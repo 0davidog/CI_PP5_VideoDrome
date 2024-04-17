@@ -1,0 +1,79 @@
+body {
+    color: #041348;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.2rem;
+}
+
+header {
+    background-color: #041348;
+    background-image: linear-gradient(to bottom, #000000, #041348);
+}
+
+footer {
+    background-color: #041348;
+    background-image: linear-gradient(to top, #000000, #041348);
+}
+
+.btn:hover {
+    border-color:#dc3545;
+    background-color:#dc3545;
+}
+
+.orbitron-title{
+    font-weight: 900;
+}
+
+.content-block {
+    margin-top: 100px;
+}
+
+.navbar-brand {
+    font-size: 2.5rem;
+}
+
+.navbar-brand:hover {
+    color: #dc3545 !important;
+}
+
+.navbar-brand:focus {
+    color:#dc3545;
+    outline: none;
+}
+
+.nav-link {
+    color: #198754;
+}
+
+.nav-link:hover {
+    color: #dc3545;
+    transform: scale(1.2);
+}
+
+.nav-link:focus {
+    color:#dc3545;
+    outline: none;
+}
+
+.nav-link:active {
+    color: #dc3545 !important;
+}
+
+.dropdown-item:hover {
+    color:#dc3545;
+}
+
+.dropdown-toggle:active {
+    color:#dc3545;
+}
+
+#footer-text:hover {
+    color: #198754;
+    transform: scale(1);
+}
+
+.btn-success:hover {
+    transform: scale(1.1);
+}
