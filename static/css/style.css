@@ -1,10 +1,11 @@
 body {
+    min-height: 100vh;
     color: #041348;
     font-family: "Orbitron", sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 header {
@@ -17,6 +18,10 @@ footer {
     background-image: linear-gradient(to top, #000000, #041348);
 }
 
+a:hover {
+    color:#dc3545;
+}
+
 .btn:hover {
     border-color:#dc3545;
     background-color:#dc3545;
@@ -27,7 +32,8 @@ footer {
 }
 
 .content-block {
-    margin-top: 100px;
+    margin-top: 172px;
+    height: 100%;
 }
 
 .navbar-brand {
@@ -45,6 +51,10 @@ footer {
 
 .nav-link {
     color: #198754;
+}
+
+.nav-link-white {
+    color: #ffffff;
 }
 
 .nav-link:hover {
