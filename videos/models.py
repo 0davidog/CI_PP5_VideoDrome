@@ -58,7 +58,7 @@ class Video(models.Model):
     price = models.DecimalField(default=0.0, null=False, max_digits=4, decimal_places=2)
     cover = models.ImageField(null=True, blank=True)
     cover_url = models.URLField(max_length=1024, null=True, blank=True)
-    overview = models.TextField(max_length=500, blank=True)
+    overview = models.TextField(blank=True)
     release_year = models.DecimalField(max_digits=4, decimal_places=0, blank=True)
     aspect_ratio = models.CharField(max_length=250, blank=True)
     feature_length = models.CharField(max_length=250, blank=True)
@@ -76,6 +76,15 @@ class Video(models.Model):
 
     def __str__(self):
         return f'{self.title} {self.release_year} {self.format}'
+    
+    def excerpt(self, num_words=25):
+        # Split the text into words
+        words = self.overview.split()
+
+        # Get the partial text containing only the specified number of words
+        excerpt = ' '.join(words[:num_words])
+
+        return excerpt
 
 
     

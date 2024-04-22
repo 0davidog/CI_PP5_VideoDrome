@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            {% for video in videos %}
+            <div class="col-3 mb-5">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-4 image-container">
+                        <img src="..." class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title"><a href="#" class="video-link">{{ video.title }}&nbsp;{{ video.format }}</a></h5>
+                          <p class="card-text">{{ video.excerpt }}...</p>
+                          <p>£{{ video.price}}</p>
+                          <a href="#" class="btn btn-primary">Add to Basket</a>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

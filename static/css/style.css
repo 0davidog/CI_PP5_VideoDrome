@@ -3,7 +3,7 @@ body {
     color: #041348;
     font-family: "Orbitron", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 600;
+    font-weight: 400;
     font-style: normal;
     font-size: 1rem;
 }
@@ -86,4 +86,8 @@ a:hover {
 
 .btn-success:hover {
     transform: scale(1.1);
+}
+
+.image-container {
+    background-color: grey;
 }
