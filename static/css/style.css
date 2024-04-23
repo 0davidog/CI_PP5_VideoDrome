@@ -88,6 +88,19 @@ a:hover {
     transform: scale(1.1);
 }
 
+.wishlist-link {
+    color:#dc3545;
+}
+
+.rating-link {
+    color: #ffc107;
+}
+
 .image-container {
     background-color: grey;
+    height: 100%;
+}
+
+.video-card, .video-card-row {
+    height:100%;
 }

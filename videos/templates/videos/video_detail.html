@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col-4">
+            <div class="image-container"><img src="..." class="img-fluid rounded-start" alt="..."></div>
+        </div>
+        <div class="col-8">
+            <h2>{{ video.title }}</h2>
+            <h3>{{ video.format }}</h3>
+            <p>
+                {% if user.is_authenticated %}
+                    Your Rating:&nbsp;
+                    {% if user_rating.rating >= 1 %}
+                        <a href="{% url 'rate_video' video.slug 1 %}" class="rating-link"><i class="fa-solid fa-star"></i></a>
+                    {% else %}
+                        <a href="{% url 'rate_video' video.slug 1 %}" class="rating-link"><i class="fa-regular fa-star"></i></a>
+                    {% endif %}
+                    {% if user_rating.rating >= 2 %}
+                        <a href="{% url 'rate_video' video.slug 2 %}" class="rating-link"><i class="fa-solid fa-star"></i></a>
+                    {% else %}
+                        <a href="{% url 'rate_video' video.slug 2 %}" class="rating-link"><i class="fa-regular fa-star"></i></a>
+                    {% endif %}
+                    {% if user_rating.rating >= 3 %}
+                        <a href="{% url 'rate_video' video.slug 3 %}" class="rating-link"><i class="fa-solid fa-star"></i></a>
+                    {% else %}
+                        <a href="{% url 'rate_video' video.slug 3 %}" class="rating-link"><i class="fa-regular fa-star"></i></a>
+                    {% endif %}
+                    {% if user_rating.rating >= 4 %}
+                        <a href="{% url 'rate_video' video.slug 4 %}" class="rating-link"><i class="fa-solid fa-star"></i></a>
+                    {% else %}
+                    <a href="{% url 'rate_video' video.slug 4 %}" class="rating-link"><i class="fa-regular fa-star"></i></a>
+                    {% endif %}
+                    {% if user_rating.rating >= 5 %}
+                        <a href="{% url 'rate_video' video.slug 5 %}" class="rating-link"><i class="fa-solid fa-star"></i></a>
+                    {% else %}
+                        <a href="{% url 'rate_video' video.slug 5 %}" class="rating-link"><i class="fa-regular fa-star"></i></a>
+                    {% endif %}
+                    {% if user_rating.rating %}
+                        ({{ user_rating.rating }})
+                    {% else %}
+                        (0)
+                    {% endif %}
+                    {% else %}
+                        Your Rating: <span class="text-warning">Log in to rate videos.</span>
+                    {% endif %}
+            </p>
+            <p>Director: {{ video.director }}</p>
+            <p>Release Year: {{ video.release_year }}</p>
+            <p>Certificate: {{ video.certificate }}</p>
+            <p class="mt-5">In Stock</p>
+            <p>Price: £{{ video.price}}</p>
+            <a href="#" class="btn btn-primary me-2"><i class="fa-solid fa-basket-shopping"></i>&nbsp;Add to Basket</a>
+            {% if user.is_authenticated %}
+            {% if wishlisted %}
+            <span><a href="{% url 'wishlist_video' video.slug %}" class="wishlist-link"><i class="fa-solid fa-heart me-2"></i>In Wishlist</a></span>
+            {% else %}
+            <span><a href="{% url 'wishlist_video' video.slug %}" class="wishlist-link"><i class="fa-regular fa-heart me-2"></i>Add to Wishlist</a></span>
+            {% endif %}
+            {% else %}
+            <span><a href="#" class="wishlist-link"><i class="fa-regular fa-heart me-2"></i>log in to Add to Wishlist</a></span>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mb-4">  
+            <h4>Video Overview</h4>
+            <p>{{ video.overview }}</p>
+            <h5>More Information</h5>
+            <details>
+                <summary>View Details</summary>
+                <p class="mt-4">
+                    Languages:
+                    {% if languages %}
+                        {% for language in languages %}
+                            {{ language }}
+                        {% endfor %}
+                    {% else %}
+                    No information available.
+                    {% endif %}
+                </p>
+                <p>
+                    Subtitles:
+                    {% if subtitles %}
+                        {% for subtitle in subtitles %}
+                            {{ subtitle }}
+                        {% endfor %}    
+                    {% else %}
+                    No information available.
+                    {% endif %}
+                </p>
+            </details>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h4>Customer Reviews</h4>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -34,12 +34,12 @@ class Video(models.Model):
     """
     
     CERTIFICATE_CHOICES=[
-        ("1", "Not Rated"),
-        ("2", "U"),
-        ("3", "PG"),
-        ("4", "12"),
-        ("5", "15"),
-        ("6", "18"),
+        ("Not Rated", "Not Rated"),
+        ("U", "U"),
+        ("PG", "PG"),
+        ("12", "12"),
+        ("15", "15"),
+        ("18", "18"),
     ]
 
     FORMAT_CHOICES=[
@@ -52,7 +52,8 @@ class Video(models.Model):
     
     title = models.CharField(max_length=250, unique=True)
     slug = models.SlugField(max_length=250, editable=True)
-    certificate = models.CharField(choices=CERTIFICATE_CHOICES, max_length=250, default="1", null=False)
+    director = models.CharField(max_length=250, null=True)
+    certificate = models.CharField(choices=CERTIFICATE_CHOICES, max_length=250, default="Not Rated", null=False)
     format = models.CharField(choices=FORMAT_CHOICES, max_length=250, default="DVD", null=False)
     discs = models.IntegerField(default=1, null=False)
     price = models.DecimalField(default=0.0, null=False, max_digits=4, decimal_places=2)
@@ -73,6 +74,7 @@ class Video(models.Model):
         related_name='wishlist',
         blank=True
     )
+    rating = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
         return f'{self.title} {self.release_year} {self.format}'
@@ -86,5 +88,22 @@ class Video(models.Model):
 
         return excerpt
 
-
     
+class UserRating(models.Model):
+    """
+    """
+    RATING_CHOICES=[
+        (1, 1),
+        (2, 2),
+        (3, 3),
+        (4, 4),
+        (5, 5),
+    ]
+    video = models.ForeignKey(Video, on_delete=models.CASCADE, related_name="video_rating")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_rating")
+    rating = models.IntegerField(choices=RATING_CHOICES)
+
+    def __str__(self):
+        """
+        """
+        return f"{self.video} rated {self.rating} stars by {self.user}"
