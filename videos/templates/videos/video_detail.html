@@ -51,17 +51,15 @@
             <p>Director: {{ video.director }}</p>
             <p>Release Year: {{ video.release_year }}</p>
             <p>Certificate: {{ video.certificate }}</p>
-            <p class="mt-5">In Stock</p>
+            <p class="mt-5">{% if video.in_stock %}In Stock{% else %}Out of Stock{% endif %}</p>
             <p>Price: £{{ video.price}}</p>
-            <a href="#" class="btn btn-primary me-2"><i class="fa-solid fa-basket-shopping"></i>&nbsp;Add to Basket</a>
+            <button href="#" class="btn btn-primary me-2 btn-basket" {% if not video.in_stock %} disabled {% endif %}><i class="fa-solid fa-basket-shopping"></i>&nbsp;Add to Basket</button>
             {% if user.is_authenticated %}
             {% if wishlisted %}
             <span><a href="{% url 'wishlist_video' video.slug %}" class="wishlist-link"><i class="fa-solid fa-heart me-2"></i>In Wishlist</a></span>
             {% else %}
             <span><a href="{% url 'wishlist_video' video.slug %}" class="wishlist-link"><i class="fa-regular fa-heart me-2"></i>Add to Wishlist</a></span>
             {% endif %}
-            {% else %}
-            <span><a href="#" class="wishlist-link"><i class="fa-regular fa-heart me-2"></i>log in to Add to Wishlist</a></span>
             {% endif %}
         </div>
     </div>

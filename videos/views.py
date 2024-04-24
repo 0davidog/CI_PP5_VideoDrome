@@ -14,8 +14,24 @@ def all_videos(request):
     search_query = None
     format_query = None
     genre_query = None
+    sort = None
+    direction = None
 
     if request.GET:
+
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'title':
+                sortkey = 'lower_title'
+                videos = videos.annotate(lower_name=Lower('title'))
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            
+            videos = videos.order_by(sortkey)
         
         if 'genre' in request.GET:
             genre_query = request.GET['genre']
@@ -33,12 +49,15 @@ def all_videos(request):
             queries = Q(title__icontains=search_query)|Q(overview__icontains=search_query)|Q(director__icontains=search_query)
 
             videos = videos.filter(queries)
-
+    
+    current_sorting = f'{sort}_{direction}'
+    
     context = {
         'videos': videos,
         'search': search_query,
         'genre_query': genre_query,
         'format_query': format_query,
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'videos/videos.html', context)

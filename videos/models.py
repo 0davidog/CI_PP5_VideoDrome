@@ -64,6 +64,7 @@ class Video(models.Model):
     format = models.CharField(choices=FORMAT_CHOICES, max_length=250, default="DVD", null=False)
     discs = models.IntegerField(default=1, null=False)
     price = models.DecimalField(default=0.0, null=False, max_digits=4, decimal_places=2)
+    stock = models.IntegerField(default=0, null=False)
     cover = models.ImageField(null=True, blank=True)
     cover_url = models.URLField(max_length=1024, null=True, blank=True)
     overview = models.TextField(blank=True)
@@ -96,6 +97,12 @@ class Video(models.Model):
 
         return excerpt
 
+    def in_stock(self):
+        if self.stock > 0:
+            return True
+        else:
+            return False
+        
     
 class UserRating(models.Model):
     """
