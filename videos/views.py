@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib import messages
+from django.db.models import Q
 from .models import Video, Language, Subtitle, UserRating, User
 
 # Create your views here.
@@ -11,8 +12,19 @@ def all_videos(request):
 
     videos = Video.objects.all()
 
+    if request.GET:
+        if 's-q' in request.GET:
+            search_query = request.GET['s-q']
+            if not search_query:
+                messages.error(request, "Search criteria needed!")
+                return redirect(reverse('videos'))
+            queries = Q(title__icontains=search_query)|Q(overview__icontains=search_query)|Q(director__icontains=search_query)
+
+            videos = videos.filter(queries)
+
     context = {
         'videos': videos,
+        'search': search_query,
     }
 
     return render(request, 'videos/videos.html', context)
