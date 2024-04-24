@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib import messages
 from django.db.models import Q
-from .models import Video, Language, Subtitle, UserRating, User
+from .models import Video, Language, Subtitle, UserRating, User, Genre
 
 # Create your views here.
 
@@ -11,8 +11,20 @@ def all_videos(request):
     """ A view to show all products, including sorting and search queries """
 
     videos = Video.objects.all()
+    search_query = None
+    format_query = None
+    genre_query = None
 
     if request.GET:
+        
+        if 'genre' in request.GET:
+            genre_query = request.GET['genre']
+            videos = videos.filter(genre__genre_name__icontains=genre_query)
+            
+        if 'format' in request.GET:
+            format_query = request.GET['format']
+            videos = videos.filter(format__icontains=format_query)
+
         if 's-q' in request.GET:
             search_query = request.GET['s-q']
             if not search_query:
@@ -25,6 +37,8 @@ def all_videos(request):
     context = {
         'videos': videos,
         'search': search_query,
+        'genre_query': genre_query,
+        'format_query': format_query,
     }
 
     return render(request, 'videos/videos.html', context)

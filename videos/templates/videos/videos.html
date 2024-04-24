@@ -3,29 +3,41 @@
 
 
 {% block content %}
-    <div class="container-fluid">
-        <div class="row">
-            {% for video in videos %}
-            <div class="col-3 mb-5">
-                <div class="card video-card mb-3" style="max-width: 540px;">
-                    <div class="row g-0 video-card-row">
-                      <div class="col-md-4 image-container">
-                        <img src="..." class="img-fluid rounded-start" alt="...">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <a href="{% url 'video_detail' video.slug %}" class="video-link">{{ video.title }}&nbsp;{{ video.format }}</a>
-                            </h5>
-                            <p class="card-text">{{ video.excerpt }}...</p>
-                            <p>In Stock<br>Price: £{{ video.price}}</p>
-                            <a href="#" class="btn btn-primary"><i class="fa-solid fa-basket-shopping"></i>&nbsp;Add to Basket</a>
-                        </div>
-                      </div>
+{% if genre_query %}
+<h2 class="text-center mb-5">{{ genre_query | title}}</h2>
+{% endif %}
+{% if format_query %}
+{% if format_query == "dvd" %}
+<h2 class="text-center mb-5">DVD</h2>
+{% elif format_query == "blu-ray" %}
+<h2 class="text-center mb-5">Blu-Ray</h2>
+{% elif format_query == "4k-ultra-hd" %}
+<h2 class="text-center mb-5">4K Ultra HD</h2>
+{% endif %}
+{% endif %}
+<div class="container-fluid">
+    <div class="row">
+        {% for video in videos %}
+        <div class="col-3 mb-5">
+            <div class="card video-card mb-3" style="max-width: 540px;">
+                <div class="row g-0 video-card-row">
+                    <div class="col-md-4 image-container">
+                    <img src="..." class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="{% url 'video_detail' video.slug %}" class="video-link">{{ video.title }}&nbsp;{{ video.format }}</a>
+                        </h5>
+                        <p class="card-text">{{ video.excerpt }}...</p>
+                        <p>In Stock<br>Price: £{{ video.price}}</p>
+                        <a href="#" class="btn btn-primary"><i class="fa-solid fa-basket-shopping"></i>&nbsp;Add to Basket</a>
+                    </div>
                     </div>
                 </div>
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
     </div>
+</div>
 {% endblock %}

@@ -27,7 +27,14 @@ class Region(models.Model):
 
     def __str__(self):
         return self.region
+    
+class Genre(models.Model):
+    """
+    """
+    genre_name = models.CharField(max_length=100, blank=True)
 
+    def __str__(self):
+        return self.genre_name
     
 class Video(models.Model):
     """
@@ -69,6 +76,7 @@ class Video(models.Model):
     languages = models.ManyToManyField(Language, blank=True)
     subtitles = models.ManyToManyField(Subtitle, blank=True)
     region = models.ManyToManyField(Region, blank=True)
+    genre = models.ManyToManyField(Genre, blank=True)
     wishlist = models.ManyToManyField(
         User,
         related_name='wishlist',

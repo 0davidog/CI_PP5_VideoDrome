@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Video, Language, Region, Subtitle, UserRating
+from .models import Video, Language, Region, Subtitle, UserRating, Genre
 
 # Register your models here.
 
@@ -11,3 +11,4 @@ admin.site.register(Language)
 admin.site.register(Region)
 admin.site.register(Subtitle)
 admin.site.register(UserRating)
+admin.site.register(Genre)
