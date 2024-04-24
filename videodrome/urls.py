@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
     path('videos/', include('videos.urls')),
+    path('basket/', include('basket.urls')),
 ]

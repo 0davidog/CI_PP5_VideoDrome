@@ -70,6 +70,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.stripe',
     'main',
     'videos',
+    'basket',
 ]
 
 MIDDLEWARE = [
