@@ -24,6 +24,31 @@
             {% endif %}
         </div>
         <div class="col text-end">
+            {% if genre_query %}
+            <div class="dropdown">
+                <button class="btn dropdown-toggle me-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  SORT BY
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'videos' %}?genre={{ genre_query }}&sort=price&direction=asc">Price (low to high)</a></li>
+                  <li><a class="dropdown-item" href="{% url 'videos' %}?genre={{ genre_query }}&sort=price&direction=desc">Price (high to low)</a></li>
+                  <li><a class="dropdown-item" href="{% url 'videos' %}?genre={{ genre_query }}&sort=release_year&direction=desc">Year (newest first)</a></li>
+                  <li><a class="dropdown-item" href="{% url 'videos' %}?genre={{ genre_query }}&sort=release_year&direction=asc">Year (oldest first)</a></li>
+                </ul>
+            </div>
+            {% elif format_query %}
+            <div class="dropdown">
+                <button class="btn dropdown-toggle me-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  SORT BY
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'videos' %}?format={{ format_query }}&sort=price&direction=asc">Price (low to high)</a></li>
+                  <li><a class="dropdown-item" href="{% url 'videos' %}?format={{ format_query }}&sort=price&direction=desc">Price (high to low)</a></li>
+                  <li><a class="dropdown-item" href="{% url 'videos' %}?format={{ format_query }}&sort=release_year&direction=desc">Year (newest first)</a></li>
+                  <li><a class="dropdown-item" href="{% url 'videos' %}?format={{ format_query }}&sort=release_year&direction=asc">Year (oldest first)</a></li>
+                </ul>
+            </div>
+            {% else %}
             <div class="dropdown">
                 <button class="btn dropdown-toggle me-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   SORT BY
@@ -35,6 +60,8 @@
                   <li><a class="dropdown-item" href="{% url 'videos' %}?sort=release_year&direction=asc">Year (oldest first)</a></li>
                 </ul>
             </div>
+            {% endif %}
+
         </div>
     </div>
     <div class="row">
