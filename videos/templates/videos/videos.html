@@ -10,6 +10,9 @@
             {{ current_sorting }}
         </div>
         <div class="col">
+            {% if all_videos == True %}
+            <h2 class="text-center">All Videos</h2>
+            {% endif %}
             {% if genre_query %}
             <h2 class="text-center">{{ genre_query | title}}</h2>
             {% endif %}
@@ -18,7 +21,7 @@
             <h2 class="text-center">DVD</h2>
             {% elif format_query == "blu-ray" %}
             <h2 class="text-center">Blu-Ray</h2>
-            {% elif format_query == "4k-ultra-hd" %}
+            {% elif format_query == "uhd" %}
             <h2 class="text-center">4K Ultra HD</h2>
             {% endif %}
             {% endif %}

@@ -52,7 +52,7 @@ class Video(models.Model):
     FORMAT_CHOICES=[
         ("DVD", "DVD"),
         ("Blu-Ray", "Blu-Ray"),
-        ("4K Ultra HD", "4K Ultra HD"),
+        ("UHD", "UHD"),
         ("Dual Format: Blu-Ray and DVD", "Dual Format: Blu-Ray and DVD"),
         ("Dual Format: UHD and Blu-Ray", "Dual Format: UHD and Blu-Ray"),
     ]

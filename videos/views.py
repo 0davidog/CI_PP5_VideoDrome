@@ -11,6 +11,7 @@ def all_videos(request):
     """ A view to show all products, including sorting and search queries """
 
     videos = Video.objects.all()
+    all_videos = True
     search_query = None
     format_query = None
     genre_query = None
@@ -25,6 +26,7 @@ def all_videos(request):
             if sortkey == 'title':
                 sortkey = 'lower_title'
                 videos = videos.annotate(lower_name=Lower('title'))
+                all_videos = False
 
             if 'direction' in request.GET:
                 direction = request.GET['direction']
@@ -32,14 +34,22 @@ def all_videos(request):
                     sortkey = f'-{sortkey}'
             
             videos = videos.order_by(sortkey)
+            all_videos = False
         
         if 'genre' in request.GET:
             genre_query = request.GET['genre']
-            videos = videos.filter(genre__genre_name__icontains=genre_query)
+            if genre_query == "4k,ultra,hd,uhd":
+                genre_query.split(',')
+                videos = videos.filter(genre__genre_name__icontains=genre_query)
+                all_videos = False
+            else:
+                videos = videos.filter(genre__genre_name__icontains=genre_query)
+                all_videos = False
             
         if 'format' in request.GET:
             format_query = request.GET['format']
             videos = videos.filter(format__icontains=format_query)
+            all_videos = False
 
         if 's-q' in request.GET:
             search_query = request.GET['s-q']
@@ -49,11 +59,13 @@ def all_videos(request):
             queries = Q(title__icontains=search_query)|Q(overview__icontains=search_query)|Q(director__icontains=search_query)
 
             videos = videos.filter(queries)
+            all_videos = False
     
     current_sorting = f'{sort}_{direction}'
     
     context = {
         'videos': videos,
+        'all_videos': all_videos,
         'search': search_query,
         'genre_query': genre_query,
         'format_query': format_query,

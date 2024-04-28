@@ -97,7 +97,7 @@
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="{% url 'videos' %}?format=dvd">DVD</a></li>
                     <li><a class="dropdown-item" href="{% url 'videos' %}?format=blu-ray">Blu-Ray</a></li>
-                    <li><a class="dropdown-item" href="{% url 'videos' %}?format=4k-ultra-hd">4K Ultra HD</a></li>
+                    <li><a class="dropdown-item" href="{% url 'videos' %}?format=uhd">4K Ultra HD</a></li>
                   </ul>
                   </div>
               </li>
@@ -107,9 +107,9 @@
                     BY GENRE
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="{% url 'videos' %}?genre=horror">Horror</a></li>
-                    <li><a class="dropdown-item" href="{% url 'videos' %}?genre=thriller">Thriller</a></li>
-                    <li><a class="dropdown-item" href="{% url 'videos' %}?genre=animation">Animation</a></li>
+                    {% for genre in genre_list %}
+                    <li><a class="dropdown-item" href="{% url 'videos' %}?genre={{ genre.genre_name | lower }}">{{ genre.genre_name | title }}</a></li>
+                    {% endfor %}
                   </ul>
                   </div>
               </li>
