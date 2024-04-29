@@ -99,9 +99,9 @@ class Video(models.Model):
 
     def in_stock(self):
         if self.stock > 0:
-            return True
+            return "In Stock"
         else:
-            return False
+            return "Out Of Stock"
         
     
 class UserRating(models.Model):
@@ -122,3 +122,28 @@ class UserRating(models.Model):
         """
         """
         return f"{self.video} rated {self.rating} stars by {self.user}"
+    
+
+class UserReview(models.Model):
+    """"""
+    video = models.ForeignKey(
+    Video,
+    on_delete=models.CASCADE,
+    related_name="reviews"
+    )
+    title = models.CharField(max_length=250, blank=True)
+    content = models.TextField()
+    author = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name="reviewer"
+    )
+
+    approved = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        """
+        """
+        return f"Review: {self.content} by {self.author}"

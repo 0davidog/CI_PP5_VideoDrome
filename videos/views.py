@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib import messages
 from django.db.models import Q
-from .models import Video, Language, Subtitle, UserRating, User, Genre
+from .models import Video, Language, Subtitle, UserRating, User, UserReview
 
 # Create your views here.
 
@@ -77,12 +77,18 @@ def all_videos(request):
 def video_detail(request, slug):
     """
     """
+    
     video = get_object_or_404(Video, slug=slug)
     languages = Language.objects.filter(video=video)
     subtitles = Subtitle.objects.filter(video=video)
 
     wishlisted = False
     user_rating = None
+    user_review = None
+    review_rating = None
+    review_count = 0
+    one_star_reviews = 0
+
     if request.user.is_authenticated:
         if video.wishlist.filter(id=request.user.id).exists():
             wishlisted = True
@@ -91,6 +97,17 @@ def video_detail(request, slug):
             user_rating = get_object_or_404(UserRating.objects.filter(user=request.user, video=video))
         else:
             user_rating = None
+        
+    if UserReview.objects.filter(video=video).exists():
+        user_review = get_object_or_404(UserReview.objects.filter(video=video))
+        review_count = UserReview.objects.filter(video=video).count()
+        if UserRating.objects.filter(user=user_review.author, video=video).exists():
+            review_rating = get_object_or_404(UserRating.objects.filter(user=user_review.author, video=video))
+            one_star_reviews = UserRating.objects.filter(rating=1).count()
+        else:
+            review_rating = None
+    else:
+        user_review = None
 
     context = {
         'video': video,
@@ -98,6 +115,10 @@ def video_detail(request, slug):
         'subtitles': subtitles,
         'wishlisted': wishlisted,
         'user_rating': user_rating,
+        'user_review': user_review,
+        'review_rating': review_rating,
+        'review_count': review_count,
+        'one_star_reviews': one_star_reviews,
     }
 
     return render(request, 'videos/video_detail.html', context)

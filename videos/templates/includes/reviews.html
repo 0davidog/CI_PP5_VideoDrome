@@ -1,0 +1,44 @@
+<div class="container-fluid mb-5">
+
+    <div class="row">
+        <div class="col"><h2>User Reviews ({{ review_count }})</h2><hr></div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h3 class="card-title">Ratings</h3>
+                    <hr>
+                    <p class="card-text">
+                        &nbsp;({{ one_star_reviews }})
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row"><hr>
+
+        {% if user_review %}
+        
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{ user_review.title }}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{ user_review.author }}</h6>
+              {{ review_rating.rating }}
+              <hr>
+              <p class="card-text">"{{ user_review.content }}"</p>
+              <hr>
+              <a href="#" class="card-link">Edit</a>
+              <a href="#" class="card-link">Delete</a>
+            </div>
+          </div>
+        </div>
+        
+        {% else %}
+        <div class="col"><h2>No Reviews</h2></div>
+        {% endif %}
+    </div>
+</div>

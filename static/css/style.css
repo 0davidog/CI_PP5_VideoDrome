@@ -73,6 +73,10 @@ a:hover {
     color:#dc3545;
 }
 
+.fa-star {
+    color: #ffc107;
+}
+
 .rating-link {
     color: #ffc107;
 }
