@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
+from django.urls import reverse
 from django.contrib import messages
 from videos.models import Video
 
@@ -23,4 +24,30 @@ def add_to_basket(request, item_id):
 
     request.session['basket'] = basket
     return redirect(redirect_url)
+
+
+def update_basket(request, item_id):
+    """Adjust the quantity of the specified product to the specified amount"""
+    print(item_id)
+    quantity = int(request.POST.get('quantity'))
+    print(quantity)
+    basket = request.session.get('basket', {})
+    print(basket)
+
+    if quantity > 0:
+        basket[item_id] = quantity
+    else:
+        basket.pop(item_id)
+
+    request.session['basket'] = basket
+    return redirect(reverse('view_basket'))
+
+
+def remove_from_basket(request, item_id):
+    """Remove the item from the shopping bag"""
+
+    basket = request.session.get('basket', {})
+    basket.pop(item_id)
+    request.session['basket'] = basket
+    return redirect(reverse('view_basket'))
     

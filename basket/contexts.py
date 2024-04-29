@@ -12,12 +12,14 @@ def in_basket(request):
 
     for item_id, quantity in basket.items():
         video = get_object_or_404(Video, pk=item_id)
+        sub_total = quantity * video.price
         total += quantity * video.price
         video_count += quantity
         basket_items.append({
             'item_id': item_id,
             'quantity': quantity,
             'video': video,
+            'sub_total': sub_total,
         })
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
