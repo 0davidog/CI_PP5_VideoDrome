@@ -26,7 +26,7 @@ def all_videos(request):
             if sortkey == 'title':
                 sortkey = 'lower_title'
                 videos = videos.annotate(lower_name=Lower('title'))
-                all_videos = False
+                
 
             if 'direction' in request.GET:
                 direction = request.GET['direction']
@@ -34,7 +34,7 @@ def all_videos(request):
                     sortkey = f'-{sortkey}'
             
             videos = videos.order_by(sortkey)
-            all_videos = False
+            
         
         if 'genre' in request.GET:
             genre_query = request.GET['genre']
