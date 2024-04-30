@@ -87,7 +87,11 @@ def video_detail(request, slug):
     user_review = None
     review_rating = None
     review_count = 0
-    one_star_reviews = 0
+    one_star_ratings = 0
+    two_star_ratings = 0
+    three_star_ratings = 0
+    four_star_ratings = 0
+    five_star_ratings = 0
 
     if request.user.is_authenticated:
         if video.wishlist.filter(id=request.user.id).exists():
@@ -103,7 +107,11 @@ def video_detail(request, slug):
         review_count = UserReview.objects.filter(video=video).count()
         if UserRating.objects.filter(user=user_review.author, video=video).exists():
             review_rating = get_object_or_404(UserRating.objects.filter(user=user_review.author, video=video))
-            one_star_reviews = UserRating.objects.filter(rating=1).count()
+            one_star_ratings = UserRating.objects.filter(video=video, rating=1).count()
+            two_star_ratings = UserRating.objects.filter(video=video, rating=2).count()
+            three_star_ratings = UserRating.objects.filter(video=video, rating=3).count()
+            four_star_ratings = UserRating.objects.filter(video=video, rating=4).count()
+            five_star_ratings = UserRating.objects.filter(video=video, rating=5).count()
         else:
             review_rating = None
     else:
@@ -118,7 +126,11 @@ def video_detail(request, slug):
         'user_review': user_review,
         'review_rating': review_rating,
         'review_count': review_count,
-        'one_star_reviews': one_star_reviews,
+        'one_star_ratings': one_star_ratings,
+        'two_star_ratings': two_star_ratings,
+        'three_star_ratings': three_star_ratings,
+        'four_star_ratings': four_star_ratings,
+        'five_star_ratings': five_star_ratings,
     }
 
     return render(request, 'videos/video_detail.html', context)

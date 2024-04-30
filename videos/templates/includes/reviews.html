@@ -10,8 +10,13 @@
                 <div class="card-body">
                     <h3 class="card-title">Ratings</h3>
                     <hr>
-                    <p class="card-text">
-                        &nbsp;({{ one_star_reviews }})
+
+                    <p class="card-text" id=>
+                        <span class="star-rating" data-rating="1"></span>&nbsp;<span>({{ one_star_ratings }})</span><br>
+                        <span class="star-rating" data-rating="2"></span>&nbsp;<span>({{ two_star_ratings }})</span><br>
+                        <span class="star-rating" data-rating="3"></span>&nbsp;<span>({{ three_star_ratings }})</span><br>
+                        <span class="star-rating" data-rating="4"></span>&nbsp;<span>({{ four_star_ratings }})</span><br>
+                        <span class="star-rating" data-rating="5"></span>&nbsp;<span>({{ five_star_ratings }})</span>
                     </p>
                 </div>
             </div>
@@ -27,7 +32,7 @@
             <div class="card-body">
               <h5 class="card-title">{{ user_review.title }}</h5>
               <h6 class="card-subtitle mb-2 text-muted">{{ user_review.author }}</h6>
-              {{ review_rating.rating }}
+              <span class="star-rating" data-rating="{{ review_rating.rating }}"></span>&nbsp;<span>({{ review_rating.rating }})</span>
               <hr>
               <p class="card-text">"{{ user_review.content }}"</p>
               <hr>
