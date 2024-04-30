@@ -84,7 +84,7 @@ def video_detail(request, slug):
 
     wishlisted = False
     user_rating = None
-    user_review = None
+    user_reviews = None
     review_rating = None
     review_count = 0
     one_star_ratings = 0
@@ -103,19 +103,23 @@ def video_detail(request, slug):
             user_rating = None
         
     if UserReview.objects.filter(video=video).exists():
-        user_review = get_object_or_404(UserReview.objects.filter(video=video))
+        user_reviews = UserReview.objects.filter(video=video)
         review_count = UserReview.objects.filter(video=video).count()
-        if UserRating.objects.filter(user=user_review.author, video=video).exists():
-            review_rating = get_object_or_404(UserRating.objects.filter(user=user_review.author, video=video))
-            one_star_ratings = UserRating.objects.filter(video=video, rating=1).count()
-            two_star_ratings = UserRating.objects.filter(video=video, rating=2).count()
-            three_star_ratings = UserRating.objects.filter(video=video, rating=3).count()
-            four_star_ratings = UserRating.objects.filter(video=video, rating=4).count()
-            five_star_ratings = UserRating.objects.filter(video=video, rating=5).count()
-        else:
-            review_rating = None
+        
+        for review in user_reviews:
+            if UserRating.objects.filter(user=review.author, video=video).exists():
+                review_rating = get_object_or_404(UserRating.objects.filter(user=review.author, video=video))
+            
+            else:
+                review_rating = None
     else:
-        user_review = None
+        user_reviews = None
+
+    one_star_ratings = UserRating.objects.filter(video=video, rating=1).count()
+    two_star_ratings = UserRating.objects.filter(video=video, rating=2).count()
+    three_star_ratings = UserRating.objects.filter(video=video, rating=3).count()
+    four_star_ratings = UserRating.objects.filter(video=video, rating=4).count()
+    five_star_ratings = UserRating.objects.filter(video=video, rating=5).count()
 
     context = {
         'video': video,
@@ -123,7 +127,7 @@ def video_detail(request, slug):
         'subtitles': subtitles,
         'wishlisted': wishlisted,
         'user_rating': user_rating,
-        'user_review': user_review,
+        'user_reviews': user_reviews,
         'review_rating': review_rating,
         'review_count': review_count,
         'one_star_ratings': one_star_ratings,

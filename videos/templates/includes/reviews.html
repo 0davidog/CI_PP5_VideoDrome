@@ -22,26 +22,27 @@
             </div>
         </div>
     </div>
+    <hr>
+    <div class="row">
 
-    <div class="row"><hr>
-
-        {% if user_review %}
+        {% if user_reviews %}
+        {% for review in user_reviews %}
         
         <div class="col">
             <div class="card" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title">{{ user_review.title }}</h5>
-              <h6 class="card-subtitle mb-2 text-muted">{{ user_review.author }}</h6>
+              <h5 class="card-title">{{ review.title }}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{ review.author }}</h6>
               <span class="star-rating" data-rating="{{ review_rating.rating }}"></span>&nbsp;<span>({{ review_rating.rating }})</span>
               <hr>
-              <p class="card-text">"{{ user_review.content }}"</p>
+              <p class="card-text">"{{ review.content }}"</p>
               <hr>
               <a href="#" class="card-link">Edit</a>
               <a href="#" class="card-link">Delete</a>
             </div>
           </div>
         </div>
-        
+        {% endfor %}
         {% else %}
         <div class="col"><h2>No Reviews</h2></div>
         {% endif %}
