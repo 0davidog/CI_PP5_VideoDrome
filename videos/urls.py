@@ -6,4 +6,5 @@ urlpatterns = [
     path('<slug>', views.video_detail, name='video_detail'),
     path('wishlist/<slug:slug>/', views.wishlist, name='wishlist_video'),
     path('rating/<slug:slug>/<rating>', views.rating, name='rate_video'),
+    path('review/<video_id>/<slug:slug>', views.create_review, name='create_review'),
 ]

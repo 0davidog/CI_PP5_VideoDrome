@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.contrib import messages
 from django.db.models import Q
 from .models import Video, Language, Subtitle, UserRating, User, UserReview
+from .forms import ReviewForm
 
 # Create your views here.
 
@@ -178,3 +179,31 @@ def rating(request, slug, rating):
 
 
     return HttpResponseRedirect(reverse('video_detail', args=[slug]))
+
+def create_review(request, video_id, slug):
+    """
+    View to render and submit a review form.
+    """
+    review_form = ReviewForm()
+    user = get_object_or_404(User, id=request.user.id)
+    video = get_object_or_404(Video, id=video_id)
+
+    if request.method == "POST":
+        review_form = ReviewForm(data=request.POST)
+        if review_form.is_valid():
+            review = review_form.save(commit=False)
+            review.author = user
+            review.video = video
+            review.save()
+            messages.add_message(request, messages.SUCCESS, f"Review submitted. Awaiting admin approval.")
+            review_form = ReviewForm()
+            return HttpResponseRedirect(reverse('video_detail', args=[slug]))
+        else:
+            messages.add_message(request, messages.ERROR, f"Review failed to submit. Please check form.")
+
+    context = {
+        "video": video,
+        "review_form": review_form,
+    }
+
+    return render(request, "videos/create_review.html", context)

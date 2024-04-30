@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<div class="container-fluid">
+
+    <div class="row p-xl-5">
+        <div class="col">
+
+            <div class="card">
+                <div class="card-body">
+
+                    {% if user.is_authenticated %}
+                    <form id="review_form" method="post" enctype="multipart/form-data">
+
+                        {{ review_form | crispy }}
+
+                        {% csrf_token %}
+
+                        <button type="submit" class="btn btn-success">
+                            Submit Review
+                        </button>
+                    </form>
+
+                    <hr>
+
+                    <div class="text-danger">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        All review submissions will require admin approval.
+                    </div>
+        
+                    {% else %}
+                    <div class="alert" role="alert">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        Please log in to write a review!
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+{% endblock %}
