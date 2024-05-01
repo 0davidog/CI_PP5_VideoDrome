@@ -1,0 +1,38 @@
+{% if messages %}
+<div class="toast-container p-3">
+    {% for message in messages %}  
+    <div id="message-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        {% with message.level as level %}
+            {% if level == 40 %}
+                <div class="toast-header text-bg-danger">
+                    <strong class="me-auto"><i class="fa-solid fa-triangle-exclamation"></i>&nbsp;ERROR!</strong>
+                    <small></small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            {% elif level == 30 %}
+                <div class="toast-header text-bg-warning">
+                    <strong class="me-auto"><i class="fa-solid fa-triangle-exclamation"></i>&nbsp;WARNING!</strong>
+                    <small></small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            {% elif level == 25 %}
+                <div class="toast-header text-bg-success">
+                    <strong class="me-auto"><i class="fa-solid fa-check"></i>&nbsp;SUCCESS!</strong>
+                    <small></small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            {% else %}
+                <div class="toast-header text-bg-info">
+                    <strong class="me-auto"><i class="fa-solid fa-circle-info"></i>&nbsp;INFO!</strong>
+                    <small></small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            {% endif %}
+        {% endwith %}
+        <div class="toast-body">
+            {{ message | safe }}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}

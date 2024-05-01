@@ -93,6 +93,14 @@ a:hover {
     width: 75px !important;
 }
 
+/* Bootsrap toast settings */
+
+.toast-container {
+    position: fixed;
+    top: 54px;
+    right: 0;
+}
+
 @media (min-width: 1200px) {
     .orbitron-title {
         font-size: 2.25rem;;
@@ -107,5 +115,11 @@ a:hover {
 
     .content-block {
         margin-top: 152px;
+    }
+
+    .toast-container {
+        position: fixed;
+        top: 152px;
+        right: 0;
     }
 }

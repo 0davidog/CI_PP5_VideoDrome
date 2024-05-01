@@ -38,11 +38,12 @@
     {% include 'includes/nav-desktop.html' %}
 
     <div class="content-block">
-      {% include 'includes/messages.html' %}
+
       <div class="mt-4">
         {% block content %}
         {% endblock content %}
       </div>
+
     </div>
 
     <footer class="mt-auto">
@@ -64,8 +65,13 @@
       </nav>
     </footer>
 
+{% include 'includes/toast.html' %}
+
 {% block extras %}
+<script type="text/javascript" src="{% static 'js/toast.js' %}"></script>
 {% endblock %}
+
+
     
   </body>
 </html>

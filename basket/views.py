@@ -16,6 +16,7 @@ def add_to_basket(request, item_id):
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     basket = request.session.get('basket', {})
+    video = get_object_or_404(Video.objects.filter(id=item_id))
 
     if item_id in list(basket.keys()):
         basket[item_id] += quantity
@@ -23,16 +24,17 @@ def add_to_basket(request, item_id):
         basket[item_id] = quantity
 
     request.session['basket'] = basket
+    messages.add_message(request, messages.SUCCESS, f"Added {video} to basket.")
     return redirect(redirect_url)
+    
 
 
 def update_basket(request, item_id):
     """Adjust the quantity of the specified product to the specified amount"""
-    print(item_id)
+    
     quantity = int(request.POST.get('quantity'))
-    print(quantity)
     basket = request.session.get('basket', {})
-    print(basket)
+    video = get_object_or_404(Video.objects.filter(id=item_id))
 
     if quantity > 0:
         basket[item_id] = quantity
@@ -40,6 +42,8 @@ def update_basket(request, item_id):
         basket.pop(item_id)
 
     request.session['basket'] = basket
+    if quantity == 0:
+        messages.add_message(request, messages.SUCCESS, f"Removed {video} from basket.")
     return redirect(reverse('view_basket'))
 
 
@@ -48,6 +52,9 @@ def remove_from_basket(request, item_id):
 
     basket = request.session.get('basket', {})
     basket.pop(item_id)
+    video = get_object_or_404(Video.objects.filter(id=item_id))
+
     request.session['basket'] = basket
+    messages.add_message(request, messages.SUCCESS, f"Removed {video} from basket.")
     return redirect(reverse('view_basket'))
     
