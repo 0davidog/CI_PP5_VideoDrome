@@ -180,13 +180,13 @@ def rating(request, slug, rating):
 
     return HttpResponseRedirect(reverse('video_detail', args=[slug]))
 
-def create_review(request, video_id, slug):
+def create_review(request, slug):
     """
     View to render and submit a review form.
     """
     review_form = ReviewForm()
     user = get_object_or_404(User, id=request.user.id)
-    video = get_object_or_404(Video, id=video_id)
+    video = get_object_or_404(Video, slug-slug)
 
     if request.method == "POST":
         review_form = ReviewForm(data=request.POST)
@@ -200,6 +200,38 @@ def create_review(request, video_id, slug):
             return HttpResponseRedirect(reverse('video_detail', args=[slug]))
         else:
             messages.add_message(request, messages.ERROR, f"Review failed to submit. Please check form.")
+
+    context = {
+        "video": video,
+        "review_form": review_form,
+    }
+
+    return render(request, "videos/create_review.html", context)
+
+
+def update_review(request, slug, review_id):
+
+    video = get_object_or_404(Video, slug=slug)
+    review = get_object_or_404(UserReview, id=review_id)
+    
+
+    if request.method == 'POST':
+
+        review_form = ReviewForm(data=request.POST, instance=review)
+
+        if review_form.is_valid() and review.author == request.user:
+            review = review_form.save(commit=False)
+            review.video = video
+            review.approved = False
+            review.save()
+            messages.add_message(request, messages.SUCCESS, f"Review edit submitted. Awaiting admin approval.")
+            review_form = ReviewForm()
+            return HttpResponseRedirect(reverse('video_detail', args=[slug]))
+        else:
+            messages.add_message(request, messages.ERROR, f"Review failed to submit. Please check form.")
+
+    else:
+        review_form = ReviewForm(instance=review)
 
     context = {
         "video": video,

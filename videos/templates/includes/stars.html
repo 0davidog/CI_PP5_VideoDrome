@@ -1,10 +1,14 @@
 {% if user.is_authenticated %}
+{% if user_rating %}
 Your Rating:&nbsp;
+{% else %}
+Add Your Rating:&nbsp;
+{% endif %}
 <a href="{% url 'rate_video' video.slug 1 %}" class="rating-link"><i class="fa-regular fa-star" id="star-1"></i></a>
 <a href="{% url 'rate_video' video.slug 2 %}" class="rating-link"><i class="fa-regular fa-star" id="star-2"></i></a>
 <a href="{% url 'rate_video' video.slug 3 %}" class="rating-link"><i class="fa-regular fa-star" id="star-3"></i></a>
 <a href="{% url 'rate_video' video.slug 4 %}" class="rating-link"><i class="fa-regular fa-star" id="star-4"></i></a>
 <a href="{% url 'rate_video' video.slug 5 %}" class="rating-link"><i class="fa-regular fa-star" id="star-5"></i></a>
 {% else %}
-Your Rating: <span class="text-warning">Log in to rate videos.</span>
+Add Your Rating: <span class="text-warning">Log in to rate videos.</span>
 {% endif %}
