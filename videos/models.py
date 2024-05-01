@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+import uuid
 
 # Create your models here.
 
@@ -102,7 +103,24 @@ class Video(models.Model):
             return "In Stock"
         else:
             return "Out Of Stock"
-        
+    
+    def _generate_sku(self):
+        """
+        Generate random 8 digit number using uuid
+        """
+        uuid_int = uuid.uuid4().int
+        a = str(uuid_int)
+        sku = a[:8]
+        return sku
+    
+    def save(self, *args, **kwargs):
+        """
+        Override the original save method to set the sku number
+        if it hasn't been set already.
+        """
+        if not self.sku:
+            self.sku = self._generate_sku()
+        super().save(*args, **kwargs)
     
 class UserRating(models.Model):
     """
