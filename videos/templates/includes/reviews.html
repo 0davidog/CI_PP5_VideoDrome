@@ -32,6 +32,10 @@
             <a class="btn btn-success" href="{% url 'create_review' video.slug %}">
                 Leave your review on {{ video.title }}
             </a>
+            {% else %}
+            <a class="btn btn-secondary" href="{% url 'account_login' %}">
+                Please log-in to leave your own reviews.
+            </a>
             {% endif %}
         </div>
         
@@ -44,7 +48,7 @@
             <div class="card-body">
               <h5 class="card-title">{{ review.title }}</h5>
               <h6 class="card-subtitle mb-2 text-muted">{{ review.author }}</h6>
-              <span class="star-rating" data-rating="{{ review_rating.rating }}"></span>&nbsp;<span>({{ review_rating.rating }})</span>
+              <span class="star-rating" data-rating="{{ review_rating.rating }}"></span>
               <hr>
               <p class="card-text">"{{ review.content }}"</p>
               <hr>

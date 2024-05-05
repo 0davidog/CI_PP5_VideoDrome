@@ -86,7 +86,7 @@ def video_detail(request, slug):
     wishlisted = False
     user_rating = None
     user_reviews = None
-    review_rating = None
+    review_rating = 0
     review_count = 0
     one_star_ratings = 0
     two_star_ratings = 0
@@ -112,7 +112,7 @@ def video_detail(request, slug):
                 review_rating = get_object_or_404(UserRating.objects.filter(user=review.author, video=video))
             
             else:
-                review_rating = None
+                review_rating = 0
     else:
         user_reviews = None
 
@@ -186,7 +186,7 @@ def create_review(request, slug):
     """
     review_form = ReviewForm()
     user = get_object_or_404(User, id=request.user.id)
-    video = get_object_or_404(Video, slug-slug)
+    video = get_object_or_404(Video, slug=slug)
 
     if request.method == "POST":
         review_form = ReviewForm(data=request.POST)

@@ -82,6 +82,10 @@ a:hover {
 }
 
 .image-container {
+    padding-top: 75%; 
+    /* (Maintains a 4:3 aspect ratio 
+    when image on top of the card on small screens
+    and on video detail page.)  */
     background-color: grey;
 }
 
@@ -93,7 +97,7 @@ a:hover {
     width: 75px !important;
 }
 
-/* Bootsrap toast settings */
+/* Bootsrap toast position settings */
 
 .toast-container {
     position: fixed;
@@ -101,6 +105,14 @@ a:hover {
     right: 0;
 }
 
+/* Bootstrap md breakpoint */
+@media (min-width: 768px) {
+    .image-container {
+        height: 100%;
+    }
+}
+
+/* Bootstrap xl breakpoint */
 @media (min-width: 1200px) {
     .orbitron-title {
         font-size: 2.25rem;;
