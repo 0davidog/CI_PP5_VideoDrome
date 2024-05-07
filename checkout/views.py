@@ -1,19 +1,11 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
+from django.urls import reverse
 from django.contrib import messages
+from videos.models import Video
 
-from .forms import OrderForm
 
-
-def checkout(request):
-    basket = request.session.get('basket', {})
-    if not basket:
-        messages.error(request, "There's nothing in your basket at the moment")
-        return redirect(reverse('videos'))
-
-    order_form = OrderForm()
-    template = 'checkout/checkout.html'
-    context = {
-        'order_form': order_form,
-    }
-
-    return render(request, template, context)
+def view_checkout(request):
+   
+   """ Displays the checkout html template """
+   
+   return render(request, 'checkout/checkout.html')

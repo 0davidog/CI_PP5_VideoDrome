@@ -40,6 +40,11 @@ a:hover {
     border: none !important;
 }
 
+.btn-link:hover {
+    color:#dc3545;
+    background-color: transparent;
+}
+
 .orbitron-title {
     font-weight: 900;
 }
@@ -93,7 +98,7 @@ a:hover {
     height:100%;
 }
 
-.qty_input {
+.qty {
     width: 75px !important;
 }
 
