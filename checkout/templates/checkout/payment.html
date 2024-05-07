@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        <div class="col">
+            <h2>Payment</h2>
+            {% if basket_items %}({{ all_item_count}}&nbsp;items){% endif %}
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col">
+            <hr>
+        </div>
+    </div>
+
+    {% if basket_items %}
+
+    <div class="row mb-5">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Video</th>
+                <th scope="col"></th>
+                <th scope="col">Quantitiy</th>
+                <th scope="col">Price</th>
+                <th scope="col">Sub-Total</th>
+              </tr>
+            </thead>
+            <tbody  class="table-group-divider">
+                {% for item in basket_items %}
+              <tr>
+                <td><img src="#" alt="..."></td>
+                <td>{{ item.video.title }}&nbsp;{{ item.video.format }}</td>
+                <td>
+                    <form class="form d-inline" action="{% url 'update_basket' item.video.id %}" method="POST">
+                        {% csrf_token %}
+                        <input class="qty d-inline" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-video_id="{{ video.id }}">
+                        <button type="submit" class="btn btn-primary d-inline">
+                            update
+                        </button>
+                    </form>
+                    <a class="btn btn-link d-inline" href="{% url 'remove_from_basket' item.video_id %}">remove</a>
+                </td>
+                <td>{{ item.video.price }}</td>
+                <td>{{ item.sub_total }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row mb-4 text-end">
+        <div class="col">
+            <h3>Total: £{{ total_basket_cost }}</h3>
+        </div>
+    </div>
+    
+
+    {% else %}
+    <div class="row mb-4">
+        <div class="col">
+            There appears to be nothing in your basket.
+        </div>
+    </div>
+    {% endif %}
+    <div class="row">
+        <div class="col">
+            {% if basket_items %}
+            <a href="{% url 'videos' %}" class="btn btn-secondary">Continue Shopping?</a>
+            <a href="{% url 'view_checkout' %}" class="btn btn-success">Head to Checkout</a>
+            {% else %}
+            <a href="{% url 'videos' %}" class="btn btn-success">Continue Shopping?</a>
+            {% endif %}
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}
