@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 
 import os
+import stripe
+
+stripe.api_key = 'sk_test_51PDqtEICDG3fo7DfdAt8SlU1ixgvSnQ4kRGmXnJUu27uyubNKANm8q3rmW7AZlnm5Bx61SftyDpSUyNPA7sFFXQt00Ngt0wXx3'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

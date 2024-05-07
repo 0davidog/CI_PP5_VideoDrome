@@ -84,7 +84,9 @@
             <h4>Shipping</h4>
         </div>
     </div>
-    <form action="{% url 'payment' %}" method="POST" id="payment-form">
+
+    <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+        {% csrf_token %}
         <div class="row mb-4">
             <div class="col">
                 {{ order_form.f_name | as_crispy_field }}
@@ -109,11 +111,31 @@
             </div>
         </div>
 
+        <div class="row mb-4">
+            <div class="col">
+                <h4>Payment</h4>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-6">
+                <div id="checkout">
+                    <!--Stripe goes here-->
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col">
+                <hr>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col">
                 {% if basket_items %}
                 <a href="{% url 'videos' %}" class="btn btn-secondary">Continue Shopping?</a>
-                <button type="submit" class="btn btn-success">To Payment</button>
+                <button type="submit" class="btn btn-success">Submit Order</button>
                 {% else %}
                 <a href="{% url 'videos' %}" class="btn btn-success">Continue Shopping?</a>
                 {% endif %}
@@ -136,4 +158,11 @@
     {% endif %}
 
 </div>
+{% endblock %}
+
+{% block extras %}
+{{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'js/stripe.js' %}"></script>
 {% endblock %}
