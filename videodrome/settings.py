@@ -13,9 +13,19 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 
 import os
+
+if os.path.isfile('env.py'):
+    import env
+
 import stripe
 
-stripe.api_key = 'sk_test_51PDqtEICDG3fo7DfdAt8SlU1ixgvSnQ4kRGmXnJUu27uyubNKANm8q3rmW7AZlnm5Bx61SftyDpSUyNPA7sFFXQt00Ngt0wXx3'
+# Stripe
+
+FREE_DELIVERY_OVER = 50
+
+STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_PUBLIC_KEY")
+STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY")
+STRIPE_WH_SECRET = os.environ.get("STRIPE_WH_SECRET")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,12 +36,14 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-hzom&6&pzthpgfh3ud!irkaa0g7d6=1rgi-^#buael=6szg53^'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+
+X_FRAME_OPTIONS = 'ALLOW-FROM https://ui.dev/amiresponsive'
 
 AUTHENTICATION_BACKENDS = [
 
@@ -164,8 +176,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
