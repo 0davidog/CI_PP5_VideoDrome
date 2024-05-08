@@ -67,27 +67,32 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]  # Extracting payment ID  
             customer.save()  # Saving customer to database
 
-            order = Order.objects.create(
-                customer=customer.id,
+            order = Order(
+                customer=customer,
                 stripe_pid = pid, # Setting Stripe payment ID for the order
                 original_basket = json.dumps(basket), # Saving basket content as JSON string
-            ) # create order instance
+            ) 
+            order.save() # create order instance
 
-            order_basket = VideoOrderBasket.objects.create(
+            order_basket = VideoOrderBasket(
                 order=order,
-            ) # create basket model instance
+            ) 
+            order_basket.save()
+            # create basket model instance
 
             # Iterating through basket items and creating OrderVideoItem instances
             for item_id, quantity in basket.items():
                 try:
                     video = Video.objects.get(id=item_id)  # Getting video from database
 
-                    video_order_item = VideoOrderItem.objects.create(
+                    video_order_item = VideoOrderItem(
                                 order=order,
                                 video=video,
                                 basket=order_basket,
                                 quantity=quantity,
-                            ) # Saving order line item to database
+                            ) 
+                    video_order_item.save()
+                    # Saving order line item to database
 
                 except Video.DoesNotExist:
                     # Handling case where video doesn't exist in database
@@ -156,7 +161,7 @@ def checkout_success(request, order_number):
         del request.session['basket']  # Deleting bag from session
 
     template = 'checkout/checkout_successful.html'  # Template for checkout success page
-    
+
     context = {
         'order': order,  # Passing order object to context
     }

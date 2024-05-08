@@ -89,20 +89,34 @@
         {% csrf_token %}
         <div class="row mb-4">
             <div class="col">
-                {{ order_form.f_name | as_crispy_field }}
-                {{ order_form.l_name | as_crispy_field }}
-                {{ order_form.email | as_crispy_field }}
-                {{ order_form.phone | as_crispy_field }}
+                {{ customer_info.f_name | as_crispy_field }}
+                {{ customer_info.l_name | as_crispy_field }}
+                {{ customer_info.email | as_crispy_field }}
+                {{ customer_info.phone | as_crispy_field }}
             </div>
             <div class="col">
-                {{ order_form.street_address1 | as_crispy_field }}
-                {{ order_form.street_address2 | as_crispy_field }}
-                {{ order_form.town_or_city | as_crispy_field }}
-                {{ order_form.postcode | as_crispy_field }}
-                {{ order_form.county | as_crispy_field }}
-                {{ order_form.country | as_crispy_field }}
+                {{ customer_info.street_address1 | as_crispy_field }}
+                {{ customer_info.street_address2 | as_crispy_field }}
+                {{ customer_info.town_or_city | as_crispy_field }}
+                {{ customer_info.postcode | as_crispy_field }}
+                {{ customer_info.county | as_crispy_field }}
+                {{ customer_info.country | as_crispy_field }}
             </div>
         </div>
+
+{% if user.is_authenticated %}
+        <div class="row mb-4">
+            <div class="col">
+                <div class="form-check form-check-inline float-right mr-0">
+                    
+                        <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
+                        <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
+                    
+                </div>
+                <hr>
+            </div>
+        </div>
+{% endif %}
 
         <div class="row mb-4">
             <div class="col">
@@ -119,9 +133,13 @@
 
         <div class="row mb-4">
             <div class="col-6">
-                <div id="checkout">
+                <div id="card-element">
                     <!--Stripe goes here-->
                 </div>
+                <!-- Used to display form errors -->
+                <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                <!-- Pass the client secret to the view so we can get the payment intent id -->
+                <input type="hidden" value="{{ client_secret }}" name="client_secret">
             </div>
         </div>
 
@@ -135,7 +153,7 @@
             <div class="col">
                 {% if basket_items %}
                 <a href="{% url 'videos' %}" class="btn btn-secondary">Continue Shopping?</a>
-                <button type="submit" class="btn btn-success">Submit Order</button>
+                <button type="submit" class="btn btn-success" id="submit-button">Submit Order</button>
                 {% else %}
                 <a href="{% url 'videos' %}" class="btn btn-success">Continue Shopping?</a>
                 {% endif %}
@@ -156,6 +174,14 @@
         </div>
     </div>
     {% endif %}
+
+    <div id="loading-overlay">
+        <h1 class="text-light logo-font loading-spinner">
+            <span class="icon">
+                <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+            </span>
+        </h1>
+    </div>
 
 </div>
 {% endblock %}

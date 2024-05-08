@@ -27,10 +27,12 @@ class Order(models.Model):
     order_date = models.DateTimeField(auto_now_add=True)
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name="customer_order")
     charge = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    original_basket = models.TextField(null=False, blank=False, default='')
+    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
 
-    def cost(self):
+    def cost(self, *args, **kwargs):
         self.charge = self.order_total
-        self.save()
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f"{self.order_number} {self.order_date}"
@@ -43,14 +45,14 @@ class VideoOrderBasket(models.Model):
     delivery = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
 
-    def calculate_total(self):
+    def calculate_total(self, *args, **kwargs):
         """
         Sum up video sub toatals and add delivery to set the order total
         """
         self.order_sub_total = self.video_order.aggregate(sum('video_sub_total'))['video_sub_total__sum'] or 0
         self.delivery = 2.99
         self.order_total = self.order_sub_total + self.delivery
-        self.save()
+        super().save(*args, **kwargs)
 
     def __int__(self):
         return self.order_total
@@ -61,7 +63,7 @@ class VideoOrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name="video_order_items")
     video = models.ForeignKey(Video, on_delete=models.CASCADE)
     basket = models.ForeignKey(VideoOrderBasket, on_delete=models.CASCADE, related_name="video_order")
-    quantitiy = models.IntegerField(null=False, blank=False, default=0)
+    quantity = models.IntegerField(null=False, blank=False, default=0)
     video_sub_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
 
     def save(self, *args, **kwargs):
@@ -72,6 +74,6 @@ class VideoOrderItem(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'SKU {self.product.sku} on order {self.order.order_number}'
+        return f'SKU {self.video.sku} on order {self.order.order_number}'
 
 
