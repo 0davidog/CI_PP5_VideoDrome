@@ -1,7 +1,31 @@
 from django.contrib import admin
-from .models import Order, Customer, VideoOrderBasket, VideoOrderItem
+from .models import CustomerOrder, OrderItem
 
-admin.site.register(Order)
-admin.site.register(Customer)
-admin.site.register(VideoOrderItem)
-admin.site.register(VideoOrderBasket)
+
+class OrderItemAdminInline(admin.TabularInline):
+    model = OrderItem
+    readonly_fields = ('video_sub_total',)
+
+
+class CustomerOrderAdmin(admin.ModelAdmin):
+    inlines = (OrderItemAdminInline,)
+
+    readonly_fields = ('order_number', 'order_date',
+                       'delivery_cost', 'order_total',
+                       'grand_total', 'original_basket',
+                       'stripe_pid')
+
+    fields = ('order_number', 'order_date', 'f_name', 'l_name',
+              'email', 'phone', 'country',
+              'postcode', 'town_or_city', 'street_address1',
+              'street_address2', 'county', 'delivery_cost',
+              'order_total', 'grand_total', 'original_basket',
+              'stripe_pid')
+
+    list_display = ('order_number', 'order_date', 'f_name', 'l_name',
+                    'order_total', 'delivery_cost',
+                    'grand_total',)
+
+    ordering = ('-order_date',)
+
+admin.site.register(CustomerOrder, CustomerOrderAdmin)

@@ -1,9 +1,9 @@
 from django import forms
-from .models import Customer
+from .models import CustomerOrder
 
-class CustomerForm(forms.ModelForm):
+class CustomerOrderForm(forms.ModelForm):
     class Meta:
-        model = Customer
+        model = CustomerOrder
         fields = (
             'f_name',
             'l_name',

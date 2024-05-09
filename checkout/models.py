@@ -7,8 +7,11 @@ from videos.models import Video
 
 # Create your models here.
 
-class Customer(models.Model):
-    """Contact and Shipping information for order"""
+class CustomerOrder(models.Model):
+
+    order_number = models.UUIDField(default=uuid.uuid4(), null=False, editable=False)
+    order_date = models.DateTimeField(auto_now_add=True)
+
     f_name = models.CharField(max_length=20, null=False, blank=False)
     l_name = models.CharField(max_length=20, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
@@ -19,57 +22,38 @@ class Customer(models.Model):
     street_address1 = models.CharField(max_length=80, null=False, blank=False)
     street_address2 = models.CharField(max_length=80, null=True, blank=True)
     county = models.CharField(max_length=80, null=True, blank=True)
-
-
-class Order(models.Model):
-    """Create database entry of customer order"""
-    order_number = models.UUIDField(default=uuid.uuid4(), null=False, editable=False)
-    order_date = models.DateTimeField(auto_now_add=True)
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name="customer_order")
-    charge = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    delivery_cost = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
+    order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     original_basket = models.TextField(null=False, blank=False, default='')
     stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
+    
+    def update_total(self):
+        """
+        Update grand total each time a line item is added,
+        accounting for delivery costs.
+        """
+        self.order_total = self.orderitems.aggregate(Sum('video_sub_total'))['video_sub_total__sum'] or 0
+        if self.order_total < settings.FREE_DELIVERY_OVER:
+            self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
+        else:
+            self.delivery_cost = 0
+        self.grand_total = self.order_total + self.delivery_cost
+        self.save()
 
-    def cost(self, *args, **kwargs):
-        self.charge = self.order_total
-        super().save(*args, **kwargs)
 
     def __str__(self):
         return f"{self.order_number} {self.order_date}"
-    
-
-class VideoOrderBasket(models.Model):
-    """"""
-    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name="order_total")
-    order_sub_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
-    delivery = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
-    order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
-
-    def calculate_total(self, *args, **kwargs):
-        """
-        Sum up video sub toatals and add delivery to set the order total
-        """
-        self.order_sub_total = self.video_order.aggregate(sum('video_sub_total'))['video_sub_total__sum'] or 0
-        self.delivery = 2.99
-        self.order_total = self.order_sub_total + self.delivery
-        super().save(*args, **kwargs)
-
-    def __int__(self):
-        return self.order_total
 
 
-class VideoOrderItem(models.Model):
+class OrderItem(models.Model):
     """An entry for each unique video ordered"""
-    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name="video_order_items")
+    order = models.ForeignKey(CustomerOrder, on_delete=models.CASCADE, related_name="orderitems")
     video = models.ForeignKey(Video, on_delete=models.CASCADE)
-    basket = models.ForeignKey(VideoOrderBasket, on_delete=models.CASCADE, related_name="video_order")
     quantity = models.IntegerField(null=False, blank=False, default=0)
     video_sub_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
 
     def save(self, *args, **kwargs):
-        """
-        Override the original save method to set the subtotal
-        """
         self.video_sub_total = self.video.price * self.quantity
         super().save(*args, **kwargs)
 

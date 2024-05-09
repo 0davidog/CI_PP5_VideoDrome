@@ -22,6 +22,7 @@ import stripe
 # Stripe
 
 FREE_DELIVERY_OVER = 50
+STANDARD_DELIVERY_PERCENTAGE = 10
 
 STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_PUBLIC_KEY", '')
 STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", '')

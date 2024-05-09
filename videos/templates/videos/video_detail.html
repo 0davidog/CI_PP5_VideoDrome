@@ -43,12 +43,12 @@
     <div class="row">
         <div class="col mb-4">  
             <h4>Video Overview</h4>
-            <p>{{ video.overview }}</p>
+            <p class="copy-font">{{ video.overview }}</p>
             <h5>More Information</h5>
             <details>
                 <summary>View Details</summary>
-                <p class="mt-4">
-                    Languages:
+                <p class="mt-4 copy-font">
+                    <strong>Languages:</strong>
                     {% if languages %}
                         {% for language in languages %}
                             {{ language }}
@@ -57,8 +57,8 @@
                     No information available.
                     {% endif %}
                 </p>
-                <p>
-                    Subtitles:
+                <p class="copy-font">
+                    <strong>Subtitles:</strong>
                     {% if subtitles %}
                         {% for subtitle in subtitles %}
                             {{ subtitle }}

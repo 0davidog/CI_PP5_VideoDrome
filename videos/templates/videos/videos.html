@@ -78,10 +78,10 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title">
+                            <h5 class="card-title mb-4">
                                 <a href="{% url 'video_detail' video.slug %}" class="video-link">{{ video.title }}&nbsp;{{ video.format }}</a>
                             </h5>
-                            <p class="card-text">{{ video.excerpt }}...</p>
+                            <p class="card-text copy-font mb-4">{{ video.excerpt }}...</p>
                             <p>{{ video.in_stock }}<br>Price: £{{ video.price}}</p>
                             <form class="form" action="{% url 'add_to_basket' video.id %}" method="POST">
                                 {% csrf_token %}

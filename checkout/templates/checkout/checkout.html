@@ -89,18 +89,18 @@
         {% csrf_token %}
         <div class="row mb-4">
             <div class="col">
-                {{ customer_info.f_name | as_crispy_field }}
-                {{ customer_info.l_name | as_crispy_field }}
-                {{ customer_info.email | as_crispy_field }}
-                {{ customer_info.phone | as_crispy_field }}
+                {{ order_form.f_name | as_crispy_field }}
+                {{ order_form.l_name | as_crispy_field }}
+                {{ order_form.email | as_crispy_field }}
+                {{ order_form.phone | as_crispy_field }}
             </div>
             <div class="col">
-                {{ customer_info.street_address1 | as_crispy_field }}
-                {{ customer_info.street_address2 | as_crispy_field }}
-                {{ customer_info.town_or_city | as_crispy_field }}
-                {{ customer_info.postcode | as_crispy_field }}
-                {{ customer_info.county | as_crispy_field }}
-                {{ customer_info.country | as_crispy_field }}
+                {{ order_form.street_address1 | as_crispy_field }}
+                {{ order_form.street_address2 | as_crispy_field }}
+                {{ order_form.town_or_city | as_crispy_field }}
+                {{ order_form.postcode | as_crispy_field }}
+                {{ order_form.county | as_crispy_field }}
+                {{ order_form.country | as_crispy_field }}
             </div>
         </div>
 

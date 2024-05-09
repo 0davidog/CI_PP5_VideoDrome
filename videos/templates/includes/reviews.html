@@ -8,8 +8,8 @@
     </div>
 
     <div class="row mb-2">
-        <div class="col">
-            <div class="card" style="width: 18rem;">
+        <div class="col-2">
+            <div class="card">
                 <div class="card-body">
                     <h3 class="card-title">Ratings</h3>
                     <hr>
@@ -43,14 +43,14 @@
         {% if user_reviews %}
         {% for review in user_reviews %}
         
-        <div class="col">
-            <div class="card" style="width: 18rem;">
+        <div class="col-3">
+            <div class="card">
             <div class="card-body">
               <h5 class="card-title">{{ review.title }}</h5>
               <h6 class="card-subtitle mb-2 text-muted">{{ review.author }}</h6>
               <span class="star-rating" data-rating="{{ review_rating.rating }}"></span>
               <hr>
-              <p class="card-text">"{{ review.content }}"</p>
+              <p class="card-text copy-font">"{{ review.content }}"</p>
               <hr>
               <form id="re"></form>
               <a href="{% url 'update_review' video.slug review.id %}" class="card-link">Edit</a>

@@ -21,6 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     {% endblock %}
 
     {% block corejs %}
@@ -34,7 +35,8 @@
 
   </head>
 
-  <body class="d-flex flex-column h-100">
+  <body class="d-flex flex-column h-100" 
+  {% if is_index %} style="background-image: url('static/images/IMG_0223.JPG');" {% endif %}>
     {% include 'includes/nav-mobile.html' %}
     {% include 'includes/nav-desktop.html' %}
 
