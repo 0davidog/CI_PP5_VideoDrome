@@ -36,13 +36,16 @@
             <tbody  class="table-group-divider">
                 {% for item in basket_items %}
               <tr>
-                <td><img src="#" alt="..."></td>
-                <td>{{ item.video.title }}&nbsp;{{ item.video.format }}</td>
+                <td><img src="{% static 'images/videodrome_logo.webp' %}" class="logo-img-basket" alt="Videodrome logo"></td>
+                <td>
+                    {{ item.video.title }}&nbsp;{{ item.video.format }}<br>
+                    <span class="text-muted">SKU:{{ item.video.sku }}</span>
+                </td>
                 <td>
                     {{ item.quantity }}
                 </td>
-                <td>{{ item.video.price }}</td>
-                <td>{{ item.sub_total }}</td>
+                <td>£{{ item.video.price }}</td>
+                <td>£{{ item.sub_total }}</td>
               </tr>
               {% endfor %}
             </tbody>
@@ -174,14 +177,6 @@
         </div>
     </div>
     {% endif %}
-
-    <div id="loading-overlay">
-        <h1 class="text-light logo-font loading-spinner">
-            <span class="icon">
-                <i class="fas fa-3x fa-sync-alt fa-spin"></i>
-            </span>
-        </h1>
-    </div>
 
 </div>
 {% endblock %}

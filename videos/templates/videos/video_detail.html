@@ -25,8 +25,14 @@
                 <button type="submit" class="btn btn-primary me-2 btn-basket" {% if not video.in_stock %} disabled {% endif %}>
                     <i class="fa-solid fa-basket-shopping"></i>&nbsp;Add to Basket
                 </button>
+                {% if user.is_staff %}
+                <a class="btn btn-link d-inline" href="{% url 'admin:videos_video_change' video.id %}">
+                    Admin: Edit
+                </a>
+                {% endif %}
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
             </form>
+            
             <div class="mt-2">
                 {% if user.is_authenticated %}
                 {% if wishlisted %}

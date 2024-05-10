@@ -36,11 +36,25 @@
   </head>
 
   <body class="d-flex flex-column h-100" 
-  {% if is_index %} style="background-image: url('static/images/IMG_0223.JPG');" {% endif %}>
+  {% if is_index %} style="" {% endif %}>
     {% include 'includes/nav-mobile.html' %}
     {% include 'includes/nav-desktop.html' %}
 
     <div class="content-block">
+
+      <div class="alert alert-light text-center" role="alert">
+        {% if user.is_authenticated %}
+        &nbsp;Hello, <a href="#" class="alert-link">
+          {% if user.first_name %}
+          {{ user.first_name }}
+          {% else %}
+          {{ user }}
+          {% endif %}
+        </a>.
+        {% else %}
+        &nbsp;Hello, log in or register to access more of our features.
+        {% endif %}
+      </div>
 
       <div class="mt-4">
         {% block content %}
@@ -53,7 +67,7 @@
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
           <div class="mx-auto">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav mt-5">
               <li class="nav-item me-2">
                 <a class="nav-link-white" aria-current="page" href="https://github.com/0davidog" target="_blank" rel="noopener"
                 aria-label="Check out my work on Github (opens in new tab)"><i class="fa-brands fa-github"></i></a>

@@ -31,6 +31,7 @@ footer {
     color: #ffffff;
     background-color: #041348;
     background-image: linear-gradient(to top, #000000, #041348);
+    height: 100px;
 }
 
 a:hover {
@@ -59,6 +60,7 @@ a:hover {
 }
 
 .orbitron-title {
+    color: #198754;
     font-weight: 900;
 }
 
@@ -66,9 +68,17 @@ a:hover {
     height: 54px;
 }
 
+#index {
+    color: #ffffff;
+    background-color:#041348;
+    background-image: linear-gradient(to left, #000000, #041348);
+    margin-top: 25vh;
+}
+
 .content-block {
     margin-top: 54px;
     min-height: 50vh;
+    margin-bottom: 54px;
 }
 
 .navbar-brand:hover, .navbar-brand:focus {
@@ -117,6 +127,10 @@ a:hover {
     left: 50%;
     transform: translateX(-50%);
     
+}
+
+.logo-img-basket {
+    height: 100px;
 }
 
 .video-card, .video-card-row {

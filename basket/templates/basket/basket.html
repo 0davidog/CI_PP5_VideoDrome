@@ -34,20 +34,23 @@
             <tbody  class="table-group-divider">
                 {% for item in basket_items %}
               <tr>
-                <td><img src="#" alt="..."></td>
-                <td>{{ item.video.title }}&nbsp;{{ item.video.format }}</td>
+                <td><img src="{% static 'images/videodrome_logo.webp' %}" class="logo-img-basket" alt="Videodrome logo"></td>
+                <td>
+                    {{ item.video.title }}&nbsp;{{ item.video.format }}<br>
+                    <span class="text-muted">SKU:{{ item.video.sku }}</span>
+                </td>
                 <td>
                     <form class="form d-inline" action="{% url 'update_basket' item.video.id %}" method="POST">
                         {% csrf_token %}
-                        <input class="qty d-inline" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-video_id="{{ video.id }}">
+                        <input class="qty d-inline me-2" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-video_id="{{ video.id }}">
                         <button type="submit" class="btn btn-primary d-inline">
                             update
                         </button>
                     </form>
                     <a class="btn btn-link d-inline" href="{% url 'remove_from_basket' item.video_id %}">remove</a>
                 </td>
-                <td>{{ item.video.price }}</td>
-                <td>{{ item.sub_total }}</td>
+                <td>£{{ item.video.price }}</td>
+                <td>£{{ item.sub_total }}</td>
               </tr>
               {% endfor %}
             </tbody>
