@@ -18,8 +18,6 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
-import stripe
-
 # Stripe
 
 FREE_DELIVERY_OVER = 50
@@ -93,6 +91,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'django_countries',
+    'stripe',
     'main',
     'videos',
     'basket',
