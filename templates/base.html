@@ -36,13 +36,13 @@
   </head>
 
   <body class="d-flex flex-column h-100" 
-  {% if is_index %} style="" {% endif %}>
+  {% if is_index %} style="background-color: #0d6efd;" {% endif %}>
     {% include 'includes/nav-mobile.html' %}
     {% include 'includes/nav-desktop.html' %}
 
     <div class="content-block">
 
-      <div class="alert alert-light text-center" role="alert">
+      <div class="alert alert-primary text-center" role="alert">
         {% if user.is_authenticated %}
         &nbsp;Hello, <a href="#" class="alert-link">
           {% if user.first_name %}

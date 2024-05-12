@@ -25,7 +25,7 @@
             <thead>
               <tr>
                 <th scope="col">Video</th>
-                <th scope="col"></th>
+                <th class="d-none d-sm-table-cell" scope="col"></th>
                 <th scope="col">Quantitiy</th>
                 <th scope="col">Price</th>
                 <th scope="col">Sub-Total</th>
@@ -34,7 +34,7 @@
             <tbody  class="table-group-divider">
                 {% for item in basket_items %}
               <tr>
-                <td><img src="{% static 'images/videodrome_logo.webp' %}" class="logo-img-basket" alt="Videodrome logo"></td>
+                <td class="d-none d-sm-table-cell"><img src="{% static 'images/videodrome_logo.webp' %}" class="logo-img-basket" alt="Videodrome logo"></td>
                 <td>
                     {{ item.video.title }}&nbsp;{{ item.video.format }}<br>
                     <span class="text-muted">SKU:{{ item.video.sku }}</span>
