@@ -12,8 +12,7 @@ class CustomerOrder(models.Model):
     order_number = models.UUIDField(default=uuid.uuid4(), null=False, editable=False)
     order_date = models.DateTimeField(auto_now_add=True)
 
-    f_name = models.CharField(max_length=20, null=False, blank=False)
-    l_name = models.CharField(max_length=20, null=False, blank=False)
+    name = models.CharField(max_length=20, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone = models.CharField(max_length=20, null=False, blank=False)
     country = CountryField(blank_label='Country *', null=False, blank=False)

@@ -1,1 +1,1 @@
-web: gunicorn videodrome.wsgi
+web: gunicorn videodrome.wsgi:application

@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 
 import os
+import dj_database_url
 
 if os.path.isfile('env.py'):
     import env
@@ -132,17 +133,24 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'videodrome.wsgi.application'
 
-
 # Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+
+if 'HEROKU_POSTGRESQL_TEAL_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('HEROKU_POSTGRESQL_TEAL_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
+     'default': dj_database_url.parse('postgres://u50r2gctr48htl:p6394c340f031042aed6b2274df7a60c5b3c08dcfc2234abc8ff68ec4aa6ab254@cav8p52l9arddb.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com:5432/d9c998cgld3o7h')
+ }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

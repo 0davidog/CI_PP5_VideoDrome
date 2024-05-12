@@ -5,8 +5,7 @@ class CustomerOrderForm(forms.ModelForm):
     class Meta:
         model = CustomerOrder
         fields = (
-            'f_name',
-            'l_name',
+            'name',
             'email',
             'phone',
             'street_address1',
@@ -24,8 +23,7 @@ class CustomerOrderForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
-            'f_name': 'First Name',
-            'l_name': 'Last Name',
+            'name': 'Full Name',
             'email': 'Email Address',
             'phone': 'Phone Number',
             'street_address1': 'Address Line 1',
@@ -35,7 +33,7 @@ class CustomerOrderForm(forms.ModelForm):
             'county': 'County',
         }
 
-        self.fields['f_name'].widget.attrs['autofocus'] = True
+        self.fields['name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field != 'country':
                 if self.fields[field].required:
