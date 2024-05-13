@@ -74,9 +74,11 @@
             <div class="card video-card mb-3 mx-auto" style="max-width: 540px;">
                 <div class="row g-0 video-card-row">
                     <div class="col-md-4 image-container">
-                        
+                        {% if "placeholder" in video.cover.url %}
                         <img src="{% static 'images/videodrome_logo.webp' %}" class="logo-img" alt="Videodrome logo">
-                    
+                        {% else %}
+                        <img src="{{ video.cover.url }}" class="logo-img" alt="{{ video.title }} cover">
+                        {% endif %}
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
