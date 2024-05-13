@@ -5,6 +5,7 @@ from django.conf import settings
 
 from .models import CustomerOrder, OrderItem
 from videos.models import Video
+from customer.models import Customer
 
 
 import json
@@ -61,6 +62,22 @@ class StripeWH_Handler:
             if value == "":
                 shipping_details.address[field] = None
 
+         # Update profile information if save_info was checked
+        profile = None
+        username = intent.metadata.username
+        if username != 'AnonymousUser':
+            customer = Customer.objects.get(user__username=username)
+            
+            if save_info:
+                customer.saved_phone_number = shipping_details.phone
+                customer.saved_country = shipping_details.address.country
+                customer.saved_postcode = shipping_details.address.postal_code
+                customer.saved_town_or_city = shipping_details.address.city
+                customer.saved_street_address1 = shipping_details.address.line1
+                customer.saved_street_address2 = shipping_details.address.line2
+                customer.saved_county = shipping_details.address.state
+                customer.save()
+
         order_exists = False
         attempt = 1
         while attempt <= 5:
@@ -68,7 +85,6 @@ class StripeWH_Handler:
 
                 order = CustomerOrder.objects.get(
                     name__iexact=shipping_details.name,
-
                     email__iexact=billing_details.email,
                     phone__iexact=shipping_details.phone,
                     country__iexact=shipping_details.address.country,
@@ -99,7 +115,7 @@ class StripeWH_Handler:
             try:
                 order = CustomerOrder.objects.create(
                     name__iexact=shipping_details.name,
-                    user_profile=profile,
+                    customer=customer,
                     email=billing_details.email,
                     phone=shipping_details.phone,
                     country=shipping_details.address.country,

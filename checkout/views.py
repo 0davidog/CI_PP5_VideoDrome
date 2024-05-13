@@ -6,6 +6,8 @@ from django.conf import settings
 from .forms import CustomerOrderForm
 from .models import CustomerOrder, OrderItem
 from videos.models import Video
+from customer.models import Customer
+from customer.forms import CustomerInfoForm
 from basket.contexts import in_basket
 
 import stripe
@@ -94,6 +96,28 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
+        if request.user.is_authenticated:
+            try:
+                customer = Customer.objects.get(user=request.user)
+                order_form = CustomerOrderForm(initial={
+                    'name': customer.user.get_full_name(),
+                    'email': customer.user.email,
+                    'phone_number': customer.saved_phone_number,
+                    'country': customer.saved_country,
+                    'postcode': customer.saved_postcode,
+                    'town_or_city': customer.saved_town_or_city,
+                    'street_address1': customer.saved_street_address1,
+                    'street_address2': customer.saved_street_address2,
+                    'county': customer.saved_county,
+                })
+
+            except Customer.DoesNotExist:
+                order_form = CustomerOrderForm()
+        
+        else:
+            order_form = CustomerOrderForm()
+
+
         order_form = CustomerOrderForm()
 
     if not stripe_public_key:
@@ -117,6 +141,28 @@ def checkout_success(request, order_number):
     save_info = request.session.get('save_info')
     order = get_object_or_404(CustomerOrder, order_number=order_number)
     order_items = OrderItem.objects.filter(order=order)
+
+    if request.user.is_authenticated:
+
+        customer = Customer.objects.get(user=request.user)
+        # Attach the user's profile to the order
+        order.customer = customer
+        order.save()
+
+        # Save the user's info
+        if save_info:
+            profile_data = {
+                'saved_phone_number': order.phone,
+                'saved_country': order.country,
+                'saved_postcode': order.postcode,
+                'saved_town_or_city': order.town_or_city,
+                'saved_street_address1': order.street_address1,
+                'saved_street_address2': order.street_address2,
+                'saved_county': order.county,
+            }
+            user_profile_form = CustomerInfoForm(profile_data, instance=customer)
+            if user_profile_form.is_valid():
+                user_profile_form.save()
     
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \

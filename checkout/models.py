@@ -4,6 +4,7 @@ from django.db.models import Sum
 from django.conf import settings
 from django_countries.fields import CountryField
 from videos.models import Video
+from customer.models import Customer
 
 # Create your models here.
 
@@ -11,6 +12,9 @@ class CustomerOrder(models.Model):
 
     order_number = models.CharField(max_length=32, null=False, editable=False)
     order_date = models.DateTimeField(auto_now_add=True)
+
+    customer = models.ForeignKey(Customer, on_delete=models.SET_NULL,
+                                    null=True, blank=True, related_name='orders')
 
     name = models.CharField(max_length=20, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)

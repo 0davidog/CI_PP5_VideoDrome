@@ -1,7 +1,7 @@
 from django import forms
 from .models import Customer
 
-class CustomerOrderForm(forms.ModelForm):
+class CustomerInfoForm(forms.ModelForm):
     class Meta:
         model = Customer
         exclude = (
