@@ -41,7 +41,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'videodrome-ff881eaa1b51.herokuapp.com']
 
@@ -95,6 +95,7 @@ INSTALLED_APPS = [
     'videos',
     'basket',
     'checkout',
+    'customer'
 ]
 
 MIDDLEWARE = [

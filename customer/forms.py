@@ -1,19 +1,11 @@
 from django import forms
-from .models import CustomerOrder
+from .models import Customer
 
 class CustomerOrderForm(forms.ModelForm):
     class Meta:
-        model = CustomerOrder
-        fields = (
-            'name',
-            'email',
-            'phone',
-            'street_address1',
-            'street_address2',
-            'town_or_city',
-            'postcode',
-            'county',
-            'country',
+        model = Customer
+        exclude = (
+            'user',
         )
 
     def __init__(self, *args, **kwargs):

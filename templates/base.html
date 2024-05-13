@@ -44,7 +44,7 @@
 
       <div class="alert alert-primary text-center" role="alert">
         {% if user.is_authenticated %}
-        &nbsp;Hello, <a href="#" class="alert-link">
+        &nbsp;Hello, <a href="{% url 'customer_info' %}" class="alert-link">
           {% if user.first_name %}
           {{ user.first_name }}
           {% else %}
