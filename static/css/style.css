@@ -9,7 +9,7 @@ body {
     font-size: 1rem;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center;
+    background-position: right -400px bottom 0px;
     background-size: cover;
 }
 
@@ -31,7 +31,6 @@ footer {
     color: #ffffff;
     background-color: #041348;
     background-image: linear-gradient(to top, #000000, #041348);
-    height: 100px;
 }
 
 a:hover {
@@ -70,9 +69,8 @@ a:hover {
 
 #index {
     color: #ffffff;
-    background-color:#041348;
-    background-image: linear-gradient(to left, #000000, #041348);
-    margin-top: 25vh;
+    background: rgba(0, 0, 0, .5);
+    margin-top: 15vh;
 }
 
 .content-block {
@@ -110,10 +108,7 @@ a:hover {
 }
 
 .image-container {
-    padding-top: 75%; 
-    /* (Maintains a 4:3 aspect ratio 
-    when image on top of the card on small screens
-    and on video detail page.)  */
+    height: 500px;
     background-color: grey;
     overflow: hidden;
     position: relative;
@@ -123,9 +118,9 @@ a:hover {
     min-height: 100%;
     min-width: 100%;
     position: absolute;
-    top: -25%;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     
 }
 
@@ -183,8 +178,8 @@ a:hover {
     .image-container {
         height: 100%;
     }
-    .logo-img {
-        top: -10%;
+    body {
+        background-position: right 0px;
     }
 }
 
@@ -209,5 +204,8 @@ a:hover {
         position: fixed;
         top: 152px;
         right: 0;
+    }
+    #index {
+        background: none;
     }
 }

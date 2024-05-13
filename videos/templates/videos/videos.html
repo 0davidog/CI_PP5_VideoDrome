@@ -75,7 +75,7 @@
                 <div class="row g-0 video-card-row">
                     <div class="col-md-4 image-container">
                         {% if "placeholder" in video.cover.url %}
-                        <img src="{% static 'images/videodrome_logo.webp' %}" class="logo-img" alt="Videodrome logo">
+                        <img src="{% static 'images/videodrome.webp' %}" class="logo-img" alt="Videodrome logo">
                         {% else %}
                         <img src="{{ video.cover.url }}" class="logo-img" alt="{{ video.title }} cover">
                         {% endif %}

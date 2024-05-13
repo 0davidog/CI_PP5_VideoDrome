@@ -67,11 +67,7 @@ class Video(models.Model):
     discs = models.IntegerField(default=1, null=False)
     price = models.DecimalField(default=0.0, null=False, max_digits=4, decimal_places=2)
     stock = models.IntegerField(default=0, null=False)
-    cover = CloudinaryField(
-        'video_cover',
-        default='placeholder'
-    )
-    cover_url = models.URLField(max_length=1024, null=True, blank=True)
+    cover = CloudinaryField('video_cover', default='placeholder', null=True, blank=True)
     overview = models.TextField(blank=True)
     release_year = models.DecimalField(max_digits=4, decimal_places=0, blank=True)
     aspect_ratio = models.CharField(max_length=250, blank=True)

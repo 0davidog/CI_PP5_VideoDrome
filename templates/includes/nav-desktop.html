@@ -1,3 +1,4 @@
+{% load static %}
 <header class="container-fluid fixed-top d-none d-xl-block">
     <nav class="navbar" id="nav-main">
       <div class="container-fluid">
@@ -7,7 +8,9 @@
           <i class="fa-solid fa-bars"></i>
         </button>
         <div class="">
-          <a class="navbar-brand orbitron-title text-success" href="{% url 'home' %}">VideoDrome</a>
+          <a class="navbar-brand orbitron-title text-success" href="{% url 'home' %}">
+            <img src="{% static 'images/videodrome_logo_nobg.png' %}" height="50px">
+            VideoDrome</a>
           <p class="d-none d-xl-block"><small>Home of cult and genre cinema on video.</small></p>
         </div>
         <div class="d-none d-xl-inline">
