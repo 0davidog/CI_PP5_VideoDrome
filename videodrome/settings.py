@@ -79,6 +79,7 @@ LOGOUT_REDIRECT_URL = '/'
 EMAIL_HOST = 'smtp.gmail.com'  # SMTP server address
 EMAIL_PORT = 587  # Port number for TLS
 EMAIL_USE_TLS = True  # Use TLS (True for Gmail)
+
 EMAIL_HOST_USER = os.environ.get("EMAIL_USER")  # Your email address
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASS")  # Your email password or app password
 
