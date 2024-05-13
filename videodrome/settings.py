@@ -18,6 +18,11 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
+import cloudinary	
+cloudinary.config( 
+  	secure = True
+)
+
 # Stripe
 
 FREE_DELIVERY_OVER = 50
@@ -61,6 +66,7 @@ SITE_ID = 1
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+DEFAULT_FROM_EMAIL = 'videodrome@example.com'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
@@ -91,6 +97,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     "crispy_bootstrap5",
     'django_countries',
+    'cloudinary',
     'main',
     'videos',
     'basket',
@@ -147,9 +154,9 @@ else:
         }
     }
 
-DATABASES = {
-     'default': dj_database_url.parse('postgres://u50r2gctr48htl:p6394c340f031042aed6b2274df7a60c5b3c08dcfc2234abc8ff68ec4aa6ab254@cav8p52l9arddb.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com:5432/d9c998cgld3o7h')
- }
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.herokuapp.com"
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 import uuid
 
 # Create your models here.
@@ -66,7 +67,10 @@ class Video(models.Model):
     discs = models.IntegerField(default=1, null=False)
     price = models.DecimalField(default=0.0, null=False, max_digits=4, decimal_places=2)
     stock = models.IntegerField(default=0, null=False)
-    cover = models.ImageField(null=True, blank=True)
+    cover = CloudinaryField(
+        'video_cover',
+        default='placeholder'
+    )
     cover_url = models.URLField(max_length=1024, null=True, blank=True)
     overview = models.TextField(blank=True)
     release_year = models.DecimalField(max_digits=4, decimal_places=0, blank=True)
