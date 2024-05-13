@@ -9,7 +9,7 @@ body {
     font-size: 1rem;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: right -400px bottom 0px;
+    background-position: right -300px top 0;
     background-size: cover;
 }
 
@@ -207,5 +207,6 @@ a:hover {
     }
     #index {
         background: none;
+        padding-left: 100px;
     }
 }

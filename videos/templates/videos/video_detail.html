@@ -6,7 +6,13 @@
 <div class="container-fluid">
     <div class="row mb-4">
         <div class="col-4">
-            <div class="image-container"><img src="{% static 'images/videodrome_logo.webp' %}" class="logo-img rounded-start" alt="Videodrome logo"></div>
+            <div class="image-container">
+                {% if "placeholder" in video.cover.url %}
+                <img src="{% static 'images/videodrome.webp' %}" class="logo-img" alt="Videodrome logo">
+                {% else %}
+                <img src="{{ video.cover.url }}" class="logo-img" alt="{{ video.title }} cover">
+                {% endif %}
+            </div>
         </div>
         <div class="col-8">
             <h2>{{ video.title }}</h2>

@@ -5,11 +5,132 @@
 {% block content %}
 <div class="container">
 
-    <div class="row">
-        <div class="col">
-            <h2>Customer Info</h2>
-            <p>{{ customer.user }}</p>
+    <div class="row mb-5">
+
+        <div class="col-8">
+            <h2><i class="fa-solid fa-user"></i>&nbsp;My Account</h2>
         </div>
+
+        <div class="col-4 text-end">
+            <a href="{% url 'account_logout' %}" class="btn btn-success">Sign Out</a>
+        </div>
+
+    </div>
+    <hr class="mb-5">
+    <div class="row">
+        
+        <div class="col-12 col-lg-6 text-center p-1">
+            <h3 class="mb-5">Account Details</h3>
+            <a class="btn btn-success mb-5"><i class="fa-solid fa-user"></i>&nbsp;Edit Details</a>
+            <hr class="mb-5">
+            <h3 class="mb-5">Shipping Details</h3>
+            <p></p>
+            <a class="btn btn-success mb-5"><i class="fa-solid fa-truck"></i>&nbsp;Edit Details</a>
+            <hr class="mb-5">
+        </div>
+        
+        <div class="col-12 col-lg-6 text-center p-1">
+            <h3 class="mb-5">Your Wishlist</h3>
+            <a class="btn btn-success mb-5"><i class="fa-regular fa-heart"></i>&nbsp;View Wishlist</a>
+            <hr class="mb-5">
+            <h3 class="mb-5">Your Reviews</h3>
+            <a class="btn btn-success mb-5"><i class="fa-regular fa-pen-to-square"></i>&nbsp;View Reviews</a>
+            <hr class="mb-5">
+        </div>
+
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-12 text-center">
+            <h3>Your Orders</h3>
+        </div>
+    </div>
+    <hr class="mb-5">
+
+    <div class="row mb-5">
+        <div class="col-12 text-center">
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Total Cost</th>
+                    <th scope="col">Order Date</th>
+                  </tr>
+                </thead>
+                <tbody class="table-group-divider">
+
+                  <tr>
+                    <th scope="row"><a href="#">XXXXXX</a></th>
+                    <td>Paid</td>
+                    <td>£30.00</td>
+                    <td>25/05/87</td>
+                  </tr>
+
+                </tbody>
+              </table>
+               
+        </div>
+    </div>
+    <hr class="mb-5">
+
+
+    <div class="row mb-5">
+        <div class="col-12 text-center">
+            <h3>Customer Service/Contact</h3>
+        </div>
+    </div>
+
+    <hr class="mb-5">
+
+    <div class="row">
+
+        <div class="col col-12 col-lg-4 text-center p-1">
+            <h3 class="mb-5">Contact Us</h3>
+            <a class="btn btn-success mb-5"><i class="fa-regular fa-message"></i>&nbsp;Write Message</a>
+        </div>
+
+        <div class="col col-12 col-lg-4 text-center p-1">
+            <h3 class="mb-5">Your Messages</h3>
+            <a class="btn btn-success mb-5"><i class="fa-solid fa-message"></i>&nbsp;View Messages</a>
+        </div>
+
+        <div class="col col-12 col-lg-4 text-center p-1">
+            <h3 class="mb-5">Facebook</h3>
+            <a class="btn btn-success mb-5"><i class="fa-brands fa-facebook"></i>&nbsp;Visit Facebook</a>
+        </div>
+
+
+    </div>
+    <hr class="mb-5">
+
+
+    <div class="row mb-5">
+        <div class="col-12 text-center">
+            <h3>Admin/Staff Services</h3>
+        </div>
+    </div>
+
+    <hr class="mb-5">
+
+    <div class="row">
+
+        <div class="col col-12 col-lg-4 text-center p-1">
+            <h3 class="mb-5">Inventory</h3>
+            <a class="btn btn-success mb-5"><i class="fa-regular fa-clipboard"></i>&nbsp;View Inventory</a>
+        </div>
+
+        <div class="col col-12 col-lg-4 text-center p-1">
+            <h3 class="mb-5">Customer Orders</h3>
+            <a class="btn btn-success mb-5"><i class="fa-solid fa-clipboard-user"></i>&nbsp;View Orders</a>
+        </div>
+
+        <div class="col col-12 col-lg-4 text-center p-1">
+            <h3 class="mb-5">Message Board</h3>
+            <a class="btn btn-success mb-5"><i class="fa-regular fa-message"></i>&nbsp;View Messages</a>
+        </div>
+
+
     </div>
 
 </div>

@@ -38,6 +38,7 @@
                 </button>  
                 <ul class="dropdown-menu">
                   {% if user.is_authenticated %}
+                  <li><a class="dropdown-item" href="{% url 'customer_info' %}">Account Info</a></li>
                   <li>
                     <a class="dropdown-item" href="{% url 'account_logout' %}">
                       Sign Out
@@ -142,8 +143,8 @@
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="{% url 'admin:checkout_customerorder_changelist' %}">Orders</a>
-                        User List
+                      <a class="dropdown-item" href="{% url 'admin:checkout_customerorder_changelist' %}">
+                        Orders
                       </a>
                     </li>
                   </ul>
