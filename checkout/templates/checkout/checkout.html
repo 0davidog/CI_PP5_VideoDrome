@@ -36,7 +36,13 @@
             <tbody  class="table-group-divider">
                 {% for item in basket_items %}
               <tr>
-                <td class="d-none d-sm-table-cell"><img src="{% static 'images/videodrome_logo.webp' %}" class="logo-img-basket" alt="Videodrome logo"></td>
+                <td class="d-none d-sm-table-cell">
+                    {% if "placeholder" in item.video.cover.url %}
+                    <img src="{% static 'images/videodrome.webp' %}" class="logo-img-basket" alt="Videodrome logo">
+                    {% else %}
+                    <img src="{{ video.cover.url }}" class="logo-img" alt="{{ video.title }} cover">
+                    {% endif %}
+                </td>
                 <td>
                     {{ item.video.title }}&nbsp;{{ item.video.format }}<br>
                     <span class="text-muted">SKU:{{ item.video.sku }}</span>
@@ -54,7 +60,7 @@
 
     <div class="row text-end">
         <div class="col">
-            Total: £{{ total_basket_cost }}
+            Total to pay: £{{ total_basket_cost }}
         </div>
     </div>
 
@@ -78,25 +84,18 @@
             <hr>
         </div>
     </div>
-    
-    <div class="row mb-4">
-        <div class="col">
-            <h4>Contact</h4>
-        </div>
-        <div class="col">
-            <h4>Shipping</h4>
-        </div>
-    </div>
 
     <form action="{% url 'checkout' %}" method="POST" id="payment-form">
         {% csrf_token %}
         <div class="row mb-4">
-            <div class="col">
+            <div class="col-12 col-lg-6 mb-4">
+                <h4 class=" mb-4">Contact</h4>
                 {{ order_form.name | as_crispy_field }}
                 {{ order_form.email | as_crispy_field }}
                 {{ order_form.phone | as_crispy_field }}
             </div>
-            <div class="col">
+            <div class="col-12 col-lg-6 mb-4">
+                <h4 class=" mb-4">Shipping</h4>
                 {{ order_form.street_address1 | as_crispy_field }}
                 {{ order_form.street_address2 | as_crispy_field }}
                 {{ order_form.town_or_city | as_crispy_field }}
@@ -109,6 +108,7 @@
 {% if user.is_authenticated %}
         <div class="row mb-4">
             <div class="col">
+
                 <div class="form-check form-check-inline float-right mr-0">
                     
                         <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
@@ -127,21 +127,26 @@
             </div>
         </div>
 
-        <div class="row mb-4">
-            <div class="col">
-                <h4>Payment</h4>
+        <div class="row">
+            <div class="col-12 mb-4">
+                <h4 class="mb-4">Payment</h4>
+                <p><a class="text-danger" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-triangle-exclamation"></i><small>&nbsp;Please read this warning and accept to continue with payment information.</small></a></p>
+                <input type="checkbox" id="myCheckbox"> I've read the warning and accept. <br>
+                <hr>
             </div>
-        </div>
+            <div class="col-12 col-lg-6">
 
-        <div class="row mb-4">
-            <div class="col-6">
                 <div id="card-element">
                     <!--Stripe goes here-->
                 </div>
-                <!-- Used to display form errors -->
-                <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                
+                <div class="mb-3 text-danger" id="card-errors" role="alert">
+                    <!-- Used to display form errors -->
+                </div>
+
                 <!-- Pass the client secret to the view so we can get the payment intent id -->
                 <input type="hidden" value="{{ client_secret }}" name="client_secret">
+
             </div>
         </div>
 
@@ -156,6 +161,9 @@
                 {% if basket_items %}
                 <a href="{% url 'videos' %}" class="btn btn-secondary">Continue Shopping?</a>
                 <button type="submit" class="btn btn-success" id="submit-button">Submit Order</button>
+                <p class="text-danger mt-4">
+                    <i class="fa-solid fa-triangle-exclamation"></i>&nbsp;Your card will be charged £{{ total_basket_cost }}
+                </p>
                 {% else %}
                 <a href="{% url 'videos' %}" class="btn btn-success">Continue Shopping?</a>
                 {% endif %}
@@ -183,6 +191,33 @@
                 <i class="fas fa-3x fa-sync-alt fa-spin"></i>
             </span>
         </h1>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="fa-solid fa-triangle-exclamation"></i>&nbsp;Before Proceeding...</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body copy-font">
+            This website is for academic purposes only.<br>
+            Please do not attempt to use your genuine credit card information to complete a test purchase.<br>
+            However, if you do the payment process will fail so there is no danger of accidently being charged.<br>
+            <br>
+            <strong>To Complete a Test Purchase:</strong><br>
+            Use this card number: 4242 4242 4242 4242.<br>
+            Use a valid future date, such as 12/34.<br>
+            Use any three-digit CVC.<br>
+            Use any five character value you like for the postcode.<br>
+            From: <a href="https://docs.stripe.com/testing?locale=en-GB" target="_blank" rel="noopener" aria-label="View the Stripe documentation on test cards.">Stripe Documentation</a><br>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Okay</button>
+            </div>
+        </div>
+        </div>
     </div>
 
 

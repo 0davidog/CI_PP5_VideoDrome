@@ -136,12 +136,33 @@ a:hover {
     width: 75px !important;
 }
 
-#checkout {
-    color: #041348;
-    border: 1px solid #dee2e6;
-    border-radius: 0.375rem;
+
+/* copied bootstrap's .formcontrol css from inspector */
+
+.StripeElement {
+    display: block;
+    width: 100%;
     padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
 }
+
+.StripeElement--webkit-autofill {
+    background-color: #cfe2ff !important;
+  }
+
+  .StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+  box-shadow: 1px 1px 5px 1px #cfe2ff;
+}
+  
 
 /* Bootsrap toast position settings */
 
