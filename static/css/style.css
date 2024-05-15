@@ -75,7 +75,7 @@ a:hover {
 
 .content-block {
     margin-top: 54px;
-    min-height: 50vh;
+    min-height: 75vh;
     margin-bottom: 54px;
 }
 
@@ -136,7 +136,6 @@ a:hover {
     width: 75px !important;
 }
 
-
 /* copied bootstrap's .formcontrol css from inspector */
 
 .StripeElement {
@@ -162,7 +161,6 @@ a:hover {
 .stripe-style-input:active {
   box-shadow: 1px 1px 5px 1px #cfe2ff;
 }
-  
 
 /* Bootsrap toast position settings */
 
