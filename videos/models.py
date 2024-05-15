@@ -28,7 +28,7 @@ class Region(models.Model):
     region = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
-        return self.region
+        return f"{self.regioncode}: {self.region}"
     
 class Genre(models.Model):
     """
@@ -58,18 +58,26 @@ class Video(models.Model):
         ("Dual Format: Blu-Ray and DVD", "Dual Format: Blu-Ray and DVD"),
         ("Dual Format: UHD and Blu-Ray", "Dual Format: UHD and Blu-Ray"),
     ]
+
+    CONDITION_CHOICES=[
+        ("Used", "Used"),
+        ("New", "New"),
+    ]
     
     title = models.CharField(max_length=250, unique=True)
     slug = models.SlugField(max_length=250, editable=True)
     director = models.CharField(max_length=250, null=True)
-    certificate = models.CharField(choices=CERTIFICATE_CHOICES, max_length=250, default="Not Rated", null=False)
     format = models.CharField(choices=FORMAT_CHOICES, max_length=250, default="DVD", null=False)
     discs = models.IntegerField(default=1, null=False)
+    condition = models.CharField(choices=CONDITION_CHOICES, max_length=250, default="Used", null=True)
     price = models.DecimalField(default=0.0, null=False, max_digits=4, decimal_places=2)
     stock = models.IntegerField(default=0, null=False)
     cover = CloudinaryField('video_cover', default='placeholder', null=True, blank=True)
     overview = models.TextField(blank=True)
+    overview_source = models.URLField(blank=True, null=True)
+    trailer = models.URLField(blank=True, null=True)
     release_year = models.DecimalField(max_digits=4, decimal_places=0, blank=True)
+    certificate = models.CharField(choices=CERTIFICATE_CHOICES, max_length=250, default="Not Rated", null=False)
     aspect_ratio = models.CharField(max_length=250, blank=True)
     feature_length = models.CharField(max_length=250, blank=True)
     added = models.DateTimeField(auto_now_add=True)

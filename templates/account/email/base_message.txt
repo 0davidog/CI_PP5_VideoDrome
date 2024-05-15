@@ -1,7 +1,8 @@
-{% load i18n %}{% autoescape off %}{% blocktrans with site_name=current_site.name %}Hello from {{ site_name }}!{% endblocktrans %}
+{% load i18n %}{% autoescape off %}{% blocktrans with site_name=current_site.name %}Greetings from VideoDrome!{% endblocktrans %}
 
 {% block content %}{% endblock content %}
 
-{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}Thank you for using {{ site_name }}!
-{{ site_domain }}{% endblocktrans %}
+Thank you for visiting us at VideoDrome!
+https://videodrome-ff881eaa1b51.herokuapp.com/
+
 {% endautoescape %}

@@ -42,7 +42,7 @@
 
     <div class="content-block">
 
-      <div class="alert alert-primary text-center" role="alert">
+      <div class="alert alert-primary text-center d-none d-xl-block" role="alert">
         {% if user.is_authenticated %}
         &nbsp;Hello, <a href="{% url 'customer_info' %}" class="alert-link">
           {% if user.first_name %}
@@ -56,7 +56,7 @@
         {% endif %}
       </div>
 
-      <div class="mt-4">
+      <div class="mt-2">
         {% block content %}
         {% endblock content %}
       </div>
