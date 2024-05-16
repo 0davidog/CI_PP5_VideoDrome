@@ -1,9 +1,12 @@
 from django import forms
+from django.contrib.auth.models import User
 from .models import Customer
 
-class CustomerInfoForm(forms.ModelForm):
+class SavedAddressForm(forms.ModelForm):
+
     class Meta:
         model = Customer
+
         exclude = (
             'user',
         )
@@ -15,23 +18,51 @@ class CustomerInfoForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
-            'name': 'Full Name',
-            'email': 'Email Address',
-            'phone': 'Phone Number',
-            'street_address1': 'Address Line 1',
-            'street_address2': 'Address Line 2',
-            'town_or_city': 'Town/City',
-            'postcode': 'Postcode',
-            'county': 'County',
+            'saved_street_address1': 'Address Line 1*',
+            'saved_street_address2': 'Address Line 2',
+            'saved_town_or_city': 'Town/City*',
+            'saved_postcode': 'Postcode*',
+            'saved_county': 'County',
+            'saved_phone_number': 'Phone*',
         }
 
-        self.fields['name'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            if field != 'country':
-                if self.fields[field].required:
-                    placeholder = f'{placeholders[field]} *'
-                else:
-                    placeholder = placeholders[field]
-                self.fields[field].widget.attrs['placeholder'] = placeholder
+            if field != 'saved_country':
+                placeholder = placeholders[field]
+            self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].label = False
     
+
+class SavedDetailsForm(forms.ModelForm):
+
+    class Meta:
+        model = User
+
+        fields = (
+            'first_name', 
+            'last_name',
+        )
+
+    def __init__(self, *args, **kwargs):
+        """
+        Add placeholders and classes, remove auto-generated
+        labels and set autofocus on first field
+        """
+        super().__init__(*args, **kwargs)
+        placeholders = {
+            'first_name': 'First Name',
+            'last_name': 'Last Name',
+        }
+
+        for field in self.fields:
+            placeholder = placeholders[field]
+            self.fields[field].widget.attrs['placeholder'] = placeholder
+            self.fields[field].label = False
+    
+    def clean(self):
+        cleaned_data = super().clean()
+        # Iterate over fields and remove empty values
+        for field_name, value in list(cleaned_data.items()):
+            if value in [None, '']:
+                del cleaned_data[field_name]
+        return cleaned_data

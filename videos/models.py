@@ -83,9 +83,9 @@ class Video(models.Model):
     added = models.DateTimeField(auto_now_add=True)
     on_sale = models.BooleanField(default=False)
     sku = models.CharField(max_length=254, null=True, blank=True)
-    languages = models.ManyToManyField(Language, blank=True)
-    subtitles = models.ManyToManyField(Subtitle, blank=True)
-    region = models.ManyToManyField(Region, blank=True)
+    languages = models.ManyToManyField(Language, blank=True, related_name='video')
+    subtitles = models.ManyToManyField(Subtitle, blank=True, related_name='video')
+    region = models.ManyToManyField(Region, blank=True, related_name='video')
     genre = models.ManyToManyField(Genre, blank=True)
     wishlist = models.ManyToManyField(
         User,

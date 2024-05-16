@@ -7,7 +7,7 @@ from .forms import CustomerOrderForm
 from .models import CustomerOrder, OrderItem
 from videos.models import Video
 from customer.models import Customer
-from customer.forms import CustomerInfoForm
+from customer.forms import SavedAddressForm
 from basket.contexts import in_basket
 
 import stripe
@@ -98,11 +98,14 @@ def checkout(request):
 
         if request.user.is_authenticated:
             try:
+                
                 customer = Customer.objects.get(user=request.user)
+
                 order_form = CustomerOrderForm(initial={
+
                     'name': customer.user.get_full_name(),
                     'email': customer.user.email,
-                    'phone_number': customer.saved_phone_number,
+                    'phone': customer.saved_phone_number,
                     'country': customer.saved_country,
                     'postcode': customer.saved_postcode,
                     'town_or_city': customer.saved_town_or_city,
@@ -116,9 +119,6 @@ def checkout(request):
         
         else:
             order_form = CustomerOrderForm()
-
-
-        order_form = CustomerOrderForm()
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
@@ -160,7 +160,7 @@ def checkout_success(request, order_number):
                 'saved_street_address2': order.street_address2,
                 'saved_county': order.county,
             }
-            user_profile_form = CustomerInfoForm(profile_data, instance=customer)
+            user_profile_form = SavedAddressForm(profile_data, instance=customer)
             if user_profile_form.is_valid():
                 user_profile_form.save()
     

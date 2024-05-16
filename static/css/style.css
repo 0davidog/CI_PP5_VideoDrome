@@ -33,6 +33,12 @@ footer {
     background-image: linear-gradient(to top, #000000, #041348);
 }
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
 a:hover {
     color:#dc3545;
 }
@@ -134,6 +140,10 @@ a:hover {
 
 .qty {
     width: 75px !important;
+}
+
+#ratings-table {
+    height: 393px;
 }
 
 /* copied bootstrap's .formcontrol css from inspector */

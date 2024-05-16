@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div class="container">
+
+    <div class="row mb-5">
+
+        <div class="col-8">
+            <h2><i class="fa-solid fa-truck"></i>&nbsp;Shipping Details</h2>
+        </div>
+
+        <div class="col-4 text-end">
+            <a href="{% url 'customer_info' %}" class="btn btn-secondary">Return</a>
+        </div>
+
+    </div>
+    <hr class="mb-5">
+
+    <div class="row">
+
+        <div class="col-12 col-lg-6">
+            <h3 class="mb-5">Current Details</h3>
+
+            <ul>
+                <li>{% if user.get_full_name %}{{ user.get_full_name }}{% endif %}</li>
+                <li>{{ customer.saved_street_address1 }}</li>
+                <li>{{ customer.saved_street_address2 }}</li>
+                <li>{{ customer.saved_town_or_city }}</li>
+                <li>{{ customer.saved_county }}</li>
+                <li>{{ customer.saved_postcode }}</li>
+                <li>{{ customer.saved_country }}</li>
+                <li>{{ customer.saved_phone_number }}</li>
+            </ul>
+
+        </div>
+
+        <div class="col-12 col-lg-6">
+            <h3 class="mb-5">Update Details</h3>
+            <form id="address_form" method="POST" action="{% url 'saved_address' %}">
+                {% csrf_token %}
+                {{ saved_address_form | crispy }}
+                <p class="text-end text-muted">* Indicates a required field.</p>
+                <div class="text-end">
+                    <button type="submit" class="btn btn-success">Save</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+   
+
+</div>
+{% endblock %}

@@ -23,6 +23,7 @@
             <p>Director: {{ video.director }}</p>
             <p>Release Year: {{ video.release_year }}</p>
             <p>Certificate: {{ video.certificate }}</p>
+            <p>Condition: {{ video.condition }}</p>
             <p class="mt-5">{{ video.in_stock }}</p>
             <p>Price: £{{ video.price}}</p>
             <form class="form" action="{% url 'add_to_basket' video.id %}" method="POST">
@@ -53,32 +54,62 @@
         </div>
     </div>
     <div class="row">
-        <div class="col mb-4">  
+        <div class="col mb-4"> 
+
             <h4>Video Overview</h4>
-            <p class="copy-font">{{ video.overview }}</p>
+
+            <p class="copy-font">
+                {{ video.overview }}
+                <small><em><a href="{{ video.overview_source }}">From Wikipedia, the free encyclopedia.</a></em></small>
+            </p>
+
+            {% if video.trailer %}
+            <a href="{{ video.trailer}}" class="btn btn-link wishlist-link mb-5 mt-2" rel="noopener" target="_blank"><i class="fa-brands fa-youtube"></i>&nbsp;View Trailer on YouTube</a>
+
+            {% endif %}
+
             <h5>More Information</h5>
             <details>
                 <summary>View Details</summary>
-                <p class="mt-4 copy-font">
-                    <strong>Languages:</strong>
-                    {% if languages %}
-                        {% for language in languages %}
-                            {{ language }}
-                        {% endfor %}
-                    {% else %}
-                    No information available.
-                    {% endif %}
-                </p>
-                <p class="copy-font">
-                    <strong>Subtitles:</strong>
-                    {% if subtitles %}
-                        {% for subtitle in subtitles %}
-                            {{ subtitle }}
-                        {% endfor %}    
-                    {% else %}
-                    No information available.
-                    {% endif %}
-                </p>
+                <div class="mt-5 mb-5 copy-font">
+                    <p>
+                        <strong>Number of disks:</strong> {{ video.discs }}
+
+                    </p>
+                    <p>
+                        <strong>Languages:</strong>
+                        {% if languages %}
+                            {% for language in languages %}
+                                {{ language }}
+                            {% endfor %}
+                        {% else %}
+                        No information available.
+                        {% endif %}
+                    </p>
+                    <p>
+                        <strong>Subtitles:</strong>
+                        {% if subtitles %}
+                            {% for subtitle in subtitles %}
+                                {{ subtitle }}
+                            {% endfor %}    
+                        {% else %}
+                        No information available.
+                        {% endif %}
+                    </p>
+                    <p>
+                        <strong>Region:</strong>
+                        {% if region %}
+                            {% for value in region %}
+                                {{ value }}
+                            {% endfor %}    
+                        {% else %}
+                        No information available.
+                        {% endif %}
+                    </p>
+                    <p>
+                        <strong>Added:</strong> {{ video.added }}
+                    </p>
+                </div>
             </details>
         </div>
     </div>

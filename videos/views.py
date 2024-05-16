@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib import messages
 from django.db.models import Q
-from .models import Video, Language, Subtitle, UserRating, User, UserReview
+from .models import Video, Language, Subtitle, UserRating, User, UserReview, Region
 from .forms import ReviewForm
 
 # Create your views here.
@@ -82,6 +82,7 @@ def video_detail(request, slug):
     video = get_object_or_404(Video, slug=slug)
     languages = Language.objects.filter(video=video)
     subtitles = Subtitle.objects.filter(video=video)
+    region = Region.objects.filter(video=video)
 
     wishlisted = False
     user_rating = None
@@ -136,6 +137,7 @@ def video_detail(request, slug):
         'three_star_ratings': three_star_ratings,
         'four_star_ratings': four_star_ratings,
         'five_star_ratings': five_star_ratings,
+        'region': region,
     }
 
     return render(request, 'videos/video_detail.html', context)
@@ -239,3 +241,22 @@ def update_review(request, slug, review_id):
     }
 
     return render(request, "videos/create_review.html", context)
+
+
+def delete_review(request, review_id):
+
+    referer = request.META.get('HTTP_REFERER')
+
+    review = get_object_or_404(UserReview, id=review_id)
+
+    if request.user == review.author:
+        review.delete()
+        messages.add_message(request, messages.SUCCESS, f"Review successfully deleted.")
+    else:
+        messages.add_message(request, messages.ERROR, f"You can only delete you own reviews!")
+    
+    # If referer exists, redirect to it. Otherwise, redirect to a default URL.
+    if referer:
+        return HttpResponseRedirect(referer)
+    else:
+        return HttpResponseRedirect('/')  # Redirect to a default URL if no referer is found

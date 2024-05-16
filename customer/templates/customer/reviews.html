@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div class="container">
+
+    <div class="row mb-5">
+
+        <div class="col-8">
+            <h2><i class="fa-solid fa-star"></i>&nbsp;Ratings and Reviews</h2>
+        </div>
+
+        <div class="col-4 text-end">
+            <a href="{% url 'customer_info' %}" class="btn btn-secondary">Return</a>
+        </div>
+
+    </div>
+    <hr class="mb-5">
+
+    <div class="row mb-5">
+
+        <div class="col">
+            <h3 class="mb-5">Ratings</h3>
+      
+            <table class="table table-striped" id="ratings-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Video</th>
+                    <th class="d-none d-sm-table-cell" scope="col"></th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Rating</th>
+
+                  </tr>
+                </thead>
+                <tbody  class="table-group-divider">
+
+                    {% for star in star_ratings %}
+                  <tr>
+                    <td class="d-none d-sm-table-cell">
+                        {% if "placeholder" in star.video.cover.url %}
+                        <img src="{% static 'images/videodrome.webp' %}" class="logo-img-basket" alt="Videodrome logo">
+                        {% else %}
+                        <img src="{{ video.cover.url }}" class="logo-img" alt="{{ video.title }} cover">
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="{% url 'video_detail' star.video.slug %}">{{ star.video.title }}&nbsp;{{ star.video.format }}</a><br>
+                        <span class="text-muted">SKU:{{ star.video.sku }}</span>
+                    </td>
+
+                    <td>£{{ star.video.price }}</td>
+                    <td><span class="star-rating" data-rating="{{ star.rating }}"></span></td>
+
+                  </tr>
+                  {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <hr>
+    </div>
+        <div class="row mb-5">
+
+            <div class="col-12">
+                <h3 class="mb-5">Reviews</h3>
+            </div>
+
+            
+            {% if user_reviews %}
+
+                {% for review in user_reviews %}
+                    <div class="col-3">
+                        <div class="card">
+                        <div class="card-body">
+                            <a href="{% url 'video_detail' review.video.slug %}"><small>{{ review.video.title }}&nbsp;{{ review.video.format}}</small></a>
+                            <h5 class="card-title">{{ review.title }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ review.author }}</h6>
+                            <hr>
+                            <p class="card-text copy-font">"{{ review.content }}"</p>
+                            <hr>
+                            <a href="{% url 'update_review' review.video.slug review.id %}" class="card-link me-2">Edit</a>
+                            <a type="button" class="wishlist-link" data-bs-toggle="modal" data-bs-target="#deleteReviewModal{{ review.id }}">
+                                Delete
+                            </a>
+                              
+                        </div>
+                    </div>
+                    </div>
+
+                   
+                {% endfor %}
+
+            {% else %}
+            <div class="col-12">
+                <p>You haven't yet written any reviews.</p>
+                <a href="{% url 'videos' %}" class="btn btn-success">Explore the collection.</a>
+            </div>
+            {% endif %}
+
+            {{ review_ratings }}
+
+        </div>
+
+</div>
+  
+<div class="invisible" id="user-rating">{{ user_rating.rating }}</div>
+{% endblock %}
+
+{% block extras %}
+{{ block.super }}
+<script src="{% static 'js/stars.js' %}"></script>
+{% endblock %}

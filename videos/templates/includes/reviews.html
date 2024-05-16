@@ -13,7 +13,7 @@
                 <div class="card-body">
                     <h3 class="card-title">Ratings</h3>
                     <hr>
-                    <p class="card-text" id=>
+                    <p class="card-text">
                         <span class="star-rating" data-rating="1"></span>&nbsp;<span>({{ one_star_ratings }})</span><br>
                         <span class="star-rating" data-rating="2"></span>&nbsp;<span>({{ two_star_ratings }})</span><br>
                         <span class="star-rating" data-rating="3"></span>&nbsp;<span>({{ three_star_ratings }})</span><br>
@@ -54,10 +54,33 @@
               <hr>
               <form id="re"></form>
               <a href="{% url 'update_review' video.slug review.id %}" class="card-link">Edit</a>
-              <a href="#" class="card-link">Delete</a>
+              <a type="button" class="wishlist-link" data-bs-toggle="modal" data-bs-target="#deleteReviewModal{{ review.id }}">
+                Delete
+            </a>
             </div>
           </div>
         </div>
+
+        <div class="modal fade" id="deleteReviewModal{{ review.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Warning!</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you wish to delete your review?<br>
+                    This cannot be undone.
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                  <a type="button" class="btn btn-danger" href="{% url 'delete_review' review.id %}">Delete</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
         {% endfor %}
         {% else %}
         <div class="col"><h2>No Reviews</h2></div>
