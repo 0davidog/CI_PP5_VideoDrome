@@ -46,7 +46,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'videodrome-ff881eaa1b51.herokuapp.com']
 
@@ -76,12 +76,15 @@ LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-EMAIL_HOST = 'smtp.gmail.com'  # SMTP server address
-EMAIL_PORT = 587  # Port number for TLS
-EMAIL_USE_TLS = True  # Use TLS (True for Gmail)
-
-EMAIL_HOST_USER = os.environ.get("EMAIL_USER")  # Your email address
-EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASS")  # Your email password or app password
+if 'DEVELOPMENT' in os.environ:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'videodrome@example.com'
+else:
+    EMAIL_HOST = 'smtp.gmail.com'  # SMTP server address
+    EMAIL_PORT = 587  # Port number for TLS
+    EMAIL_USE_TLS = True  # Use TLS (True for Gmail)
+    EMAIL_HOST_USER = os.environ.get("EMAIL_USER")  # Your email address
+    EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASS")  # Your email password or app password
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
