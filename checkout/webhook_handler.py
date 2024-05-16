@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 from django.conf import settings
 
@@ -19,22 +19,25 @@ class StripeWH_Handler:
 
     def _send_confirmation_email(self, order):
         """Send the user a confirmation email"""
-
+        print('email?')
         cust_email = order.email
 
         subject = render_to_string(
-            'checkout/confirmation_emails/confirmation_email_subject.txt',
+            'checkout/email_confirmation/subject.txt',
             {'order': order})
         body = render_to_string(
-            'checkout/confirmation_emails/confirmation_email_body.txt',
-            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
-        
-        send_mail(
-            subject,
-            body,
-            settings.DEFAULT_FROM_EMAIL,
-            [cust_email]
-        )        
+            'checkout/email_confirmation/body.txt',
+            {'order': order, 'contact_email': settings.EMAIL_HOST_USER})
+
+        try:
+            # Create EmailMessage object instead of using send_mail directly
+            email = EmailMessage(subject, body, settings.EMAIL_HOST_USER, [cust_email])
+            print(subject, body, settings.EMAIL_HOST_USER, [cust_email])
+            email.send()
+        except Exception as e:
+            # Handle the exception
+            # You can log the error, send a notification, or perform any necessary action
+            print(f"Failed to send email to {cust_email}: {e}")
 
     def handle_event(self, event):
         """
@@ -82,7 +85,6 @@ class StripeWH_Handler:
         attempt = 1
         while attempt <= 5:
             try:
-
                 order = CustomerOrder.objects.get(
                     name__iexact=shipping_details.name,
                     email__iexact=billing_details.email,

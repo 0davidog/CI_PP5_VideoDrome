@@ -50,7 +50,13 @@
                 <tbody  class="table-group-divider">
                     {% for item in order_items %}
                   <tr>
-                    <td class="d-none d-sm-table-cell"><img src="{% static 'images/videodrome_logo.webp' %}" class="logo-img-basket" alt="Videodrome logo"></td>
+                    <td class="d-none d-sm-table-cell">
+                        {% if "placeholder" in item.video.cover.url %}
+                        <img src="{% static 'images/videodrome.webp' %}" class="logo-img-basket" alt="Videodrome logo">
+                        {% else %}
+                        <img src="{{ video.cover.url }}" class="logo-img" alt="{{ video.title }} cover">
+                        {% endif %}
+                    </td>
                     <td>
                         {{ item.video.title }}&nbsp;{{ item.video.format }}<br>
                         <span class="text-muted">SKU:{{ item.video.sku }}</span>

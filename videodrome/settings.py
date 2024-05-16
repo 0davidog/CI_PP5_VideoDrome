@@ -46,7 +46,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'videodrome-ff881eaa1b51.herokuapp.com']
 
@@ -82,9 +82,6 @@ EMAIL_USE_TLS = True  # Use TLS (True for Gmail)
 
 EMAIL_HOST_USER = os.environ.get("EMAIL_USER")  # Your email address
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASS")  # Your email password or app password
-
-DEFAULT_FROM_EMAIL = 'admin@videodrome.com'
-
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
