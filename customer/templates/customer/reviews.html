@@ -42,7 +42,7 @@
                         {% if "placeholder" in star.video.cover.url %}
                         <img src="{% static 'images/videodrome.webp' %}" class="logo-img-basket" alt="Videodrome logo">
                         {% else %}
-                        <img src="{{ video.cover.url }}" class="logo-img" alt="{{ video.title }} cover">
+                        <img src="{{ star.video.cover.url }}" class="logo-img-basket" alt="{{ star.video.title }} cover">
                         {% endif %}
                     </td>
                     <td>

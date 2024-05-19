@@ -13,10 +13,10 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 
 import os
-import dj_database_url
-
 if os.path.isfile('env.py'):
     import env
+
+import dj_database_url
 
 import cloudinary	
 cloudinary.config( 
@@ -30,7 +30,11 @@ STANDARD_DELIVERY_PERCENTAGE = 10
 
 STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_PUBLIC_KEY", '')
 STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", '')
+
+
 STRIPE_WH_SECRET = os.environ.get("STRIPE_WH_SECRET")
+
+
 
 STRIPE_CURRENCY = 'gbp'
 
@@ -111,7 +115,7 @@ INSTALLED_APPS = [
     'videos',
     'basket',
     'checkout',
-    'customer'
+    'customer',
 ]
 
 MIDDLEWARE = [
