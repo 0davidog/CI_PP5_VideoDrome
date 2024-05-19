@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
 import uuid
 
@@ -8,35 +9,44 @@ import uuid
 class Language(models.Model):
     """
     """
-    language = models.CharField(max_length=100)
+    language = models.CharField(max_length=100, blank=True, null=True, unique=True)
 
     def __str__(self):
-        return self.language
+        return f"{self.language}"
 
 class Subtitle(models.Model):
     """
     """
-    subtitle = models.CharField(max_length=100)
+    subtitle = models.CharField(max_length=100, blank=True, null=True, unique=True)
 
     def __str__(self):
-        return self.subtitle
+        if self:
+            return f"{self.subtitle}"
+        else:
+            return "No Information"
 
 class Region(models.Model):
     """
     """
-    regioncode = models.CharField(max_length=100, blank=True)
-    region = models.CharField(max_length=100, blank=True)
+    regioncode = models.CharField(max_length=100, blank=True, null=True, unique=True)
+    region = models.CharField(max_length=100, blank=True, null=True)
 
     def __str__(self):
-        return f"{self.regioncode}: {self.region}"
+        if self:
+            return f"{self.regioncode}: {self.region}"
+        else:
+            return "No Information"
     
 class Genre(models.Model):
     """
     """
-    genre_name = models.CharField(max_length=100, blank=True)
+    genre_name = models.CharField(max_length=100, blank=True, null=True, unique=True)
 
     def __str__(self):
-        return self.genre_name
+        if self:
+            return f"{self.genre_name}"
+        else:
+            return "No Information"
     
 class Video(models.Model):
     """
@@ -111,7 +121,15 @@ class Video(models.Model):
             return "In Stock"
         else:
             return "Out Of Stock"
-    
+        
+    def stocked(self):
+        if self.stock > 0:
+            stocked = True
+            return stocked
+        else:
+            stocked = False
+            return stocked
+        
     def _generate_sku(self):
         """
         Generate random 8 digit number using uuid
@@ -128,6 +146,10 @@ class Video(models.Model):
         """
         if not self.sku:
             self.sku = self._generate_sku()
+        
+        if not self.slug:
+            self.slug = slugify(f"{self.title} {self.format}")
+
         super().save(*args, **kwargs)
     
 class UserRating(models.Model):

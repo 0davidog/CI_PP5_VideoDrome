@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.contrib import messages
 from django.db.models import Q
 from .models import Video, Language, Subtitle, UserRating, User, UserReview, Region
-from .forms import ReviewForm
+from .forms import ReviewForm, VideoForm, GenreForm, LanguageForm, SubtitleForm
 
 # Create your views here.
 
@@ -189,6 +189,7 @@ def create_review(request, slug):
     review_form = ReviewForm()
     user = get_object_or_404(User, id=request.user.id)
     video = get_object_or_404(Video, slug=slug)
+    user_rating = None
 
     if request.method == "POST":
         review_form = ReviewForm(data=request.POST)
@@ -203,9 +204,15 @@ def create_review(request, slug):
         else:
             messages.add_message(request, messages.ERROR, f"Review failed to submit. Please check form.")
 
+    if UserRating.objects.filter(user=request.user, video=video).exists():
+            user_rating = get_object_or_404(UserRating.objects.filter(user=request.user, video=video))
+    else:
+        user_rating = None
+
     context = {
         "video": video,
         "review_form": review_form,
+        "user_rating": user_rating,
     }
 
     return render(request, "videos/create_review.html", context)
@@ -260,3 +267,57 @@ def delete_review(request, review_id):
         return HttpResponseRedirect(referer)
     else:
         return HttpResponseRedirect('/')  # Redirect to a default URL if no referer is found
+    
+
+def create_video(request):
+
+    if request.method == "POST":
+        video_form = VideoForm(request.POST, request.FILES)
+
+        if video_form.is_valid():
+            video = video_form.save(commit=False)
+            video.cover = request.FILES.get('cover')
+            video.save()
+            messages.add_message(request, messages.SUCCESS, f"Video added to database.")
+            video_form = VideoForm()
+        else:
+            messages.add_message(request, messages.ERROR, f"Entry failed to submit. Please check form.")
+
+    else:
+        video_form = VideoForm()
+
+
+    context = {
+        "video_form": video_form,
+    }
+
+    return render(request, "videos/create_video.html", context)
+
+
+def update_video(request, slug):
+    """
+    """
+    edit = get_object_or_404(Video, slug=slug)
+
+    if request.method == "POST":
+        video_form = VideoForm(request.POST, request.FILES, instance=edit)
+
+        if video_form.is_valid():
+            video = video_form.save(commit=False)
+            video.cover = request.FILES.get('cover')
+            video.save()
+            messages.add_message(request, messages.SUCCESS, f"Video entry updated.")
+        else:
+            messages.add_message(request, messages.ERROR, f"Entry failed to submit. Please check form.")
+
+    else:
+        video_form = VideoForm(instance=edit)
+
+    context = {
+        "video_form": video_form,
+    }
+
+    return render(request, "videos/update_video.html", context)
+
+
+

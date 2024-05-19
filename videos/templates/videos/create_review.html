@@ -2,10 +2,15 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-<div class="container-fluid">
+<div class="container">
 
-    <div class="row p-xl-5">
+    <div class="row">
+
         <div class="col">
+            <h2>Write a Review</h2>
+            <p class="text-muted">{{ video.title }}&nbsp;{{ video.release_year }}&nbsp;{{ video.format}}</p>
+            {% include 'includes/stars.html' %}
+            <hr>
 
             <div class="card">
                 <div class="card-body">
@@ -20,6 +25,7 @@
                         <button type="submit" class="btn btn-success">
                             Submit Review
                         </button>
+                        <a href="{% url 'video_detail' video.slug %}" class="btn btn-secondary">Cancel</a>
                     </form>
 
                     <hr>
@@ -42,4 +48,11 @@
     </div>
 </div>
 
+<div class="invisible" id="user-rating">{{ user_rating.rating }}</div>
+
+{% endblock %}
+
+{% block extras %}
+{{ block.super }}
+<script src="{% static 'js/stars.js' %}"></script>
 {% endblock %}

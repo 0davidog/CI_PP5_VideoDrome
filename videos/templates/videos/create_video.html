@@ -1,0 +1,116 @@
+{% extends 'base.html' %} {% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<div class="container">
+
+    <div class="row mb-5">
+
+        <div class="col-8">
+            <h2>Create Video Entry</h2>
+        </div>
+
+        <div class="col-4 text-end">
+            <a href="{% url 'videos' %}" class="btn btn-secondary">Return</a>
+        </div>
+
+        <hr class="mb-5">
+
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+
+                    {% if user.is_authenticated %}
+                    <form id="video_form" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <fieldset class="mb-5">
+                            <legend>Main Info</legend>
+                            {{ video_form.title | as_crispy_field}}
+                            {{ video_form.director | as_crispy_field}}
+                            {{ video_form.release_year | as_crispy_field}}
+                            {{ video_form.feature_length | as_crispy_field}}
+                            {{ video_form.aspect_ratio | as_crispy_field}}
+                        </fieldset>
+
+                        <fieldset class="mb-5">
+                            <legend>Video Specs</legend>
+                            <label for="certificate" class="mb-2">Certificate/Age Rating</label>
+                            {{ video_form.certificate | as_crispy_field}}
+                            <label for="format" class="mb-2">Video Format</label>
+                            {{ video_form.format | as_crispy_field}}
+                            <label for="discs" class="mb-2">Number of Discs</label>
+                            {{ video_form.discs | as_crispy_field}}
+                            <label for="condition" class="mb-2">Video Condition</label>
+                            {{ video_form.condition | as_crispy_field}}
+                            <label for="region" class="mb-2">Region Locking</label>
+                            {{ video_form.region | as_crispy_field}}
+                            <label for="price" class="mb-2">Video Price</label>
+                            {{ video_form.price | as_crispy_field}}
+                            <label for="stock" class="mb-2">Number of Items in Stock</label>
+                            {{ video_form.stock | as_crispy_field}}
+                        </fieldset>
+
+                        <fieldset class="mb-5">
+                            <legend>Image</legend>
+                            <label for="cover">Upload Cover Image</label>
+                            {{ video_form.cover | as_crispy_field}}
+                        </fieldset>
+
+                        <fieldset class="mb-5">
+                            <legend>Content Description</legend>
+                            {{ video_form.overview | as_crispy_field}}
+                            {{ video_form.overview_source | as_crispy_field}}
+                            {{ video_form.trailer | as_crispy_field}}
+                        </fieldset>
+                        
+                        <fieldset class="mb-5">
+                            <legend>Additional Specs</legend>
+                            <label for="languages">Language Tracks</label>
+                            {{ video_form.languages | as_crispy_field}}
+                            <label for="subtitles">Subtitle Tracks</label>
+                            {{ video_form.subtitles | as_crispy_field}}
+                            <label for="genre">Video Genres</label>
+                            {{ video_form.genre | as_crispy_field}}
+                        </fieldset>
+
+                        <label for="on_sale" class="mb-2">Is the Item Ready for Sale?</label>
+                        {{ video_form.on_sale | as_crispy_field}}
+
+                        <button type="submit" class="btn btn-success">
+                            Save
+                        </button>
+
+                        <a href="{% url 'videos' %}" class="btn btn-secondary" data-continue="False">Cancel</a>
+                    </form>
+        
+                    {% else %}
+                    <div class="alert" role="alert">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        STAFF ONLY.
+                        <p>You need to be signed in as administrator to access this content.</p>
+                    </div>
+                    {% endif %}
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+            
+        
+   
+</div>
+
+<div class="invisible" id="user-rating">{{ user_rating.rating }}</div>
+
+{% endblock %}
+
+{% block extras %}
+{{ block.super }}
+<script src="{% static 'js/stars.js' %}"></script>
+{% endblock %}

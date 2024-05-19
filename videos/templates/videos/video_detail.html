@@ -3,18 +3,23 @@
 
 {% block content %}
 
-<div class="container-fluid">
+<div class="container">
+
     <div class="row mb-4">
-        <div class="col-4">
-            <div class="image-container">
+
+        <div class="col-12 col-xl-6">
+
+            <div class="image-container mb-5">
                 {% if "placeholder" in video.cover.url %}
                 <img src="{% static 'images/videodrome.webp' %}" class="logo-img" alt="Videodrome logo">
                 {% else %}
                 <img src="{{ video.cover.url }}" class="logo-img" alt="{{ video.title }} cover">
                 {% endif %}
             </div>
+
         </div>
-        <div class="col-8">
+
+        <div class="col-12 col-xl-6 mb-5">
             <h2>{{ video.title }}</h2>
             <h3>{{ video.format }}</h3>
             <p>
@@ -33,7 +38,7 @@
                     <i class="fa-solid fa-basket-shopping"></i>&nbsp;Add to Basket
                 </button>
                 {% if user.is_staff %}
-                <a class="btn btn-link d-inline" href="{% url 'admin:videos_video_change' video.id %}">
+                <a class="btn btn-link d-inline" href="{% url 'update_video' video.slug %}">
                     Admin: Edit
                 </a>
                 {% endif %}
