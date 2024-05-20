@@ -88,7 +88,7 @@ def checkout(request):
             return redirect(reverse('videos'))
 
         current_basket = in_basket(request)
-        total = current_basket['total_basket_cost']
+        total = current_basket['grand_total']
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
         

@@ -17,14 +17,11 @@ endpoint_secret = settings.STRIPE_WH_SECRET
 
 @csrf_exempt
 def webhook(request):
-    print('webhook ready')
 
     if request.method == 'POST':
 
 
         payload = request.body
-
-        print(payload)
 
         event = None
 
