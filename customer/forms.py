@@ -75,6 +75,9 @@ class SavedDetailsForm(forms.ModelForm):
 
 class MessageForm(forms.ModelForm):
 
+    user_email = forms.EmailField(max_length=254)
+    subject = forms.CharField(max_length=254)
+
     class Meta:
         model = CustomerMessage
 
@@ -111,3 +114,5 @@ class MessageForm(forms.ModelForm):
             self.fields[field].widget.attrs['placeholder'] = placeholder
             # Remove existing field label
             self.fields[field].label = False
+
+

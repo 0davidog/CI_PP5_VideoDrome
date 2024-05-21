@@ -8,16 +8,12 @@ class CustomerMessageAdminInline(admin.TabularInline):
     fields = (
         'user',
         'date',
-        'user_email',
-        'subject',
         'body',
     )
     
     readonly_fields = (
         'user',
         'date',
-        'user_email',
-        'subject',
         'body',
     )
 
@@ -25,7 +21,7 @@ class CustomerMessageAdminInline(admin.TabularInline):
 class CustomerMessageThreadAdmin(admin.ModelAdmin):
     inlines = (CustomerMessageAdminInline,)
 
-    readonly_fields = ('order_number',)
+    readonly_fields = ('order_number','user_email', 'subject',)
     ordering = ('created',)
 
 

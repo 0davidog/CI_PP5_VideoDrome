@@ -38,18 +38,20 @@ def create_or_update_customer_info(sender, instance, created, **kwargs):
 class CustomerMessageThread(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_email = models.EmailField(max_length=254, null=False, blank=False)
     is_resolved = models.BooleanField(default=False)
     order_number = models.CharField(max_length=32, null=True, blank=True)
-    created = models.DateTimeField(auto_now_add=True)
+    subject = models.CharField(max_length=254, null=False, blank=False)
+    created = models.DateField(auto_now_add=True)
 
     def resolved(self):
         if self.is_resolved:
-            return "RESOLVED"
+            return "| RESOLVED"
         else:
             return ""
         
     def __str__(self):
-        return f"Thread: {self.user} | {self.created} | {self.resolved()}"
+        return f"{self.user} | {self.created} {self.resolved()}"
 
 class CustomerMessage(models.Model):
 

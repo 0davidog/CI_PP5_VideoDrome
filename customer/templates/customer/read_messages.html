@@ -9,7 +9,7 @@
     <div class="row mb-5">
 
         <div class="col-8">
-            <h2>View past messages</h2>
+            <h2>View Messages</h2>
         </div>
 
         <div class="col-4 text-end">
@@ -17,8 +17,73 @@
         </div>
 
     </div>
-    <hr class="mb-5">
-   
 
+    <hr class="mb-5">
+
+   {% if thread %}
+    <div class="row mb-5">
+
+        <div class="col-12 text-center">
+            
+            <div class="dropdown">
+                
+                <button class="btn dropdown-toggle me-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <strong>Choose Message Thread</strong>
+                </button>
+
+                <ul class="dropdown-menu">
+
+                    {% for thread in thread %}
+                        <li>
+                            <a class="dropdown-item" href="{% url 'read_messages' %}?thread={{ thread.id }}">
+                                <small>{{ thread }}</small>
+                            </a>
+                        </li>
+                    {% endfor %}
+
+                </ul>
+            </div>
+            
+        </div>
+
+    </div>
+
+
+{% if customer_messages %}
+    <div class="row mb-5">
+        {% for message in customer_messages %}
+
+            <div class="col-12 mb-4">
+                
+                <div class="card border-0">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ message.subject }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ message.user }}</h6>
+                        <hr>
+                        <p class="card-text copy-font">"{{ message.body }}"</p>
+                        <hr>
+                            <div class="text-end text-muted">
+                                <small>{% if message.thread.order_number %}Order Number: <a href="{% url 'order_detail' message.thread.order_number %}">{{ message.thread.order_number }}</a>&nbsp;|&nbsp;{% endif %}{{ message.date }}</small>
+                    </div>
+                    </div>
+              </div>
+
+            </div>
+
+
+        {% endfor %}
+    </div>
+    <hr class="mb-5">
+    <div class="row">
+        <div class="col text-end">
+            <a href="{% url 'reply_messages' message_query %}" class="btn btn-success">Reply</a>
+        </div>
+    </div>
+{% else %}
+No messages
+{% endif %}
+{% else %}
+No thread
+{% endif %}
 </div>
 {% endblock %}
