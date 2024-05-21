@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div class="container">
+
+    <div class="row mb-5">
+
+        <div class="col-8">
+            <h2>Order Detail</h2>
+            <p class="text-muted">Order: {{ order.order_number }}</p>
+        </div>
+
+        <div class="col-4 text-end">
+            <a href="{% url 'customer_info' %}" class="btn btn-secondary">Return</a>
+        </div>
+
+    </div>
+    <hr class="mb-5">
+
+    <div class="row mb-4">
+
+        <div class="col">
+            <h3 class="mb-5">Order Details</h3>
+            <p><strong>Order Number:</strong>&nbsp;<br><small>{{ order.order_number }}</small></p>
+            <p><strong>Order Date:</strong>&nbsp;<br>{{ order.order_date }}</p>
+            <h4 class="mt-5 mb-5">Shipping Details</h4>
+            <p>
+                {{ order.name }}<br>
+                {{ order.street_address1 }}<br>
+                {% if order.street_address2 %}
+                {{ order.street_address2 }}<br>
+                {% endif %}
+                {{ order.town_or_city }}<br>
+                {% if order.county %}
+                {{ order.county }}<br>
+                {% endif %}
+                {{ order.country }}<br>
+                {{ order.postcode }}<br>
+            </p>
+        </div>
+
+        <div class="col">
+            <h3 class="mb-5">Purchased</h3>
+            <table class="table table-striped mb-5">
+                <thead>
+                  <tr>
+                    <th scope="col">Video</th>
+                    <th class="d-none d-sm-table-cell" scope="col"></th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Sub-Total</th>
+                  </tr>
+                </thead>
+                <tbody  class="table-group-divider">
+                    {% for item in order_items %}
+                  <tr>
+                    <td class="d-none d-sm-table-cell">
+                        {% if "placeholder" in item.video.cover.url %}
+                        <img src="{% static 'images/videodrome.webp' %}" class="logo-img-basket" alt="Videodrome logo">
+                        {% else %}
+                        <img src="{{ item.video.cover.url }}" class="logo-img-basket" alt="{{ item.video.title }} cover">
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{ item.video.title }}&nbsp;{{ item.video.format }}<br>
+                        <span class="text-muted">SKU:{{ item.video.sku }}</span>
+                    </td>
+                    <td>
+                        {{ item.quantity }}
+                    </td>
+                    <td>£{{ item.video.price }}</td>
+                    <td>£{{ item.video_sub_total }}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+            </table>
+            <p class="text-end">
+                <strong>Items Total:</strong>&nbsp;£{{ order.order_total }}<br>
+                <strong>Delivery:</strong>&nbsp;£{{ order.delivery_cost }}<br>
+                <strong>Total:</strong>&nbsp;£{{ order.grand_total }}
+            </p>
+
+        </div>
+        <hr>
+    </div>
+   
+
+</div>
+{% endblock %}

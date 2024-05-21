@@ -304,7 +304,10 @@ def update_video(request, slug):
 
         if video_form.is_valid():
             video = video_form.save(commit=False)
-            video.cover = request.FILES.get('cover')
+            if request.FILES.get(
+                'cover'
+            ):  # Check if featured_image is not None
+                video.cover = request.FILES.get('cover')
             video.save()
             messages.add_message(request, messages.SUCCESS, f"Video entry updated.")
         else:

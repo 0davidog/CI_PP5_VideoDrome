@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-
 from django_countries.fields import CountryField
 
 # Create your models here.
@@ -33,3 +32,34 @@ def create_or_update_customer_info(sender, instance, created, **kwargs):
 
     # Existing users: just save the profile
     instance.customer.save()
+
+
+
+class CustomerMessageThread(models.Model):
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    is_resolved = models.BooleanField(default=False)
+    order_number = models.CharField(max_length=32, null=True, blank=True)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def resolved(self):
+        if self.is_resolved:
+            return "RESOLVED"
+        else:
+            return ""
+        
+    def __str__(self):
+        return f"Thread: {self.user} | {self.created} | {self.resolved()}"
+
+class CustomerMessage(models.Model):
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    order_number = models.CharField(max_length=32, null=True, blank=True)
+    user_email = models.EmailField(max_length=254, null=False, blank=False)
+    subject = models.CharField(max_length=254, null=False, blank=False)
+    body = models.TextField(null=False, blank=False)
+    date = models.DateTimeField(auto_now_add=True)
+    thread = models.ForeignKey(CustomerMessageThread, on_delete=models.CASCADE, related_name='messages', null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.user}: {self.subject}"

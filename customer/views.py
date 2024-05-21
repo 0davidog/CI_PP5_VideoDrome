@@ -1,9 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from .models import Customer
 from videos.models import Video, UserRating, UserReview
-from .forms import SavedAddressForm, SavedDetailsForm
+from .forms import SavedAddressForm, SavedDetailsForm, MessageForm
 from checkout.models import CustomerOrder
+from customer.models import CustomerMessageThread, CustomerMessage
 
 # Create your views here.
 
@@ -89,8 +90,31 @@ def read_reviews(request):
 def create_messages(request):
     """
     """
+    if request.method == "POST":
+        message_form = MessageForm(request.POST)
 
-    return render(request, 'customer/create_messages.html')
+        if message_form.is_valid():
+            message = message_form.save(commit=False)
+            message.user = request.user
+            message.thread = CustomerMessageThread.objects.create(
+                user = request.user,
+                order_number = message.order_number,
+            )
+            message.save()
+            messages.success(request, 'Your message has been saved.')
+            return redirect('read_messages')
+        else:
+            messages.error(request, 'There was an error with your form. Please double check your information.')
+
+    else:
+        message_form = MessageForm()
+
+
+    context = {
+        'message_form': message_form,
+    }
+
+    return render(request, 'customer/create_messages.html', context)
 
 def read_messages(request):
     """
@@ -113,5 +137,11 @@ def view_wishlist(request):
 
     return render(request, 'customer/wishlist.html', context)
 
+def order_detail(request, order_number):
+    """
+    """
+    
+
+    return render(request, 'customer/order_detail.html')
 
 
