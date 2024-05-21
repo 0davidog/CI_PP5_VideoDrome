@@ -39,7 +39,7 @@
   </head>
 
   <body class="d-flex flex-column" 
-  {% if is_index %} style="background-image: url('static/images/videodrome_bg.webp');" {% endif %}>
+  {% if is_index %} style="background-image: url('static/images/videodrome_bg.webp');" {% endif %} id="base-body">
     {% include 'includes/nav-mobile.html' %}
     {% include 'includes/nav-desktop.html' %}
 
@@ -55,7 +55,7 @@
           {% endif %}
         </a>.
         {% else %}
-        &nbsp;Hello, log in or register to access more of our features.
+        &nbsp;Hello, <a href="{% url 'account_login' %}" class="alert-link">log in</a> or <a href="{% url 'account_signup' %}" class="alert-link">register</a> to access more of our features.
         {% endif %}
       </div>
 
@@ -70,6 +70,7 @@
     {% include 'includes/toast.html' %}
 
     {% block extras %}
+    <script type="text/javascript" src="{% static 'js/background.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/toast.js' %}"></script>
     <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
     <script type="text/javascript" src="{% static 'js/mailchimp.js' %}"></script>

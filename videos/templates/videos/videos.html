@@ -7,9 +7,13 @@
 <div class="container-fluid">
 
     <div class="row p-4 mb-2">
+        
         <div class="d-none d-xl-block col">
+            {% if not unsorted %}
             {{ current_sorting }}
+            {% endif %}
         </div>
+        
         <div class="col">
             {% if all_videos == True %}
             <h2 class="text-center">All Videos</h2>

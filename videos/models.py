@@ -102,7 +102,6 @@ class Video(models.Model):
         related_name='wishlist',
         blank=True
     )
-    rating = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
         return f'{self.title} {self.release_year} {self.format}'

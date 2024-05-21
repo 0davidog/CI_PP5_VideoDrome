@@ -40,7 +40,7 @@
                       {% endif %}
                     </a>.
                   {% else %}
-                    &nbsp;Hello, log in or register to access more of our features.
+                  &nbsp;Hello, <a href="{% url 'account_login' %}" class="alert-link">log in</a> or <a href="{% url 'account_signup' %}" class="alert-link">register</a> to access more of our features.
                   {% endif %}
                 </p>
                 <button class="btn btn-drop dropdown-toggle me-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -123,7 +123,7 @@
               </li>
               <li class="nav-item">
                 <a class="btn btn-drop me-2 mb-4" aria-current="page" href="{% url 'view_basket' %}">
-                  <i class="fa-solid fa-basket-shopping"></i>&nbsp;Basket
+                  <i class="fa-solid fa-basket-shopping"></i>&nbsp;Basket{% if basket_items %}&nbsp;({{ all_item_count }}){% endif %}
                 </a>
               </li>
               {% if user.is_authenticated and user.is_staff %}

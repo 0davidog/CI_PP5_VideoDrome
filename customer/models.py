@@ -51,7 +51,7 @@ class CustomerMessageThread(models.Model):
             return ""
         
     def __str__(self):
-        return f"{self.user} | {self.created} {self.resolved()}"
+        return f"{self.subject} | {self.created} {self.resolved()}"
 
 class CustomerMessage(models.Model):
 

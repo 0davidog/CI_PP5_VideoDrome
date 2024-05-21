@@ -36,7 +36,7 @@
           </div>  
           <div class="nav-item d-none d-xl-inline">
             <a class="btn btn-success me-2" aria-current="page" href="{% url 'view_basket' %}">
-                <i class="fa-solid fa-basket-shopping"></i>&nbsp;Basket
+                <i class="fa-solid fa-basket-shopping"></i>&nbsp;Basket{% if basket_items %}&nbsp;({{ all_item_count }}){% endif %}
             </a>
           </div>
         </div>

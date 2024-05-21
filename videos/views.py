@@ -11,13 +11,15 @@ from .forms import ReviewForm, VideoForm, GenreForm, LanguageForm, SubtitleForm
 def all_videos(request):
     """ A view to show all products, including sorting and search queries """
 
-    videos = Video.objects.all()
+    videos = Video.objects.all().order_by('-added')
     all_videos = True
     search_query = None
     format_query = None
     genre_query = None
     sort = None
     direction = None
+    current_sorting = None
+    unsorted = True
 
     if request.GET:
 
@@ -27,12 +29,14 @@ def all_videos(request):
             if sortkey == 'title':
                 sortkey = 'lower_title'
                 videos = videos.annotate(lower_name=Lower('title'))
+            unsorted = False
                 
 
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
+                unsorted = False
             
             videos = videos.order_by(sortkey)
             
@@ -61,8 +65,9 @@ def all_videos(request):
 
             videos = videos.filter(queries)
             all_videos = False
+
+        current_sorting = f"{sort}_{direction}"
     
-    current_sorting = f'{sort}_{direction}'
     
     context = {
         'videos': videos,
@@ -71,6 +76,7 @@ def all_videos(request):
         'genre_query': genre_query,
         'format_query': format_query,
         'current_sorting': current_sorting,
+        'unsorted': unsorted,
     }
 
     return render(request, 'videos/videos.html', context)
@@ -186,10 +192,23 @@ def create_review(request, slug):
     """
     View to render and submit a review form.
     """
+
+
     review_form = ReviewForm()
     user = get_object_or_404(User, id=request.user.id)
     video = get_object_or_404(Video, slug=slug)
     user_rating = None
+
+    
+    review = UserReview.objects.filter(author=request.user, video=video).first()
+    
+    if review:
+        # If a review exists, redirect to the update review page
+        slug = video.slug
+        review_id = review.id
+        messages.add_message(request, messages.WARNING, f"You can only write one review per title. Edit your review?")
+        return redirect(reverse('update_review', args=[slug, review_id]))
+    
 
     if request.method == "POST":
         review_form = ReviewForm(data=request.POST)

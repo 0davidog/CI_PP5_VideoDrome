@@ -3,10 +3,11 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib import messages
 from .models import Customer
-from checkout.models import CustomerOrder
+from checkout.models import CustomerOrder, OrderItem
 from videos.models import Video, UserRating, UserReview
 from .forms import SavedAddressForm, SavedDetailsForm, MessageForm
 from customer.models import CustomerMessageThread, CustomerMessage
+from .email import send_customer_message
 
 # Create your views here.
 
@@ -94,6 +95,7 @@ def create_messages(request):
     """
     if request.method == "POST":
         message_form = MessageForm(request.POST)
+        
 
         if message_form.is_valid():
             message = message_form.save(commit=False)
@@ -105,7 +107,8 @@ def create_messages(request):
                 user_email = message.user_email,
             )
             message.save()
-            messages.success(request, 'Your message has been saved.')
+            send_customer_message(message)
+            messages.success(request, 'Your message has been sent.')
             return redirect('read_messages')
         else:
             messages.error(request, 'There was an error with your form. Please double check your information.')
@@ -124,8 +127,10 @@ def read_messages(request):
     """
     View to read customer messages in a specific thread.
     """
+    
     # Get the threads associated with the user
     thread = CustomerMessageThread.objects.filter(user=request.user)
+
     customer_messages = None
     message_query = None
 
@@ -165,9 +170,27 @@ def view_wishlist(request):
 def order_detail(request, order_number):
     """
     """
+    referer = request.META.get('HTTP_REFERER')
+    check = CustomerOrder.objects.filter(order_number=order_number)
     
+    if not check:
+        # If referer exists, redirect to it. Otherwise, redirect to a default URL.
+        if referer:
+            messages.error(request, 'Sorry. No Order with that number can be found.')
+            return HttpResponseRedirect(referer)
+        else:
+            messages.error(request, 'Sorry. No Order with that number can be found.')
+            return HttpResponseRedirect('/')  # Redirect to a default URL if no referer is found
+        
+    order = get_object_or_404(CustomerOrder, order_number=order_number)
+    order_items = OrderItem.objects.filter(order=order)
 
-    return render(request, 'customer/order_detail.html')
+    context = {
+        'order': order,
+        'order_items': order_items,
+    }
+    
+    return render(request, 'customer/order_detail.html', context)
 
 
 def reply_messages(request, thread):
@@ -187,8 +210,8 @@ def reply_messages(request, thread):
             message.user = request.user
             message.thread = message_thread
             message.save()
-
-            messages.success(request, 'Your message has been saved.')
+            send_customer_message(message)
+            messages.success(request, 'Your message has been sent.')
             url = reverse('read_messages') + f'?thread={thread}'
             return HttpResponseRedirect(url)
         else:

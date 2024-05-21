@@ -9,7 +9,6 @@ body {
     font-size: 1rem;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: right -300px top 0;
     background-size: cover;
 }
 
@@ -146,6 +145,11 @@ a:hover {
     height: 393px;
 }
 
+.list-table {
+    height: 150px;
+    overflow: auto;
+}
+
 /* copied bootstrap's .formcontrol css from inspector */
 
 .StripeElement {
@@ -202,7 +206,16 @@ a:hover {
     height: 100%;
 }
 
+/* BREAKPOINTS */
+
+@media (min-width:350px) {
+    body {
+        background-position: right 20% top 50%;
+    }
+}
+
 /* Bootstrap md breakpoint */
+
 @media (min-width: 768px) {
     .image-container {
         height: 100%;
