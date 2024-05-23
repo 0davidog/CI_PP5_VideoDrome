@@ -6,6 +6,7 @@ from .models import Customer
 from checkout.models import CustomerOrder, OrderItem
 from videos.models import Video, UserRating, UserReview
 from .forms import SavedAddressForm, SavedDetailsForm, MessageForm
+from videos.forms import VideoForm
 from customer.models import CustomerMessageThread, CustomerMessage
 from .email import send_customer_message
 
@@ -228,3 +229,39 @@ def reply_messages(request, thread):
     return render(request, 'customer/reply_messages.html', context)
 
 
+def inventory(request):
+
+    referer = request.META.get('HTTP_REFERER')
+    user = request.user
+    video_list = Video.objects.all().order_by('title')
+
+    if not user.is_staff:
+        if referer:
+            messages.error(request, 'Sorry. This page is admin only.')
+            return HttpResponseRedirect(referer)
+        else:
+            messages.error(request, 'Sorry. This page is admin only.')
+            return HttpResponseRedirect('customer_info')
+
+    context = {
+        'video_list': video_list,
+    }
+
+    return render(request, 'customer/inventory.html', context)
+
+
+def update_inventory(request, video_id):
+        
+    if request.method == "POST":
+        video = get_object_or_404(Video.objects.filter(id=video_id))
+        # retrieves video data by id number given in request
+        stock = int(request.POST.get('stock'))
+        # calls form number input by name 'quantity' and converts submitted string to int
+        price = int(request.POST.get('price'))
+        # calls form number input by name 'quantity' and converts submitted string to int
+        video.stock = stock
+        video.price = price
+        video.save()
+        
+
+    return redirect(reverse('inventory'))

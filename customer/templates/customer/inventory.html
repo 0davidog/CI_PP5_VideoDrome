@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div class="container">
+
+    <div class="row mb-5">
+
+        <div class="col-8">
+            <h2><i class="fa-regular fa-clipboard"></i>&nbsp;Inventory</h2>
+        </div>
+
+        <div class="col-4 text-end">
+            <a href="{% url 'customer_info' %}" class="btn btn-secondary">Return</a>
+        </div>
+
+    </div>
+    <hr class="mb-5">
+
+    <div class="row">
+        <p class="text-muted mb-5">Click the title links to edit full details and use the number inputs to update stock quantities and price (you can only update one video at a time).</p>
+
+                    {% for video in video_list %}
+                    <form class="form d-inline" action="{% url 'update_inventory' video.id %}" method="POST">
+                            {% csrf_token %}
+                            {% if forloop.counter|divisibleby:2 %}
+                        <div class="row">
+                            {% else %}
+                        <div class="row bg-secondary-subtle">
+                            {% endif %}
+                            <div class="col-lg-2 d-none d-lg-block mb-2 mt-2">
+                                {% if "placeholder" in video.cover.url %}
+                                <img src="{% static 'images/videodrome.webp' %}" class="logo-img-basket" alt="Videodrome logo">
+                                {% else %}
+                                <img src="{{ video.cover.url }}" class="logo-img-basket" alt="{{ video.title }} cover">
+                                {% endif %}
+                            </div>
+                            <div class="col-12 col-lg-4 mb-2 mt-2">
+                                <a href="{% url 'update_video' video.slug %}">{{ video.title }}&nbsp;{{ video.format }}</a><br>
+                                <span class="text-muted">SKU:{{ video.sku }}</span>
+                            </div>
+                            <div class="col-12 col-lg-2 mb-2 mt-2">
+                                <input class="qty d-inline me-2" type="number" name="stock" value="{{ video.stock }}" min="1" max="99" data-video_id="{{ video.id }}">
+                            </div>
+                            <div class="col-12 col-lg-2 mb-2 mt-2">
+                                <input class="price d-inline me-2" type="number" name="price" value="{{ video.price }}" min="1" max="99" data-video_id="{{ video.id }}">
+                            </div>
+                            <div class="col-12 col-lg-2 mb-2 mt-2">
+                                <button type="submit" class="btn btn-primary d-inline">
+                                    update
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                  {% endfor %}
+    </div>
+</div>
+{% endblock %}

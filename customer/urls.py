@@ -12,4 +12,6 @@ urlpatterns = [
     path('read_messages/', views.read_messages, name='read_messages'),
     path('order_detail/<order_number>', views.order_detail, name='order_detail'),
     path('reply_messages/<thread>', views.reply_messages, name='reply_messages'),
+    path('inventory/', views.inventory, name='inventory'),
+    path('update_inventory/<video_id>', views.update_inventory, name='update_inventory'),
 ]
