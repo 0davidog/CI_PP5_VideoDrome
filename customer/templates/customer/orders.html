@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div class="container">
+
+    <div class="row mb-5">
+
+        <div class="col-8">
+            <h2><i class="fa-solid fa-clipboard-user"></i>&nbsp;Customer Orders</h2>
+        </div>
+
+        <div class="col-4 text-end">
+            <a href="{% url 'customer_info' %}" class="btn btn-secondary">Return</a>
+        </div>
+
+    </div>
+
+    <div class="row d-none d-xl-flex">
+        <div class="col">
+            <strong>Order Number</strong>
+        </div>
+        <div class="col">
+            <strong>Name</strong>
+        </div>
+        <div class="col">
+            <strong>Date</strong>
+        </div>
+        <div class="col">
+            <strong>Total Price</strong>
+        </div>
+    </div>
+
+    {% for order in order_list %}
+    {% if forloop.counter|divisibleby:2 %}
+    <div class="row">
+        {% else %}
+        <div class="row bg-secondary-subtle">
+            {% endif %}
+        <div class="col-12 col-xl-3">
+            <span class="d-inline d-xl-none"><strong>Order#:&nbsp;</strong></span><a href="{% url 'order_detail' order.order_number %}" title="{{ order.order_number }}">{{ order.order_number | truncatechars:6 }}</a>
+            
+        </div>
+        <div class="col-12 col-xl-3">
+            <span class="d-inline d-xl-none"><strong>Name:&nbsp;</strong></span>{{ order.name }}
+        </div>
+        <div class="col-12 col-xl-3">
+            <span class="d-inline d-xl-none"><strong>Date:&nbsp;</strong></span>{{ order.order_date }}
+        </div>
+        <div class="col-12 col-xl-3">
+            <span class="d-inline d-xl-none"><strong>Price:&nbsp;</strong></span>£{{ order.grand_total }}
+        </div>
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

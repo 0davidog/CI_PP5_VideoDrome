@@ -265,3 +265,24 @@ def update_inventory(request, video_id):
         
 
     return redirect(reverse('inventory'))
+
+
+def orders(request):
+
+    referer = request.META.get('HTTP_REFERER')
+    user = request.user
+    order_list = CustomerOrder.objects.all().order_by('order_date')
+
+    if not user.is_staff:
+        if referer:
+            messages.error(request, 'Sorry. This page is admin only.')
+            return HttpResponseRedirect(referer)
+        else:
+            messages.error(request, 'Sorry. This page is admin only.')
+            return HttpResponseRedirect('customer_info')
+
+    context = {
+        'order_list': order_list,
+    }
+
+    return render(request, 'customer/orders.html', context)

@@ -14,4 +14,5 @@ urlpatterns = [
     path('reply_messages/<thread>', views.reply_messages, name='reply_messages'),
     path('inventory/', views.inventory, name='inventory'),
     path('update_inventory/<video_id>', views.update_inventory, name='update_inventory'),
+    path('orders', views.orders, name='orders'),
 ]

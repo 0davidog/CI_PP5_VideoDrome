@@ -70,11 +70,11 @@
 {% for order in order_history %}
                     <tr>
                         <th scope="row">
-                            <a href="{% url 'order_detail' order.order_number %}">
-                                <small>{{ order.order_number }}</small>
+                            <a href="{% url 'order_detail' order.order_number %}" title="{{ order.order_number }}">
+                                <small>{{ order.order_number | truncatechars:6 }}</small>
                             </a>
                         </th>
-                        <td>{{ order.grand_total }}</td>
+                        <td>£{{ order.grand_total }}</td>
                         <td>{{ order.order_date }}</td>
                     </tr>
 {% endfor %}
@@ -138,7 +138,7 @@
 
         <div class="col col-12 col-lg-4 text-center p-1">
             <h3 class="mb-5">Customer Orders</h3>
-            <a class="btn btn-success mb-5"><i class="fa-solid fa-clipboard-user"></i>&nbsp;View Orders</a>
+            <a class="btn btn-success mb-5" href="{% url 'orders' %}"><i class="fa-solid fa-clipboard-user"></i>&nbsp;View Orders</a>
         </div>
 
         <div class="col col-12 col-lg-4 text-center p-1">

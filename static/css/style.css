@@ -145,7 +145,7 @@ a:hover {
 }
 
 .price {
-    width: 100px;
+    width: 100px !important;
 }
 
 #ratings-table {
