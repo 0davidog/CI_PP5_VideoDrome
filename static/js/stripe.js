@@ -1,3 +1,6 @@
+/*jshint esversion: 6 */
+/* globals $, Stripe */
+
 window.addEventListener('DOMContentLoaded', () => {
     /*
         Core logic/payment flow for this comes from here:
@@ -154,7 +157,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }).fail(function () {
             // Reloading the page if there's an error
             location.reload();
-        })
+        });
     });
 
 });

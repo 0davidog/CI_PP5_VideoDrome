@@ -7,8 +7,12 @@ urlpatterns = [
     path('wishlist/<slug:slug>/', views.wishlist, name='wishlist_video'),
     path('rating/<slug:slug>/<rating>', views.rating, name='rate_video'),
     path('review/<slug:slug>', views.create_review, name='create_review'),
-    path('review/update/<slug:slug>/<review_id>', views.update_review, name='update_review'),
-    path('review/delete/<review_id>', views.delete_review, name='delete_review'),
+    path(
+        'review/update/<slug:slug>/<review_id>',
+        views.update_review, name='update_review'),
+    path(
+        'review/delete/<review_id>',
+        views.delete_review, name='delete_review'),
     path('add/', views.create_video, name="create_video"),
     path('edit/<slug:slug>', views.update_video, name="update_video"),
 ]
