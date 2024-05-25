@@ -80,9 +80,9 @@
                             <p class="card-text copy-font">"{{ review.content }}"</p>
                             <hr>
                             <a href="{% url 'update_review' review.video.slug review.id %}" class="card-link me-2">Edit</a>
-                            <a type="button" class="wishlist-link" data-bs-toggle="modal" data-bs-target="#deleteReviewModal{{ review.id }}">
+                            <button type="button" class="wishlist-link btn btn-link" data-bs-toggle="modal" data-bs-target="#deleteReviewModal{{ review.id }}">
                                 Delete
-                            </a>
+                            </button>
                               
                         </div>
                     </div>

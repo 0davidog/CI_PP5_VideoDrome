@@ -29,7 +29,7 @@ class SavedAddressForm(forms.ModelForm):
         for field in self.fields:
             if field != 'saved_country':
                 placeholder = placeholders[field]
-            self.fields[field].widget.attrs['placeholder'] = placeholder
+                self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].label = False
     
 

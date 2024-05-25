@@ -1,5 +1,5 @@
 <header class="container-fluid fixed-top d-xl-none">
-    <nav class="navbar" id="nav-main">
+    <nav class="navbar" id="nav-mob">
       <div class="container-fluid">
         <button class="btn btn-success" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" 
@@ -78,10 +78,10 @@
               </li>
               <li class="nav-item">
                 <div class="dropdown">
-                  <a class="btn btn-drop dropdown-toggle me-2" type="button" 
+                  <button class="btn btn-drop dropdown-toggle me-2" type="button" 
                   data-bs-toggle="dropdown" aria-expanded="false">
                     BY FORMAT
-                  </a>
+                  </button>
                   <ul class="dropdown-menu">
                     <li>
                       <a class="dropdown-item" href="{% url 'videos' %}?format=dvd">
@@ -103,10 +103,10 @@
               </li>
               <li class="nav-item">
                 <div class="dropdown">
-                  <a class="btn btn-drop dropdown-toggle me-2" type="button" 
+                  <button class="btn btn-drop dropdown-toggle me-2" type="button" 
                   data-bs-toggle="dropdown" aria-expanded="false">
                     BY GENRE
-                  </a>
+                  </button>
                   <ul class="dropdown-menu">
                     {% for genre in genre_list %}
                     <li>
@@ -132,10 +132,10 @@
               </li>
               <li class="nav-item">
                 <div class="dropdown">
-                  <a class="btn btn-drop dropdown-toggle me-2" type="button" 
+                  <button class="btn btn-drop dropdown-toggle me-2" type="button" 
                   data-bs-toggle="dropdown" aria-expanded="false">
                     ADMIN
-                  </a>
+                </button>
                   <ul class="dropdown-menu">
                     <li>
                       <a class="dropdown-item" href="{% url 'admin:index' %}">

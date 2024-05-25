@@ -17,7 +17,9 @@
         
 
     </div>
+    {% if user.is_authenticated and user.is_staff %}
     <p class="text-end"><a href="#admin-section" class="wishlist-link">To Admin Section <i class="fa-solid fa-circle-down"></i></a></p>
+    {% endif %}
     <hr class="mb-5">
     <div class="row">
         
@@ -118,6 +120,8 @@
 
 
     </div>
+
+    {% if user.is_authenticated and user.is_staff %}
     <hr class="mb-5">
 
 
@@ -148,6 +152,7 @@
 
 
     </div>
+    {% endif %}
 
 </div>
 {% endblock %}

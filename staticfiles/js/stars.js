@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 //Script to render stars in relation to user ratings on videos:
 
 /**
