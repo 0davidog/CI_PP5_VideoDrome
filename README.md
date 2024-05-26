@@ -264,7 +264,71 @@ Please refer to this seperate testing document for a full rundown of tests and a
 ### Frameworks, Libraries & Programs Used
 ## Deployment
 ### Prerequisites
-### ElephantSQL Database:
+### Heroku Postgres Database:
+
+Configuring your Django project to use Heroku Postgres involves several steps, including setting up the database configuration, installing necessary dependencies, and adjusting settings for deployment. Here's a general guide to help you migrate your Django project to Heroku Postgres:
+
+Install Required Dependencies:
+Ensure you have the dj-database-url package installed. This package allows you to utilize environment variables to configure your database connection.
+
+```pip install dj-database-url```
+
+Update requirements.txt:
+If you haven't already, make sure to update your requirements.txt file with any new dependencies, including dj-database-url.
+
+Update Django Settings:
+In your Django project settings (typically settings.py), import dj_database_url and update the DATABASES setting to use environment variables for database configuration.
+
+```
+import dj_database_url
+
+# Database
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+
+if 'HEROKU_POSTGRESQL_TEAL_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('HEROKU_POSTGRESQL_TEAL_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+```
+
+This configuration allows Django to automatically use the DATABASE_URL environment variable provided by Heroku to connect to the PostgreSQL database.
+
+Set Environment Variables:
+In your Heroku app settings, set the DATABASE_URL environment variable to the connection URL of your Heroku Postgres database. You can find this URL in the Heroku dashboard under the "Settings" tab.
+
+Migrate Database:
+Before deploying your Django app to Heroku, you need to migrate your database schema to Heroku Postgres.
+
+```
+python3 manage.py migrate
+```
+
+Collect Static Files:
+If your Django project serves static files, you may need to collect them before deploying to Heroku.
+
+```
+heroku run python manage.py collectstatic
+```
+
+Deploy to Heroku:
+Once you've made these changes, commit your code to your Git repository and deploy your Django app to Heroku using Git.
+
+```
+git push
+```
+
+Verify Deployment:
+After deployment, you can verify that your Django app is running correctly on Heroku by visiting your Heroku app's URL in a web browser.
+
+By following these steps, you should be able to successfully migrate your Django project to Heroku Postgres. Make sure to test your application thoroughly after deployment to ensure everything is working as expected. If you encounter any issues, Heroku provides detailed documentation and support resources to assist you further.
+
 ### Create Superuser
 ### Cloudinary or AWS
 ### Fork and Clone the Repository
