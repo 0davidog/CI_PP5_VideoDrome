@@ -79,6 +79,21 @@ As this is an accedemic porfolio project there is only one interation in which t
 ### Project Goal
 ### Target Audience
 ### Wireframes
+
+Wireframes were created using Balsamiq to design the general look of the sites main features.
+
+#### Landing Page Displaying All Products:
+
+![Home](https://github.com/0davidog/VideoDrome/assets/135815736/70922b57-666d-4ca8-8a6f-9a7108ddcd37)
+
+#### Product Detail Page:
+
+![Product](https://github.com/0davidog/VideoDrome/assets/135815736/51bf13ad-1905-49fb-8bf0-061d2c677c3b)
+
+#### Basket View:
+
+![Basket](https://github.com/0davidog/VideoDrome/assets/135815736/eb8e798a-de3b-4c6f-99c0-b5ed9bf38931)
+
 ## Information Architecture
 ## Design Choices
 ## Features
