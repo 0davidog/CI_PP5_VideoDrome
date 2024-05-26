@@ -1,3 +1,5 @@
+![readme-cover](https://github.com/0davidog/VideoDrome/assets/135815736/5fead196-6380-4d72-a4be-891aa77b7356)
+
 # VideoDrome
 
 VideoDrome is an ecommerce website dedicated to the sale of genre and cult films on blu-ray, DVD or UHD.
