@@ -41,26 +41,27 @@ Here is a list of user stories for this project seperated in to their relative E
     
 Epic: User Registration and Authentication
 
-- As a new user, I want to be able to register an account on the website using my email address and password.
-- As a registered user, I want to be able to log in to my account securely.
-- As a registered user, I want to be able to reset my password if I forget it.
+- [As a new user, I want to be able to register an account on the website using my email address and password.](https://github.com/0davidog/VideoDrome/issues/1)
+- [As a registered user, I want to be able to log in to my account securely so that I can shop easily with my saved information.](https://github.com/0davidog/VideoDrome/issues/2)
+- [As a Site user, I want the option to reset my password in case I forget it, ensuring secure access to my account.](https://github.com/0davidog/VideoDrome/issues/3)
 
 Epic: Product Browsing and Searching
 
-- As a user, I want to be able to browse products by category.
-- As a user, I want to be able to search for products by name or keyword.
+- [As a user, I want to be able to browse products by category so that I can better find the kind of products I'm interested in.](https://github.com/0davidog/VideoDrome/issues/4)
+- [As a user, I want to be able to search for products by name or keyword so that I can find a particular product I'm interested in.](https://github.com/0davidog/VideoDrome/issues/5)
 - As a user, I want to be able to filter search results by price, brand, size, etc.
 
 Epic: Product Detail and Reviews
 
-- As a shopper, I want to view detailed information about a product, including images, descriptions, and specifications.
-- As a shopper, I want to be able to read reviews and ratings for a product before making a purchase decision.
-- As a shopper, I want to be able to add a product to my wishlist for future reference.
+- [As a shopper, I want to view detailed information about a product, including images, descriptions, and specifications so that I can be better informed about my purchases.](https://github.com/0davidog/VideoDrome/issues/6)
+- [As a shopper, I want to be able to read reviews for a product so that I can be better informed before making a purchase decision.](https://github.com/0davidog/VideoDrome/issues/7)
+- [As a registered site-user, I want to be able to add a product to my wishlist so that I can easily return to a product I want to purchase at a more convenient time.](https://github.com/0davidog/VideoDrome/issues/8)
+- [As a registered site-user, I can give a star rating to a product so that I can express my view on product quality without writing a review.](https://github.com/0davidog/VideoDrome/issues/12)
 
 Epic: Shopping Cart and Checkout
 
-- As a shopper, I want to be able to add items to my shopping cart.
-- As a shopper, I want to be able to view and edit the contents of my shopping cart before proceeding to checkout.
+- [As a shopper, I want to be able to add items to my shopping basket so that I can purchase multiple products in one transaction.](https://github.com/0davidog/VideoDrome/issues/9)
+- [As a shopper, I want to be able to view and edit the contents of my shopping cart before proceeding to checkout so that I can be sure of my final purchase decision.](https://github.com/0davidog/VideoDrome/issues/10)
 - As a shopper, I want to be able to securely checkout and provide shipping and payment information.
 
 Epic: Order Management
