@@ -100,6 +100,150 @@ Wireframes were created using Balsamiq to design the general look of the sites m
 ![Basket](https://github.com/0davidog/VideoDrome/assets/135815736/eb8e798a-de3b-4c6f-99c0-b5ed9bf38931)
 
 ## Information Architecture
+
+### Full ERD
+![VideoDrome_ERD_full](https://github.com/0davidog/VideoDrome/assets/135815736/c8fa55be-7af0-4df2-aaed-c5d11b46b0cd)
+
+### Video Model
+![VideoDrome_ERD_Video](https://github.com/0davidog/VideoDrome/assets/135815736/edf1a469-f4f9-4005-afa4-84a6a95d6c72)
+
+|DB Key|Data Type|Purpose|Additional Information|
+|------|---------|-------|---------------|
+
+Model functions.
+- 
+
+- [ ] Create - 
+- [ ] Read - 
+- [ ] Update - 
+- [ ] Delete - 
+
+### UserRating Model
+![VideoDrome_ERD_userrating](https://github.com/0davidog/VideoDrome/assets/135815736/bd8aa67e-6f03-4bca-a37b-38025218205b)
+
+|DB Key|Data Type|Purpose|Additional Information|
+|------|---------|-------|---------------|
+
+Model functions.
+- 
+
+- [ ] Create - 
+- [ ] Read - 
+- [ ] Update - 
+- [ ] Delete - 
+
+### UserReview Model
+![VideoDrome_ERD_userreview](https://github.com/0davidog/VideoDrome/assets/135815736/d370e0b8-0b64-460e-981e-e478e71c90f9)
+
+|DB Key|Data Type|Purpose|Additional Information|
+|------|---------|-------|---------------|
+
+Model functions.
+- 
+
+- [ ] Create - 
+- [ ] Read - 
+- [ ] Update - 
+- [ ] Delete - 
+
+### Language Model
+![VideoDrome_ERD_language](https://github.com/0davidog/VideoDrome/assets/135815736/dc0e994c-7e39-4f2e-8ea5-58719005d4aa)
+
+|DB Key|Data Type|Purpose|Additional Information|
+|------|---------|-------|---------------|
+
+Model functions.
+- 
+
+- [ ] Create - 
+- [ ] Read - 
+- [ ] Update - 
+- [ ] Delete - 
+
+### Subtitle Model
+![VideoDrome_ERD_subtitle](https://github.com/0davidog/VideoDrome/assets/135815736/96f8b766-6bee-41af-bfb8-4971b32fc3d1)
+
+|DB Key|Data Type|Purpose|Additional Information|
+|------|---------|-------|---------------|
+
+Model functions.
+- 
+
+- [ ] Create - 
+- [ ] Read - 
+- [ ] Update - 
+- [ ] Delete - 
+
+### Region Model
+![VideoDrome_ERD_region](https://github.com/0davidog/VideoDrome/assets/135815736/9916c9f2-c281-46fc-ba4e-6362a7e8904c)
+
+|DB Key|Data Type|Purpose|Additional Information|
+|------|---------|-------|---------------|
+
+Model functions.
+- 
+
+- [ ] Create - 
+- [ ] Read - 
+- [ ] Update - 
+- [ ] Delete - 
+
+### Genre Model
+![VideoDrome_ERD_genre](https://github.com/0davidog/VideoDrome/assets/135815736/8a4c78f4-c39f-4f9a-a3e7-ee7d8139fe83)
+
+|DB Key|Data Type|Purpose|Additional Information|
+|------|---------|-------|---------------|
+
+Model functions.
+- 
+
+- [ ] Create - 
+- [ ] Read - 
+- [ ] Update - 
+- [ ] Delete - 
+
+### CustomerOrder Model
+![VideoDrome_ERD_customerorder](https://github.com/0davidog/VideoDrome/assets/135815736/0bf29d4f-a8ab-4bb0-81ce-a7f8acbe4b6e)
+
+|DB Key|Data Type|Purpose|Additional Information|
+|------|---------|-------|---------------|
+
+Model functions.
+- 
+
+- [ ] Create - 
+- [ ] Read - 
+- [ ] Update - 
+- [ ] Delete - 
+
+### OrderItem Model
+![VideoDrome_ERD_orderitem](https://github.com/0davidog/VideoDrome/assets/135815736/1666a421-b7e6-4ff9-8bca-f84f538ae328)
+
+|DB Key|Data Type|Purpose|Additional Information|
+|------|---------|-------|---------------|
+
+Model functions.
+- 
+
+- [ ] Create - 
+- [ ] Read - 
+- [ ] Update - 
+- [ ] Delete - 
+
+### Customer
+![VideoDrome_ERD_customer](https://github.com/0davidog/VideoDrome/assets/135815736/51730266-718a-4e39-b760-4edf2704ba5a)
+
+|DB Key|Data Type|Purpose|Additional Information|
+|------|---------|-------|---------------|
+
+Model functions.
+- 
+
+- [ ] Create - 
+- [ ] Read - 
+- [ ] Update - 
+- [ ] Delete - 
+
 ## Design Choices
 ## Features
 ## Testing
