@@ -88,6 +88,8 @@ As this is an accedemic porfolio project there is only one interation in which t
 
 Wireframes were created using Balsamiq to design the general look of the sites main features.
 
+<details><summary>DETAILS</summary>
+
 #### Landing Page Displaying All Products:
 
 ![Home](https://github.com/0davidog/VideoDrome/assets/135815736/70922b57-666d-4ca8-8a6f-9a7108ddcd37)
@@ -100,7 +102,11 @@ Wireframes were created using Balsamiq to design the general look of the sites m
 
 ![Basket](https://github.com/0davidog/VideoDrome/assets/135815736/eb8e798a-de3b-4c6f-99c0-b5ed9bf38931)
 
+</details>
+
 ## Information Architecture
+
+<details><summary>DETAILS</summary>
 
 ### Full ERD
 ![VideoDrome_ERD_full](https://github.com/0davidog/VideoDrome/assets/135815736/c8fa55be-7af0-4df2-aaed-c5d11b46b0cd)
@@ -245,17 +251,41 @@ Model functions.
 - [ ] Update - 
 - [ ] Delete - 
 
-## Design Choices
-![videodrome_video_cover_videodrome_blu_ray](https://github.com/0davidog/VideoDrome/assets/135815736/75b7ae34-43e2-427e-809f-8bccb3f682f9)
+</details>
 
-![videodrome_video_cover_videodrome_4k](https://github.com/0davidog/VideoDrome/assets/135815736/a4500b67-7ae7-4fa7-b266-dcebbf68d64f)
+## Design Choices
+
+### Title and Visual Inspiration
+
+|Detail|Image|
+|--|--|
+|detail|![videodrome_video_cover_videodrome_blu_ray](https://github.com/0davidog/VideoDrome/assets/135815736/75b7ae34-43e2-427e-809f-8bccb3f682f9)|
+|detail|![videodrome_video_cover_videodrome_4k](https://github.com/0davidog/VideoDrome/assets/135815736/a4500b67-7ae7-4fa7-b266-dcebbf68d64f)|
+
+### Chosen Colour Palette
+
 ![videodrome_palette](https://github.com/0davidog/VideoDrome/assets/135815736/ed47af8e-2ac6-4af6-b226-b96f4e36607a)
+[via coolors](https://coolors.co/041348-198754-dc3545-0d6efd-ffc107)
+
+### Font Choice
 
 ![videodrome_font_color_choice](https://github.com/0davidog/VideoDrome/assets/135815736/5ec04738-2823-456e-b30b-5b22fb812dc7)
-![videodrome_logo](https://github.com/0davidog/VideoDrome/assets/135815736/e21a1c11-57ce-4087-b89c-d67d5fdc463c)
-![videodrome_bg](https://github.com/0davidog/VideoDrome/assets/135815736/8fd207ee-24c7-4b22-8b88-6553c2e33ce9)
+
+### Graphic Design
+
+|Detail|Image|
+|--|--|
+|detail|![videodrome_logo](https://github.com/0davidog/VideoDrome/assets/135815736/e21a1c11-57ce-4087-b89c-d67d5fdc463c)|
+|detail|![videodrome_bg](https://github.com/0davidog/VideoDrome/assets/135815736/8fd207ee-24c7-4b22-8b88-6553c2e33ce9)|
 
 ## Features
+
+<details><summary>DETAILS</summary>
+
+### Features
+
+</details>
+
 ## Testing
 
 Please refer to this seperate testing document for a full rundown of tests and audits:
