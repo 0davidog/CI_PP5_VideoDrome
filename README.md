@@ -86,7 +86,7 @@ As this is an accedemic porfolio project there is only one interation in which t
 
 Please refer to this seperate testing document for a full rundown of tests and audits:
 
-[TEST-DOCUMENT](#)
+[TEST-DOCUMENT](https://github.com/0davidog/VideoDrome/blob/main/TESTING.md)
 
 ## Technologies Used
 
