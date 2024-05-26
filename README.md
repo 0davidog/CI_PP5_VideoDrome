@@ -262,8 +262,32 @@ Please refer to this seperate testing document for a full rundown of tests and a
 - Python
 
 ### Frameworks, Libraries & Programs Used
+
+- Django
+- Bootstrap
+- Heroku (deployment)
+- Cloudinary (image hosting)
+- Django-Allauth (user authentication)
+- VScode (IDE)
+- Balsamiq (for Wireframes)
+- ERD made with [Lucidchart](https://lucid.app/)
+- GitBash
+- Full requirements.txt:
+
+<details><summary>REQUIREMENTS LIST</summary>
+  
+```
+
+```
+
+</details>
+
 ## Deployment
+
 ### Prerequisites
+
+This project requires some steps in preparation...
+
 ### Heroku Postgres Database:
 
 Configuring your Django project to use Heroku Postgres involves several steps, including setting up the database configuration, installing necessary dependencies, and adjusting settings for deployment. Here's a general guide to help you migrate your Django project to Heroku Postgres:
@@ -330,10 +354,203 @@ After deployment, you can verify that your Django app is running correctly on He
 By following these steps, you should be able to successfully migrate your Django project to Heroku Postgres. Make sure to test your application thoroughly after deployment to ensure everything is working as expected. If you encounter any issues, Heroku provides detailed documentation and support resources to assist you further.
 
 ### Create Superuser
-### Cloudinary or AWS
+
+Use this command and enter details to create your superuser account:
+
+`python3 manage.py createsuperuser`
+
+### Cloudinary
+
+Cloudinary is a hosting platform used for images in this project.
+
+<details><summary>DETAILS</summary>
+
+
+- Install The necessary Cloudinary Packages:
+  
+`pip3 install cloudinary~=1.36.0 dj3-cloudinary-storage~=0.0.6 urllib3~=1.26.15`
+
+- Don't forget to add to requirements file:
+  
+`pip3 freeze --local > requirements.txt`
+
+- Visit [Cloudinary](https://cloudinary.com/) and set up a free account if you don't already have one (you can use Google or Github to create an account easily).
+- Login
+- Navigate to Programmable Media - Dashboard
+- Copy the API environment variable: CLOUDINARY_URL and fit it into your env.py file in this format:
+  
+`os.environ.setdefault("CLOUDINARY_URL", "<The URL copied from Cloudinary Dashboard>")`
+
+- (remove 'CLOUDINARY_URL=' from the copy-pasted string)
+- Open settings.py and add cloudinary and cloudinary_storage to INSTALLED_APPS.
+- (The cloudinary_storage app should by place directly under django.contrib.staticfiles)
+
+</details>
+
 ### Fork and Clone the Repository
+
+<details><summary>DETAILS</summary>
+
+#### Fork
+
+To keep the original branch unaltered you can fork a repository on github.
+
+- Navigate to the repository you want to fork.
+- Click the 'Fork' button at the top right.
+- Select the 'Owner' from the dropdown menu.
+- Enter an optional description.
+- Choose whether or not to copy main branch only.
+- Click Create fork.
+
+Source: [Github Docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
+    
+#### Clone
+
+On Github you can clone your repository to create a local and sync between the two locations.
+
+- Navigate to the main page of the repository.
+- Click thr '<>Code' button..
+- Copy the repository URL.
+- Open Git Bash or a terminal in your IDE.
+- Choose the directory you want to place the repository.
+- Type 'git clone', and then paste in the copied repo URL.
+
+`git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY`
+
+- Press Enter to create your local clone.
+
+Source: [Github Docs]([https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository))
+
+</details>
+
 ### Local Deployment
+
+<details><summary>DETAILS</summary>
+
+
+To get started with local development in GitPod or your preferred IDE, follow these steps:
+
+- Clone the repository.
+- Install required packages (if project is already worked on)
+
+`pip3 install -r requirements.txt`
+
+- Create an 'env.py file in the app's root directory for environment variables (if using CI template this should already exist).
+
+- In the 'env.py file, add a secret key in this format:
+
+```
+import os
+
+os.environ.setdefault(
+    "SECRET_KEY", 
+    "<your chosen key goes here>"
+)
+```
+
+- Add to settings.py in this format:
+
+```
+import os
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = os.environ.get("SECRET_KEY")
+```
+
+- Start the server by running the following command:
+
+`python3 manage.py runserver`
+
+- Now you can access the application by opening the provided URL in your browser (add your browser url to allowed hosts).
+
+`ALLOWED_HOSTS = ['<browser URL>']`
+
+</details>
+
 ### Production Deployment
+
+<details><summary>DETAILS</summary>
+
+        
+Prepare the Django Project:
+
+- Ensure your Django project is properly configured and runs smoothly locally.
+- Make sure you have a requirements.txt file listing all Python dependencies required for your project.
+- Ensure your project's settings are set up to work in a production environment (e.g., DEBUG = False, static files configuration, database settings).
+
+Create a Procfile:
+- Heroku uses a Procfile to determine how to run your application.
+- Create a file named Procfile (no file extension) in your project's root directory.
+- Inside the Procfile, specify the command needed to run your Django application. 
+
+For example:
+
+`web: gunicorn your_project_name.wsgi`
+
+Create a runtime.txt File:
+
+- Heroku needs to know which Python version your application requires. Create a runtime.txt file in your project's root directory.
+- Inside runtime.txt, specify the Python version.
+
+For example:
+
+`python-3.9.5`
+
+Install Gunicorn:
+
+- Gunicorn is a WSGI HTTP server for Python web applications, and it's commonly used for deploying Django applications.
+- Install Gunicorn and add it to your requirements.txt file:
+
+`pip install gunicorn`
+`pip freeze > requirements.txt`
+
+Set Up Database:
+
+See [ElephantSQL](####-ElephantSQL-Database)
+
+Ad Heroku to allowed hosts in settins.py:
+
+`ALLOWED_HOSTS = ['<browser URL>', '.herokuapp.com']`
+
+Collect Static Files:
+
+If your project uses static files, collect them using Django's collectstatic command:
+
+`heroku run python manage.py collectstatic`
+
+Commit your changes to Git:
+
+`git add .
+git commit -m "Initial commit"`
+
+Create a new app on Heroku:
+- Head over to heroku and log in. Choose 'create new app'.
+- Choose a name for your app and your location. Hit 'create app'.
+- Select the 'Settings' tab.
+- In Config Vars, reveal config vars.
+- Enter the config variables used in your env.py file.
+- For example:
+  - CLOUDINARY_URL
+  - DATABASE_URL
+  - EMAIL_USER - (gmail address)
+  - EMAIL_PASS- (gmail password)
+  - SECRET_KEY (The Django secret key is a crucial security setting used to provide cryptographic signing.)
+   
+    It is used for:
+    - Security: The secret key is used to generate hashes for password reset tokens, user session tokens, and other cryptographic signatures. It helps protect against various security threats such as session hijacking, data tampering, and CSRF (Cross-Site Request Forgery) attacks.
+    - Session Management: Django uses the secret key to sign and verify session cookies. This ensures that the session data stored in cookies cannot be tampered with by malicious users.
+    - CSRF Protection: Django uses the secret key to create tokens for preventing CSRF attacks. When a form is rendered, Django includes a hidden CSRF token in the form. When the form is submitted, Django verifies that the CSRF token matches the one generated for the user's session, thus preventing CSRF attacks.
+    - Cryptographic Signatures: The secret key is used to sign various pieces of data within Django, such as cookies, messages, and tokens. This allows Django to verify the integrity and authenticity of these pieces of data.
+    - Given its critical role in security and various Django functionalities, it's essential to keep the secret key secret and never share it publicly or with unauthorized individuals. If the secret key is compromised, it could potentially lead to security vulnerabilities in your Django application.
+
+- Head over to the Deploy tab.
+- Select Github (you will need to authorize this).
+- Choose your repository.
+- Manually deploy the main branch of this GitHub repo.
+- You can now view your app.
+
+</details>
+
 ## Credits
 ### Content
 ### Media
