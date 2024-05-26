@@ -8,13 +8,13 @@ VideoDrome is an ecommerce website dedicated to the sale of genre and cult films
 
 The live app is hosted on ther Heroku platform. More details on how the project was deployed can be found below here.
 
-[Heroku Link](#)
+[Heroku Link](https://videodrome-ff881eaa1b51.herokuapp.com/)
 
 ## Repo
 
 The project's code and file repository is hosted by Github. More details on cloning or forking the repository can be found here.
 
-[Github link](#)
+[Github link](https://github.com/0davidog/VideoDrome)
 
 ## Author
 
@@ -69,9 +69,14 @@ Epic: Order Management
 - As a shopper, I want to be able to view my order history and reorder items easily.
 
 ### Project Backlog
+
+Due to the small scope of this project, having a project backlog and seperate iterations didn't seem neccessary as their would only be one project to client hand-over. It was instead decided to keep all the user stories in the one project iteration list. A project backlog milestone was created however on github to follow agile practice.
+
+[Project Backlog](https://github.com/0davidog/VideoDrome/milestone/2)
+
 ### Iteration 01 – Due 04/06/2024
 
-[Iteration on Github]()
+[Iteration on Github](https://github.com/0davidog/VideoDrome/milestone/1)
 
 As this is an accedemic porfolio project there is only one interation in which this project will be developed and tested. That being the project start date to it's hand-in date by which all its must-have deliverables are to be achieved.
 
