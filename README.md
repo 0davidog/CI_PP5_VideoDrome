@@ -246,6 +246,15 @@ Model functions.
 - [ ] Delete - 
 
 ## Design Choices
+![videodrome_video_cover_videodrome_blu_ray](https://github.com/0davidog/VideoDrome/assets/135815736/75b7ae34-43e2-427e-809f-8bccb3f682f9)
+
+![videodrome_video_cover_videodrome_4k](https://github.com/0davidog/VideoDrome/assets/135815736/a4500b67-7ae7-4fa7-b266-dcebbf68d64f)
+![videodrome_palette](https://github.com/0davidog/VideoDrome/assets/135815736/ed47af8e-2ac6-4af6-b226-b96f4e36607a)
+
+![videodrome_font_color_choice](https://github.com/0davidog/VideoDrome/assets/135815736/5ec04738-2823-456e-b30b-5b22fb812dc7)
+![videodrome_logo](https://github.com/0davidog/VideoDrome/assets/135815736/e21a1c11-57ce-4087-b89c-d67d5fdc463c)
+![videodrome_bg](https://github.com/0davidog/VideoDrome/assets/135815736/8fd207ee-24c7-4b22-8b88-6553c2e33ce9)
+
 ## Features
 ## Testing
 
@@ -290,6 +299,8 @@ Please refer to this seperate testing document for a full rundown of tests and a
 This project requires some steps in preparation...
 
 ### Heroku Postgres Database:
+
+<details><summary>DETAILS</summary>
 
 Configuring your Django project to use Heroku Postgres involves several steps, including setting up the database configuration, installing necessary dependencies, and adjusting settings for deployment. Here's a general guide to help you migrate your Django project to Heroku Postgres:
 
@@ -353,6 +364,8 @@ Verify Deployment:
 After deployment, you can verify that your Django app is running correctly on Heroku by visiting your Heroku app's URL in a web browser.
 
 By following these steps, you should be able to successfully migrate your Django project to Heroku Postgres. Make sure to test your application thoroughly after deployment to ensure everything is working as expected. If you encounter any issues, Heroku provides detailed documentation and support resources to assist you further.
+
+</details>
 
 ### Create Superuser
 
