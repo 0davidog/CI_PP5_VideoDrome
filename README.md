@@ -62,7 +62,7 @@ Epic: Shopping Cart and Checkout
 
 - [As a shopper, I want to be able to add items to my shopping basket so that I can purchase multiple products in one transaction.](https://github.com/0davidog/VideoDrome/issues/9)
 - [As a shopper, I want to be able to view and edit the contents of my shopping cart before proceeding to checkout so that I can be sure of my final purchase decision.](https://github.com/0davidog/VideoDrome/issues/10)
-- As a shopper, I want to be able to securely checkout and provide shipping and payment information.
+- [As a shopper, I want to be able to securely check out and provide shipping and payment information so that I may purchase items with ease and confidence.](https://github.com/0davidog/VideoDrome/issues/15)
 
 Epic: Order Management
 - As a shopper, I want to be able to track the status of my orders.
