@@ -49,7 +49,7 @@ Epic: Product Browsing and Searching
 
 - [As a user, I want to be able to browse products by category so that I can better find the kind of products I'm interested in.](https://github.com/0davidog/VideoDrome/issues/4)
 - [As a user, I want to be able to search for products by name or keyword so that I can find a particular product I'm interested in.](https://github.com/0davidog/VideoDrome/issues/5)
-- As a user, I want to be able to filter search results by price, brand, size, etc.
+- [As a user, I want to be able to order products by price or release date, so I can browse in mind of the cheapest or newest items.](https://github.com/0davidog/VideoDrome/issues/14)
 
 Epic: Product Detail and Reviews
 
