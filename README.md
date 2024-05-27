@@ -6,13 +6,13 @@ VideoDrome is an ecommerce website dedicated to the sale of genre and cult films
 
 ## Live Site
 
-The live app is hosted on ther Heroku platform. More details on how the project was deployed can be found below here.
+The live app is hosted on ther Heroku platform. More details on how the project was deployed can be found below [here]().
 
 [Heroku Link](https://videodrome-ff881eaa1b51.herokuapp.com/)
 
 ## Repo
 
-The project's code and file repository is hosted by Github. More details on cloning or forking the repository can be found here.
+The project's code and file repository is hosted by Github. More details on cloning or forking the repository can be found [here]().
 
 [Github link](https://github.com/0davidog/VideoDrome)
 
@@ -21,6 +21,9 @@ The project's code and file repository is hosted by Github. More details on clon
 David C. O'Gara
 
 ## Table of Contents
+
+[]
+
 ## Agile Process
 
 This project is to be made using Agile develpment pricipals to plan and complete the work to a minimum viable product. This involves seperating the work in to a project back log of user stories in which an iteration of the project (MVP) must be achieved by project deadline.
@@ -89,8 +92,15 @@ Due to the small scope of this project, having a project backlog and seperate it
 As this is an accedemic porfolio project there is only one interation in which this project will be developed and tested. That being the project start date to it's hand-in date by which all its must-have deliverables are to be achieved.
 
 ## UX
+
 ### Project Goal
+
+The project goal is a site that allows for the browsing and purchase of physical media items in the form of DVD, Blu-ray and 4k Ultra HD disks.
+
 ### Target Audience
+
+The target audience will be enthusiasts of genre and cult cinema, physical media collectors. Due to the content of many of these films the largest target audience would likely be 15 and up in keeping with film certification laws. An older audience would be more likely to be shopping for physical media due to a sense of nostalgia and not having been raised with streaming services and digital media purchases.
+
 ### Wireframes
 
 Wireframes were created using Balsamiq to design the general look of the sites main features.
