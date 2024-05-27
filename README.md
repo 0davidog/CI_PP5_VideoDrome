@@ -66,8 +66,15 @@ Epic: Shopping Cart and Checkout
 
 Epic: Order Management
 - As a shopper, I want to be able to track the status of my orders.
-- As a shopper, I want to receive email notifications for order confirmation, shipment, and delivery.
-- As a shopper, I want to be able to view my order history and reorder items easily.
+- As a shopper, I want to receive an email notification for order confirmation.
+- As a shopper, I want to be able to view my order history.
+
+Epic: Audience Reach and Search Engine optimisation.
+
+- [As a site-owner, I want to include a site-map to ensure better site navigation and search engine optimisation](https://github.com/0davidog/VideoDrome/issues/17)
+- [As a site owner, I want to Include Meta Description tags in the application HTML so that I can improve search engine optimisation](https://github.com/0davidog/VideoDrome/issues/18)
+- [As a site-owner, I want to include a robots.txt file in my site so that I can control search engine bot crawling, preserve bandwidth and protect sensitive data.](https://github.com/0davidog/VideoDrome/issues/22)
+- [As a site-owner, I want to include a 404 response page with an appropriate redirect for attempted access to non-existent content so that users who stumble on such errors are not put off from browsing.](https://github.com/0davidog/VideoDrome/issues/23)
 
 ### Project Backlog
 
