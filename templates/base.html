@@ -70,7 +70,9 @@
     {% include 'includes/toast.html' %}
 
     {% block extras %}
+    {% if is_index %}
     <script src="{% static 'js/background.js' %}"></script>
+    {% endif %}
     <script src="{% static 'js/toast.js' %}"></script>
     <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
     <script src="{% static 'js/mailchimp.js' %}"></script>

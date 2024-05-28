@@ -59,6 +59,7 @@ def in_basket(request):
         'all_item_count': all_item_count,
         'grand_total': grand_total,
         'free_delivery_delta': free_delivery_delta,
+        'delivery': delivery,
     }
     # Add basket list,
     # total cost of the basket

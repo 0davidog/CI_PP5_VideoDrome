@@ -66,6 +66,9 @@
     <div class="row mb-4 text-end">
         <div class="col">
             <h3>Total: £{{ total_basket_cost }}</h3>
+            {% if free_delivery_delta > 0 %}
+            <p>Spend £{{ free_delivery_delta }} more for free delivery.</p>
+            {% endif %}
         </div>
     </div>
     

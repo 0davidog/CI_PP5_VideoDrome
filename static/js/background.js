@@ -3,6 +3,7 @@
 window.addEventListener('DOMContentLoaded', () => {
     
     function updateBackgroundImage() {
+
         const bgElement = document.querySelector('#base-body');
     
         const mobileImageUrl = 'static/images/videodrome_bg_mobile.webp';
@@ -13,12 +14,14 @@ window.addEventListener('DOMContentLoaded', () => {
         } else {
             bgElement.style.backgroundImage = `url('${desktopImageUrl}')`;
         }
+        
     }
     
+
     // Initial check
     updateBackgroundImage();
     
     // Update on window resize
     window.addEventListener('resize', updateBackgroundImage);
-    
-    });
+
+});

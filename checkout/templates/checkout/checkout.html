@@ -60,7 +60,8 @@
 
     <div class="row text-end">
         <div class="col">
-            Total to pay: £{{ grand_total }}
+            <p>Delivery: £{{ delivery }}</p>
+            <h3>Total to pay: £{{ grand_total }}</h3>
         </div>
     </div>
 
@@ -162,7 +163,7 @@
                 <a href="{% url 'videos' %}" class="btn btn-secondary">Continue Shopping?</a>
                 <button type="submit" class="btn btn-success" id="submit-button">Submit Order</button>
                 <p class="text-danger mt-4">
-                    <i class="fa-solid fa-triangle-exclamation"></i>&nbsp;Your card will be charged £{{ total_basket_cost }}
+                    <i class="fa-solid fa-triangle-exclamation"></i>&nbsp;Your card will be charged £{{ grand_total }}
                 </p>
                 {% else %}
                 <a href="{% url 'videos' %}" class="btn btn-success">Continue Shopping?</a>

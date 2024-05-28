@@ -9,7 +9,7 @@ from videos.models import Video, UserRating, UserReview
 from .forms import SavedAddressForm, SavedDetailsForm, MessageForm
 from videos.forms import VideoForm
 from customer.models import CustomerMessageThread, CustomerMessage
-from .email import send_customer_message
+from .email import send_customer_message, reply_to_customer
 
 # Create your views here.
 
@@ -355,7 +355,10 @@ def reply_messages(request, thread):
             # Save the message object to the database
             message.save()
             # Send the message
-            send_customer_message(message)
+            if request.user.is_staff:
+                send_customer_message(message)
+            else:
+                reply_to_customer(message)
             # Add a success message
             # indicating the successful sending of the message
             messages.success(request, 'Your message has been sent.')
