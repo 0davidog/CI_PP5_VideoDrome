@@ -2,11 +2,13 @@
 
 # VideoDrome
 
-VideoDrome is an ecommerce website dedicated to the sale of genre and cult films on blu-ray, DVD or UHD.
+<em>"Explore a vast collection of new and used DVDs, Blu-rays, and 4k Ultra HD films spanning the realms of horror, sci-fi, thriller and classic cinema. From cult favorites to timeless classics, find your next movie obsession at our online store today."</em>
+
+VideoDrome is an ecommerce website dedicated to the sale of genre, cult and classic films on physical media such as blu-ray, DVD or UHD.
 
 ## Live Site
 
-The live app is hosted on ther Heroku platform. More details on how the project was deployed can be found below [here]().
+The live app is hosted on the Heroku platform. More details on how the project was deployed can be found below [here]().
 
 [Heroku Link](https://videodrome-ff881eaa1b51.herokuapp.com/)
 
@@ -29,6 +31,8 @@ David C. O'Gara
 This project is to be made using Agile develpment pricipals to plan and complete the work to a minimum viable product. This involves seperating the work in to a project back log of user stories in which an iteration of the project (MVP) must be achieved by project deadline.
 
 ### User Stories
+
+<details><summary>DETAILS</summary>
 
 Following Agile development practice this project has been divided into user stories to give a clear understanding of the project needs, goals and features and to split the work in to small achievable sets of tasks.
 
@@ -78,6 +82,8 @@ Epic: Audience Reach and Search Engine optimisation.
 - [As a site owner, I want to Include Meta Description tags in the application HTML so that I can improve search engine optimisation](https://github.com/0davidog/VideoDrome/issues/18)
 - [As a site-owner, I want to include a robots.txt file in my site so that I can control search engine bot crawling, preserve bandwidth and protect sensitive data.](https://github.com/0davidog/VideoDrome/issues/22)
 - [As a site-owner, I want to include a 404 response page with an appropriate redirect for attempted access to non-existent content so that users who stumble on such errors are not put off from browsing.](https://github.com/0davidog/VideoDrome/issues/23)
+
+</details>
 
 ### Project Backlog
 
@@ -274,33 +280,214 @@ Model functions.
 
 ### Title and Visual Inspiration
 
+<details><summary>DETAILS</summary>
+
 |Detail|Image|
 |--|--|
 |detail|![videodrome_video_cover_videodrome_blu_ray](https://github.com/0davidog/VideoDrome/assets/135815736/75b7ae34-43e2-427e-809f-8bccb3f682f9)|
 |detail|![videodrome_video_cover_videodrome_4k](https://github.com/0davidog/VideoDrome/assets/135815736/a4500b67-7ae7-4fa7-b266-dcebbf68d64f)|
 
+</details>
+
 ### Chosen Colour Palette
+
+<details><summary>DETAILS</summary>
 
 ![videodrome_palette](https://github.com/0davidog/VideoDrome/assets/135815736/ed47af8e-2ac6-4af6-b226-b96f4e36607a)
 [via coolors](https://coolors.co/041348-198754-dc3545-0d6efd-ffc107)
 
+</details>
+
 ### Font Choice
+
+<details><summary>DETAILS</summary>
 
 ![videodrome_font_color_choice](https://github.com/0davidog/VideoDrome/assets/135815736/5ec04738-2823-456e-b30b-5b22fb812dc7)
 
+</details>
+
 ### Graphic Design
+
+<details><summary>DETAILS</summary>
 
 |Detail|Image|
 |--|--|
 |detail|![videodrome_logo](https://github.com/0davidog/VideoDrome/assets/135815736/e21a1c11-57ce-4087-b89c-d67d5fdc463c)|
 |detail|![videodrome_bg](https://github.com/0davidog/VideoDrome/assets/135815736/8fd207ee-24c7-4b22-8b88-6553c2e33ce9)|
 
-## Features
+</details>
+
+## E-commerce Business Model
+
+The ecommerce business model of this site revolves around selling physical media products (DVDs, Blu-rays, and 4k Ultra HD films) related to horror, sci-fi, thriller and classic film genres predominently. 
+Here's a breakdown of its key components:
+
+- Product Offering: The site will offer a range of products including both new and used DVDs, Blu-rays, and 4k Ultra HD films. The focus is on niche genres such as horror, sci-fi, and classic films, catering to enthusiasts and collectors within these genres.
+- Inventory Management: The business will manage an inventory of physical media, ensuring availability of both popular and niche titles in its catalog. This may involve sourcing products from distributors, acquiring used items through trade-ins or purchases, and maintaining stock levels to meet customer demand.
+- Online Platform: The site will operate as an online platform where customers can browse, search, and purchase products. It should include features such as product listings, search functionality, shopping cart, secure payment processing, and order tracking (order tracking should be listed as a future feature as it is out of this project's scope).
+- Customer Experience: Providing a positive customer experience is crucial for an ecommerce business model. This will involve offering a user-friendly website interface, accurate product descriptions and images, secure payment options, responsive customer support, and efficient order fulfillment and delivery (order fullfillment and delivery are outside the scope of this project and will be listed as future features).
+- Marketing and Promotion: Marketing efforts should focus on targeting audiences interested in horror, sci-fi, thriller, and classic films through channels such as social media, email newsletters, content marketing (e.g., blog posts, reviews), and partnerships with influencers or related websites. Special promotions, discounts, and loyalty programs may also be used to attract and retain customers.
+- Logistics and Fulfillment: The business would, if fully operational, manage logistics and fulfillment operations to ensure timely delivery of orders. This includes packaging products securely, arranging shipping or delivery services, and handling returns or exchanges.
+- Revenue Model: Revenue is primarily generated through the sale of products, with pricing determined based on factors such as demand, rarity, condition (for used items), and competition. Additional revenue streams to consider may include shipping fees, handling fees, and potentially advertising or sponsorship revenue if the site features relevant promotional content.
+
+Overall, the ecommerce business model of this site combines niche product offerings with an online platform and marketing efforts tailored to attract and engage customers interested in horror, sci-fi, and classic films.
+
+### Facebook Business Page
 
 <details><summary>DETAILS</summary>
 
+A Facebook buisness page will be set up for this project. Setting up a Facebook business page can be an effective way to enhance your online presence, engage with your audience, and target potential customers. This would potentially drive sales for VideoDrome's DVD, Blu-ray, and 4k Ultra HD film business.
+
+My goals for setting up a Facebook business page for VideoDrome could include:
+
+- Increased Visibility: By creating a Facebook business page, I can increase my online presence and make your products more visible to potential customers.
+- Direct Communication: A Facebook business page allows you to directly communicate with both my target audience and potential or existing customers. I can engage with customers through comments, messages, and posts, answering their questions, addressing concerns, and building relationships and a sense of community.
+- Targeted Advertising: Facebook provides advertising tools that would allow me to target specific demographics and interests. This means I can tailor adverts to reach people who are most likely to be interested in horror, sci-fi, thriller, and classic films, increasing the effectiveness of any marketing efforts.
+- Insights and Analytics: Facebook offers insights and analytics tools that provide valuable data about your audience, such as demographics, engagement metrics, and preferences. This information could help me better understand my customers and refine marketing strategies accordingly.
+- Promotion and Marketing: I could easily use a Facebook business page to promote products, announce new arrivals, share special offers and discounts, as well as showcase customer reviews and feedback. This would hopefully help to drive traffic to the website and increase potential sales.
+- Community Building: By creating a Facebook business page, I could build a community around my brand and products, encouraging discussions, sharing content, and creating a sense of belonging amongst my target audience.
+
+[screenshot of the FB page]
+
+</details>
+
+### Newsletter Signup
+
+<details><summary>DETAILS</summary>
+
+A email newsletter sign-up link will be added to this site with the use of mailchimp's free services.
+
+My goals for setting up an email newsletter for VideoDrome could include:
+
+- Direct Communication: An email newsletter may provide a direct channel of communication with my audience. Unlike social media platforms where posts may get lost in users' feeds, emails land directly in subscribers' inboxes, giving you a higher chance for user engagement.
+- Building Customer Relationships: Through regular newsletters, I could potentially build stronger relationships with my customers by providing them with useful content such as updates, and exclusive offers. This may help to keep the VideoDrome brand top-of-mind and encourage repeat purchases.
+- Promoting Products and Offers: Email newsletters allow for promotion of products and special offers directly to the audience. With news of new arrivals, sales, discounts, or limited-time promotions, a newsletter coul drive traffic to the store and increase sale potential.
+- Targeted Marketing: With email marketing platforms, you can segment your subscriber list based on factors such as purchase history, interests, and engagement level. This enables you to send targeted and personalized emails to different segments of your audience, increasing relevance and effectiveness.
+- Measurable Results: Email marketing platforms provide analytics and reporting tools that allow you to track the performance of your newsletters. You can see metrics such as open rates, click-through rates, and conversion rates, enabling you to measure the effectiveness of your campaigns and make data-driven decisions to optimize future efforts.
+- Cost-Effectiveness: Compared to traditional marketing channels, email marketing is relatively inexpensive. Once you have set up your email list and created your templates, the cost of sending out newsletters is minimal, making it a cost-effective way to reach your audience.
+- Driving Website Traffic: By including links to your website or specific product pages in your newsletters, you can drive traffic directly to your site. This not only increases the visibility of your products but also may improve the website's SEO ranking.
+
+[Screen shots of newsletter]
+
+</details>
+
+### Links
+
+    sponsored links are flagged with rel="sponsored"
+    social links and other links that go outside domain have rel="nofollower" to signal to search engines that those links are not associated with our specific domain
+    show facebook link
+
+
+## SEO Strategy
+
+### Keywords
+
+<details><summary>DETAILS</summary>
+
+Despite the keyword Meta tag being no long used in SEO, keyword research is still a useful practice for brainstorming how best to develop your site's content in a way that's relevant to your subject and audience.
+
+![Screenshot 2024-05-29 at 14-42-56 dvd and blu-ray films for sale - Google Search](https://github.com/0davidog/VideoDrome/assets/135815736/ae88c72d-824f-43a1-8349-f94bd5b9c911)
+
+The process for keyword research on the Videorome project looks like this:
+- First I brainstormed the general topics of the site such as film, video, genre.
+- Then a broad list of keywords were collected in relation to these topics such as 'horror dvd', 'sci-fi blu-ray'.
+- These were then placed within a google search to both test for relevancy and similair search suggestions.
+- With the short tail keywords especially, google's autocomplete suggestions offered insight into similar search queries.
+- Google Ads Keyword planner service was then used with some of the better keyword suggestions (I could search 10 at a time for free) to refine keywords based on stats such as average monthly searches and competition. This allows the user to refine a list of keywords that could have the best effect on their site by chosing words that may be high in monthly searches but lower in competition.
+
+![Screenshot 2024-05-29 at 15-10-59 Keyword ideas - Flat by the Cemetery - Google Ads](https://github.com/0davidog/VideoDrome/assets/135815736/861c0f83-cdc1-48e6-9169-bd208d0363fc)
+
+- These results were exported to a google sheet [here.](https://docs.google.com/spreadsheets/d/1psnMIbEWKKW6LQ9D93t5Wqt6_GVWCzbAYhpCUuMVd8s/edit?usp=sharing)
+- What these results suggest to me the most is that a vast majority of related searches in this topic will follow a format of [film] and [video format] such as 'evil dead rise dvd' or 'suspiria 4k'.
+- This suggests an ideal heading convention for the videos listed in on the site.
+- Example: `<h1>{{ video.title }} {{ video.format }}</h1>`
+
+To close, here's a select list of some keywords that may serve this buisness model best:
+
+#### Sort Tail
+
+```
+horror blu-ray, horror dvd, horror 4k, sci-fi blu-ray, sci-fi dvd, sci-fi 4k 
+```
+
+Note that with these keywords the genre can be replaced with the film title for a large range of relevant options.
+
+#### Long Tail
+
+```
+new horror movies on dvd, used horror DVDs for sale, new sci-fi blu-rays online, classic movie collection for sale, buy 4k ultra HD horror films, second-hand sci-fi DVDs, rare classic Blu-rays, discounted horror movies online, best deals on sci-fi Blu-rays, collectible classic films, limited edition 4k Ultra HD releases
+```
+</details>
+
+### Description
+
+<details><summary>DETAILS</summary>
+
+Here's the decription for this project chosen to hightlight the online sale of genre films in various formats:
+
+```
+<meta name="description" content="Explore a vast collection of new and used DVDs, Blu-rays, and 4k Ultra HD films spanning the realms of horror, sci-fi, thriller and classic cinema. From cult favorites to timeless classics, find your next movie obsession at our online store today.">
+```
+
+A meta description is a brief summary of the content of a web page. It is typically displayed in search engine results pages (SERPs) beneath the page title and URL. The purpose of a meta description is to provide users with a concise preview of what they can expect to find on the webpage if they click on the link.
+
+Key purposes of a meta description include:
+
+- Informing Users: Meta descriptions help users understand the relevance and content of a webpage before clicking on it. They provide a snippet of information that can help users decide whether or not to visit the page.
+- Improving Click-Through Rates (CTR): A well-written meta description can entice users to click on the link and visit the webpage. By highlighting the most important or appealing aspects of the content, a compelling meta description can increase the likelihood of users clicking through to the site.
+- Enhancing Search Engine Optimization (SEO): While meta descriptions themselves do not directly impact search engine rankings, they play a role in SEO indirectly. A relevant and engaging meta description can lead to higher CTRs, which can signal to search engines that the page is valuable and relevant to users' search queries, potentially improving its ranking over time.
+- Differentiating from Competitors: In SERPs where multiple search results are displayed, a well-crafted meta description can help your page stand out from competitors. By highlighting unique selling points, offers, or benefits, you can attract users' attention and encourage them to choose your page over others.
+- Providing Context for Social Sharing: Meta descriptions are often used as the default description when a webpage is shared on social media platforms like Facebook, Twitter, or LinkedIn. A descriptive and engaging meta description can provide context for shared links, increasing engagement and click-throughs from social media users.
+
+</details>
+
+### Title
+
+<details><summary>DETAILS</summary>
+
+Here's the title for this project, chosen to highlight the sites content of genre films on various formats, the sites name and UK location:
+
+`<title>VideoDrome UK - Genre and classic cinema on 4k, blu-ray and DVD.</title>`
+
+A meta title, also known as a title tag, is an HTML element that defines the title of a web page. It is displayed prominently in search engine results pages (SERPs) as the clickable headline for a search result, appearing as the first line of text for each listing.
+
+The meta title serves several important purposes:
+
+- Search Engine Visibility: The meta title is a crucial element for search engine optimization (SEO). It helps search engines understand the topic and relevance of a web page's content. Including relevant keywords in the meta title can improve the page's chances of ranking well for those terms in search engine results.
+- User Relevance: The meta title is the first thing users see when browsing search engine results. It provides users with a clear and concise indication of what the page is about. A well-crafted meta title can attract users' attention and encourage them to click on the search result to visit the page.
+- Brand Recognition: Meta titles often include the brand name or website name, especially for homepage titles or pages associated with a specific brand. This helps users identify the source of the content and builds brand recognition.
+- Browser Tab Label: The meta title is also displayed in the browser tab when the webpage is opened. This helps users keep track of multiple open tabs and quickly identify the content of each tab.
+- Social Sharing: When a web page is shared on social media platforms or other websites, the meta title is often used as the default title for the shared link. A descriptive and compelling meta title can improve the visibility and engagement of shared content on social media.
+
+</details>
+
+### Relevant Content
+
+<details><summary>DETAILS</summary>
+
+ `<h1>{{ video.title }} {{ video.format }}</h1>`
+
+
+Call out how you purposefully incorporated keywords into your content, H1, meta data etc.
+
+</details>
+
+## Sitemap
+
+
+    sitemap.xml file call out files that exist so browsers can easily crawl site
+
+## Robots.txt
+
+
+    robots.txt file to restrict pages that are should be searched by google, authentication and others are blocked to only allow relevant pages to be searched by google
+
+
+## Features
+
 ### Features
 
+<details><summary>DETAILS</summary>
 </details>
 
 ## Testing
