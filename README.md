@@ -132,21 +132,72 @@ Wireframes were created using Balsamiq to design the general look of the sites m
 <details><summary>DETAILS</summary>
 
 ### Full ERD
+
+The diagram displayed here shows the relationship between the database models used in the project.
+
 ![VideoDrome_ERD_full](https://github.com/0davidog/VideoDrome/assets/135815736/c8fa55be-7af0-4df2-aaed-c5d11b46b0cd)
 
-### Video Model
+- The Video model is connected to the Language, Subtitle, Region, Genre and user models all as Many To Many fields. These represent the multiple attributes different videos can have and whether or not as user has added it to their wishlist.
+- The UserRating model connects to the Video model and User model as Foreign Keys, representing subject and author respectively.
+- The UserReview model also connects to bothe the Video and User models as Foreign Keys also representing the subject and author.
+- The CustomerOrder model connects to the Customer model as a Foregin Key. This is the customer's saved information.
+- The OrderItem model connects to the CustomerOrder and Video models as Foreign Keys and represent the videos purchased as a part of an order.
+- The Customer model connects to the User model as a Foreign Key and contains the saved data chosen by the user.
+- The CustomerMessageThread model connects to the User model as a Foreign Key as the author or the original message in the thread.
+- The CustomerMessage model also connects to the User model as a Foreign Key as the author of the message.
+
+### Database Choice
+
+The project uses the PostgreSQL database installed and managed through the Heroku Postgres service and the Psycopg2 database adapter for use with Python and Django. This is chosen as the project requires a relational database for interactivity between models.
+
+[Heroku Postgres](https://www.heroku.com/postgres)
+
+### Data Models
+
+#### Video Model
 ![VideoDrome_ERD_Video](https://github.com/0davidog/VideoDrome/assets/135815736/edf1a469-f4f9-4005-afa4-84a6a95d6c72)
 
 |DB Key|Data Type|Purpose|Additional Information|
-|------|---------|-------|---------------|
+|------|---------|-------|----------------------|
+|id(Primary Key)|IntegerField|Unique numerical identifier.|Automatically generated.|
+|title|CharField|This is the film's title.|Required, has to be unique and maz length is 250 characters.|
+|slug|SlugField|This is a url friendly version of the title.|Is editable.|
+|director|CharField|This is the name of the film's director.|max_length=250, null=True|
+|format|CharField|This is the video format chosen from a list of DVD, Blu-Ray, UHD, 'Dual Format: Blu-Ray and DVD' and 'Dual Format: UHD and Blu-Ray'.|Default is set as DVD|
+|discs|IntegerField|This is the number of disks the video has.|Default is set to 1.|
+|condition|CharField|This is whether the video us used or new.|Default is set to Used.|
+|price|DecimalField
+|stock|IntegerField
+|cover|CloudinaryField
+|overview|TextField
+|overview_source|URLField
+|trailer|URLField
+|release_year|DecimalField
+|certificate|CharField
+|aspect_ratio|CharField
+|feature_lengt|CharField
+|added|DateTimeField
+|on_sale|BooleanField
+|sku|CharField
+|languages|ManyToManyField
+|subtitles|ManyToManyField
+|region|ManyToManyField
+|genre|ManyToManyField
 
 Model functions.
-- 
 
-- [ ] Create - 
-- [ ] Read - 
-- [ ] Update - 
-- [ ] Delete - 
+The Video model contains 6 model functions.
+-  __str__(self): Returns a string to identify model instance by title, year and format.
+-  excerpt(self, num_words=25): Returns a truncated version of overview text string.
+-  in_stock(self): Returns a different string value when the item stock is above 0
+-  stocked(self): Returns a different boolean value when the item stock is above 0
+-  _generate_sku(self): Generate random 8 digit number using uuid
+-  save(self, *args, **kwargs): Override the original save method to set the sku number if it hasn't been set already.
+
+- [x] Create - Users in an admin role can add Video entries via a front end form and the admin panel.
+- [x] Read - Users both registered and unregistered can see a list of displayed videos and access their detail pages.
+- [x] Update - Users in an admin role can edit video entries via a front end form and the admin panel.
+- [x] Delete - Users in an admin role can delete video entries.
 
 ### UserRating Model
 ![VideoDrome_ERD_userrating](https://github.com/0davidog/VideoDrome/assets/135815736/bd8aa67e-6f03-4bca-a37b-38025218205b)
