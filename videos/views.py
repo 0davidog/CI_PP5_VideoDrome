@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib import messages
 from django.db.models import Q
+from django.views.generic.base import TemplateView
 from .models import Video, Language, Subtitle
 from .models import UserRating, User, UserReview, Region
 
@@ -16,7 +17,7 @@ def all_videos(request):
 
     # Retrieve all videos from the database
     # Ordered by the date they were added
-    videos = Video.objects.all().order_by('-added')
+    videos = Video.objects.filter(on_sale=True).order_by('-added')
 
     # Initialize variables for filtering and sorting
     all_videos = True
@@ -573,3 +574,24 @@ def update_video(request, slug):
 
     # Render the 'update_video.html' template with the context data
     return render(request, "videos/update_video.html", context)
+
+
+class Page404(TemplateView):
+    """
+    Displays custom 404 page.
+    """
+    template_name = '404.html'
+
+
+class Page500(TemplateView):
+    """
+    Displays custom 500 page.
+    """
+    template_name = '500.html'
+
+
+class Page403(TemplateView):
+    """
+    Displays custom 403 page.
+    """
+    template_name = '403.html'

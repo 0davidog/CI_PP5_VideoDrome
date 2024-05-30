@@ -143,9 +143,15 @@ class Video(models.Model):
     )
 
     def __str__(self):
+        """
+        Returns a string to identify model instance by title, year and format.
+        """
         return f'{self.title} {self.release_year} {self.format}'
 
     def excerpt(self, num_words=25):
+        """
+        Returns a truncated version of overview text string.
+        """
         # Split the text into words
         words = self.overview.split()
 
@@ -155,12 +161,18 @@ class Video(models.Model):
         return excerpt
 
     def in_stock(self):
+        """
+        Returns a different string value when the item stock is above 0
+        """
         if self.stock > 0:
             return "In Stock"
         else:
             return "Out Of Stock"
 
     def stocked(self):
+        """
+        Returns a different boolean value when the item stock is above 0
+        """
         if self.stock > 0:
             stocked = True
             return stocked
