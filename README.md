@@ -72,9 +72,8 @@ Epic: Shopping Cart and Checkout
 - [As a shopper, I want to be able to securely check out and provide shipping and payment information so that I may purchase items with ease and confidence.](https://github.com/0davidog/VideoDrome/issues/15)
 
 Epic: Order Management
-- As a shopper, I want to be able to track the status of my orders.
-- As a shopper, I want to receive an email notification for order confirmation.
-- As a shopper, I want to be able to view my order history.
+- [As a shopper, I want to be able to track the status of my orders, so I can be confident my order is handled and shipped in good time.](https://github.com/0davidog/VideoDrome/issues/26)(future feature)
+- [As a shopper, I want to be able to view my order history so that I access the information for my records or a query.](https://github.com/0davidog/VideoDrome/issues/25)
 
 Epic: Audience Reach and Search Engine optimisation.
 
