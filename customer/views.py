@@ -25,7 +25,7 @@ def customer_info(request):
     customer = get_object_or_404(Customer, user=request.user)
 
     # Retrieve the order history of the customer
-    order_history = CustomerOrder.objects.filter(customer=customer)
+    order_history = CustomerOrder.objects.filter(customer=customer).order_by('-order_date')
 
     # Create a context dictionary to pass data to the template
     context = {

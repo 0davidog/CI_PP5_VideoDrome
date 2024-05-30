@@ -36,6 +36,6 @@ def send_confirmation_email(order):
         )
     
     # Complie all the information into an email.
-    email = EmailMessage(email_subject, email_body, sender_email, recipient_list)
+    email = EmailMessage(email_subject, email_body, sender_email, recipient_list, headers={'Content-Type': 'text/html'})
     email.content_subtype = "html"  # Set the content type to HTML
     email.send() # Email sent.
