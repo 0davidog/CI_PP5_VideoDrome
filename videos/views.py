@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.contrib import messages
 from django.db.models import Q
 from django.views.generic.base import TemplateView
+from django.db.models.functions import Lower
 from .models import Video, Language, Subtitle
 from .models import UserRating, User, UserReview, Region
 
@@ -42,7 +43,7 @@ def all_videos(request):
             # for case-insensitive sorting
             if sortkey == 'title':
                 sortkey = 'lower_title'
-                videos = videos.annotate(lower_name=Lower('title'))
+                videos = videos.annotate(lower_title=Lower('title'))
             unsorted = False
 
             # Check if sorting direction is provided in the request

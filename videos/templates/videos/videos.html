@@ -42,6 +42,7 @@
                   <li><a class="dropdown-item" href="{% url 'videos' %}?genre={{ genre_query }}&sort=price&direction=desc">Price (high to low)</a></li>
                   <li><a class="dropdown-item" href="{% url 'videos' %}?genre={{ genre_query }}&sort=release_year&direction=desc">Year (newest first)</a></li>
                   <li><a class="dropdown-item" href="{% url 'videos' %}?genre={{ genre_query }}&sort=release_year&direction=asc">Year (oldest first)</a></li>
+                  <li><a class="dropdown-item" href="{% url 'videos' %}?genre={{ genre_query }}&sort=title&direction=asc">Year (A to Z)</a></li>
                 </ul>
             </div>
             {% elif format_query %}
@@ -54,7 +55,7 @@
                   <li><a class="dropdown-item" href="{% url 'videos' %}?format={{ format_query }}&sort=price&direction=desc">Price (high to low)</a></li>
                   <li><a class="dropdown-item" href="{% url 'videos' %}?format={{ format_query }}&sort=release_year&direction=desc">Year (newest first)</a></li>
                   <li><a class="dropdown-item" href="{% url 'videos' %}?format={{ format_query }}&sort=release_year&direction=asc">Year (oldest first)</a></li>
-                  <li><a class="dropdown-item" href="{% url 'videos' %}?format={{ format_query }}&sort=title&direction=desc">Title (A to Z)</a></li>
+                  <li><a class="dropdown-item" href="{% url 'videos' %}?format={{ format_query }}&sort=title&direction=asc">Title (A to Z)</a></li>
                 </ul>
             </div>
             {% else %}
@@ -67,7 +68,7 @@
                   <li><a class="dropdown-item" href="{% url 'videos' %}?sort=price&direction=desc">Price (high to low)</a></li>
                   <li><a class="dropdown-item" href="{% url 'videos' %}?sort=release_year&direction=desc">Year (newest first)</a></li>
                   <li><a class="dropdown-item" href="{% url 'videos' %}?sort=release_year&direction=asc">Year (oldest first)</a></li>
-                  <li><a class="dropdown-item" href="{% url 'videos' %}?sort=title&direction=desc">Title (A to Z)</a></li>
+                  <li><a class="dropdown-item" href="{% url 'videos' %}?sort=title&direction=asc">Title (A to Z)</a></li>
                 </ul>
             </div>
             {% endif %}
