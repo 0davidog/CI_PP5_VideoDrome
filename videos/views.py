@@ -165,7 +165,7 @@ def video_detail(request, slug):
             user_rating = None
 
     # Check if there are any user reviews for the video
-    if UserReview.objects.filter(video=video).exists():
+    if UserReview.objects.filter(video=video, approved=True).exists():
         user_reviews = UserReview.objects.filter(video=video)
         review_count = user_reviews.count()
 

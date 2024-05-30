@@ -48,7 +48,7 @@
                 <td>
                     <form class="form d-inline" action="{% url 'update_basket' item.video.id %}" method="POST">
                         {% csrf_token %}
-                        <input class="qty d-inline me-2" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-video_id="{{ video.id }}">
+                        <input class="qty d-inline me-2" type="number" name="quantity" value="{{ item.quantity }}" min="0" max="99" data-video_id="{{ video.id }}">
                         <button type="submit" class="btn btn-primary d-inline">
                             update
                         </button>
