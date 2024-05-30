@@ -40,6 +40,8 @@
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="{% url 'videos' %}?genre={{ genre_query }}&sort=price&direction=asc">Price (low to high)</a></li>
                   <li><a class="dropdown-item" href="{% url 'videos' %}?genre={{ genre_query }}&sort=price&direction=desc">Price (high to low)</a></li>
+                  <li><a class="dropdown-item" href="{% url 'videos' %}?genre={{ genre_query }}&sort=added&direction=desc">Added (newest first)</a></li>
+                  <li><a class="dropdown-item" href="{% url 'videos' %}?genre={{ genre_query }}&sort=added&direction=asc">Added (oldest first)</a></li>
                   <li><a class="dropdown-item" href="{% url 'videos' %}?genre={{ genre_query }}&sort=release_year&direction=desc">Year (newest first)</a></li>
                   <li><a class="dropdown-item" href="{% url 'videos' %}?genre={{ genre_query }}&sort=release_year&direction=asc">Year (oldest first)</a></li>
                   <li><a class="dropdown-item" href="{% url 'videos' %}?genre={{ genre_query }}&sort=title&direction=asc">Year (A to Z)</a></li>
@@ -53,6 +55,8 @@
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="{% url 'videos' %}?format={{ format_query }}&sort=price&direction=asc">Price (low to high)</a></li>
                   <li><a class="dropdown-item" href="{% url 'videos' %}?format={{ format_query }}&sort=price&direction=desc">Price (high to low)</a></li>
+                  <li><a class="dropdown-item" href="{% url 'videos' %}?format={{ format_query }}&sort=added&direction=desc">Added (newest first)</a></li>
+                  <li><a class="dropdown-item" href="{% url 'videos' %}?format={{ format_query }}&sort=added&direction=asc">Added (oldest first)</a></li>
                   <li><a class="dropdown-item" href="{% url 'videos' %}?format={{ format_query }}&sort=release_year&direction=desc">Year (newest first)</a></li>
                   <li><a class="dropdown-item" href="{% url 'videos' %}?format={{ format_query }}&sort=release_year&direction=asc">Year (oldest first)</a></li>
                   <li><a class="dropdown-item" href="{% url 'videos' %}?format={{ format_query }}&sort=title&direction=asc">Title (A to Z)</a></li>
@@ -66,6 +70,8 @@
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="{% url 'videos' %}?sort=price&direction=asc">Price (low to high)</a></li>
                   <li><a class="dropdown-item" href="{% url 'videos' %}?sort=price&direction=desc">Price (high to low)</a></li>
+                  <li><a class="dropdown-item" href="{% url 'videos' %}?sort=added&direction=desc">Added (newest first)</a></li>
+                  <li><a class="dropdown-item" href="{% url 'videos' %}?sort=added&direction=asc">Added (oldest first)</a></li>
                   <li><a class="dropdown-item" href="{% url 'videos' %}?sort=release_year&direction=desc">Year (newest first)</a></li>
                   <li><a class="dropdown-item" href="{% url 'videos' %}?sort=release_year&direction=asc">Year (oldest first)</a></li>
                   <li><a class="dropdown-item" href="{% url 'videos' %}?sort=title&direction=asc">Title (A to Z)</a></li>
