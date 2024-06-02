@@ -66,17 +66,17 @@ I used [statcounter.com](https://gs.statcounter.com/) to give me an idea of whic
 
 Using a reference from [https://webaim.org](https://webaim.org/techniques/keyboard/#testing) I tested the keyboard navigation options that were relevant to the site (side scrolling or radio inputs couldn't be tested for example as they're not utilised on the site).
 
-- [ ] Tab key navigates forward to interactive elements.
-- [ ] Shift+Tab navigates backward to interactive elements.
-- [ ] Enter key activates links.
-- [ ] Enter or Spacebar activate buttons.
-- [ ] ↑/↓ - navigate between dropdown menu options.
-- [ ] Spacebar expands dropdown menu options.
-- [ ] Enter/Esc select dropdown menu option and collapse.
-- [ ] Typing letters jumps to a dropdown menu option.
-- [ ] Esc button closes modal dialogue box.
-- [ ] ↑/↓ buttons scroll vertically
-- [ ] Spacebar/Shift + Spacebar scroll by page (no button in focus).
+- [x] Tab key navigates forward to interactive elements.
+- [x] Shift+Tab navigates backward to interactive elements.
+- [x] Enter key activates links.
+- [x] Enter or Spacebar activate buttons.
+- [x] ↑/↓ - navigate between dropdown menu options.
+- [x] Spacebar expands dropdown menu options.
+- [x] Enter/Esc select dropdown menu option and collapse.
+- [x] Typing letters jumps to a dropdown menu option.
+- [x] Esc button closes modal dialogue box.
+- [x] ↑/↓ buttons scroll vertically
+- [x] Spacebar/Shift + Spacebar scroll by page (no button in focus).
 
 ## Validation Testing
 
