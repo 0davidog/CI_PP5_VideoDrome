@@ -401,9 +401,9 @@ Overall, the ecommerce business model of this site combines niche product offeri
 
 ### Facebook Business Page
 
-<details><summary>DETAILS</summary>
-
 A Facebook buisness page will be set up for this project. Setting up a Facebook business page can be an effective way to enhance your online presence, engage with your audience, and target potential customers. This would potentially drive sales for VideoDrome's DVD, Blu-ray, and 4k Ultra HD film business.
+
+<details><summary>DETAILS</summary>
 
 My goals for setting up a Facebook business page for VideoDrome could include:
 
@@ -414,7 +414,9 @@ My goals for setting up a Facebook business page for VideoDrome could include:
 - Promotion and Marketing: I could easily use a Facebook business page to promote products, announce new arrivals, share special offers and discounts, as well as showcase customer reviews and feedback. This would hopefully help to drive traffic to the website and increase potential sales.
 - Community Building: By creating a Facebook business page, I could build a community around my brand and products, encouraging discussions, sharing content, and creating a sense of belonging amongst my target audience.
 
-[screenshot of the FB page]
+![Screenshot 2024-06-02 at 20-33-54 Facebook](https://github.com/0davidog/VideoDrome/assets/135815736/123a81f5-2c1d-4f3f-9fd1-e1c7be1d8aa2)
+
+A link to the page is provided [here](https://www.facebook.com/people/VideoDrome/61560545848203/), however it is apparently common for Facebook to delete innactive buiness pages so this link may not last.
 
 </details>
 
