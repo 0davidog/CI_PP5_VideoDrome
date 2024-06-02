@@ -26,7 +26,7 @@
               <tr>
                 <th scope="col">Video</th>
                 <th class="d-none d-sm-table-cell" scope="col"></th>
-                <th scope="col">Quantitiy</th>
+                <th scope="col" id="Quantity-label">Quantitiy</th>
                 <th scope="col">Price</th>
                 <th scope="col">Sub-Total</th>
               </tr>
@@ -48,7 +48,7 @@
                 <td>
                     <form class="form d-inline" action="{% url 'update_basket' item.video.id %}" method="POST">
                         {% csrf_token %}
-                        <input class="qty d-inline me-2" type="number" name="quantity" value="{{ item.quantity }}" min="0" max="99" data-video_id="{{ video.id }}">
+                        <input class="qty d-inline me-2" type="number" name="quantity" value="{{ item.quantity }}" min="0" max="99" data-video_id="{{ video.id }}" aria-labelledby="Quantity-label">
                         <button type="submit" class="btn btn-primary d-inline">
                             update
                         </button>
