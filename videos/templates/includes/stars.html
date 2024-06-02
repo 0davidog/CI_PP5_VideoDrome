@@ -10,5 +10,5 @@ Add Your Rating:&nbsp;
 <a href="{% url 'rate_video' video.slug 4 %}" class="rating-link"><i class="fa-regular fa-star" id="star-4"></i></a>
 <a href="{% url 'rate_video' video.slug 5 %}" class="rating-link"><i class="fa-regular fa-star" id="star-5"></i></a>
 {% else %}
-Add Your Rating: <span class="text-warning">Log in to rate videos.</span>
+Add Your Rating: <span class="text-danger">Log in to rate videos.</span>
 {% endif %}
