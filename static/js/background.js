@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const mobileImageUrl = 'static/images/videodrome_bg_mobile.webp';
         const desktopImageUrl = 'static/images/videodrome_bg.webp';
     
-        if (window.innerWidth <= 475) { // You can adjust the width as per your requirement
+        if (window.innerWidth <= 1200) { // You can adjust the width as per your requirement
             bgElement.style.backgroundImage = `url('${mobileImageUrl}')`;
         } else {
             bgElement.style.backgroundImage = `url('${desktopImageUrl}')`;
