@@ -45,7 +45,6 @@ I used [statcounter.com](https://gs.statcounter.com/) to give me an idea of whic
 
 ## Accessibility Testing
 
-
 ### Accessibility Audits
 
 #### Performance, Accessibility, Best Practices and SEO
@@ -54,13 +53,14 @@ I used [statcounter.com](https://gs.statcounter.com/) to give me an idea of whic
 
 |Page|Factor|Performance|Accessibility|Best Practices|SEO|Screen Capture|
 |----|------|-----------|-------------|--------------|---|--------------|
-|index|mobile|
-|index|desktop|
-
-[WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) Was used to check for errors and contrast errors throughout the site.
-
-|Page|Result|Screen Capture|
-|----|------|--------------|
+|index|mobile|70|100|100|100|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/85d613da-9b32-4e39-866d-eafcf788e430)|
+|index|desktop|97|100|100|100|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/6b226dde-a3db-4dd1-8037-290463ceaaac)|
+|videos|mobile|55|100|100|100|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/e4a222cb-6920-445b-97ed-d1d7c12cc0c4)|
+|videos|desktop|90|100|100|100|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/f2a2db3f-d558-4b9a-bd4e-95fc1594ef25)|
+|video detail|mobile|64|100|100|100|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/6dd4c1ba-0f92-4e94-88d3-62415c8c50da)|
+|video detail|desktop|95|100|100|100|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/d8954ccb-c85f-49f7-bb9a-f8958395ad4a)|
+|basket|mobile|63|100|100|100|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/dcbd42ca-2ca2-4177-9d9b-d759ab030b1b)|
+|basket|desktop|96|100|100|100|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/d566cd3a-eba3-4e16-af23-ddba5dcceb30)|
 
 ### Keyboard Navigation
 
@@ -88,7 +88,6 @@ Using a reference from [https://webaim.org](https://webaim.org/techniques/keyboa
 |------|--------------|
 |No Error Found.|[W3C CSS Result Screenshot.](https://github.com/0davidog/VideoDrome/assets/135815736/c0f33359-54b0-4bc0-aae2-e5754c8f3b12)|
 
-
 ### HTML Validation
 
 [W3C  Markup Validation Service](https://validator.w3.org/) was used to validate the html through direct code input. The html was acquired for each page by viewing the page source code on the deployed site. The checkout page could not be included in this test due to stripes security features causing the source to be blocked from view.
@@ -97,6 +96,7 @@ Using a reference from [https://webaim.org](https://webaim.org/techniques/keyboa
 |----|------|--------------|
 |index|No errors or warnings to show.|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/2381b825-3913-4b05-8807-4663eff9f12c)|
 |videos|No errors or warnings to show.|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/c250df64-7f46-4e3c-883f-84c45b7ab692)|
+|videos/the-ninth-configuration-blu-ray|No errors or warnings to show.|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/7281f93b-498f-48b3-9347-8e83fec664e6)|
 |customer|No errors or warnings to show.|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/196e68b1-ea72-4b82-84ae-9248b8c9a93c)|
 |customer/update_info|No errors or warnings to show.|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/5c3e00f8-2ba9-4c1b-9aba-b1f13d2aa651)|
 |customer/view_wishlist|No errors or warnings to show.|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/c0c278a1-9a56-4404-95bf-8ea4de06698c)|
