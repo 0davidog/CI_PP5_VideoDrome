@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /customer/
+Disallow: /checkouts/
+Disallow: /basket/
+
+Sitemap: https://videodrome-ff881eaa1b51.herokuapp.com/sitemap.xml

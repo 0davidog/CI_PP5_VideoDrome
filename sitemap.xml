@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/accounts/login/</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?format=dvd</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?format=blu-ray</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?format=uhd</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=drama</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=thriller</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=horror</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=sci-fi</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=erotic</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=comedy</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=romance</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/basket/</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/contact/</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?sort=price&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?sort=price&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?sort=added&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?sort=added&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?sort=release_year&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?sort=release_year&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?sort=title&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/dark-water-uhd</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/suicide-club-dvd</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/berberian-sound-studio-blu-ray</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/the-ninth-configuration-blu-ray</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/being-john-malkovich-blu-ray</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/the-evil-dead-dual-format-uhd-and-blu-ray</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/alien-covenant-dual-format-uhd-and-blu-ray</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/mimic-directors-cut-blu-ray</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/stalker-blu-ray</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/ringu-uhd</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/solaris-blu-ray</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/the-exorcist-iii-blu-ray</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/candyman-uhd</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/bubba-ho-tep-dvd</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/dr-caligari-dvd</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/the-man-who-fell-to-earth-dvd</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/judex-nuits-rouges-dvd</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/the-piano-tuner-of-earthquakes-dvd</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/horsehead-blu-ray</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/flesh-for-frankenstein-dvd</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/blood-for-dracula-dvd</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/the-machinist-dvd</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?format=dvd&amp;sort=price&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?format=dvd&amp;sort=price&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?format=dvd&amp;sort=added&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?format=dvd&amp;sort=added&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?format=dvd&amp;sort=release_year&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?format=dvd&amp;sort=release_year&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?format=dvd&amp;sort=title&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?format=blu-ray&amp;sort=price&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?format=blu-ray&amp;sort=price&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?format=blu-ray&amp;sort=added&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?format=blu-ray&amp;sort=added&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?format=blu-ray&amp;sort=release_year&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?format=blu-ray&amp;sort=release_year&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?format=blu-ray&amp;sort=title&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?format=uhd&amp;sort=price&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?format=uhd&amp;sort=price&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?format=uhd&amp;sort=added&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?format=uhd&amp;sort=added&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?format=uhd&amp;sort=release_year&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?format=uhd&amp;sort=release_year&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?format=uhd&amp;sort=title&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=drama&amp;sort=price&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=drama&amp;sort=price&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=drama&amp;sort=added&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=drama&amp;sort=added&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=drama&amp;sort=release_year&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=drama&amp;sort=release_year&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=drama&amp;sort=title&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=thriller&amp;sort=price&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=thriller&amp;sort=price&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=thriller&amp;sort=added&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=thriller&amp;sort=added&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=thriller&amp;sort=release_year&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=thriller&amp;sort=release_year&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=thriller&amp;sort=title&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=horror&amp;sort=price&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=horror&amp;sort=price&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=horror&amp;sort=added&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=horror&amp;sort=added&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=horror&amp;sort=release_year&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=horror&amp;sort=release_year&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=horror&amp;sort=title&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=sci-fi&amp;sort=price&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=sci-fi&amp;sort=price&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=sci-fi&amp;sort=added&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=sci-fi&amp;sort=added&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=sci-fi&amp;sort=release_year&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=sci-fi&amp;sort=release_year&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=sci-fi&amp;sort=title&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=erotic&amp;sort=price&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=erotic&amp;sort=price&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=erotic&amp;sort=added&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=erotic&amp;sort=added&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=erotic&amp;sort=release_year&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=erotic&amp;sort=release_year&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=erotic&amp;sort=title&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=comedy&amp;sort=price&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=comedy&amp;sort=price&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=comedy&amp;sort=added&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=comedy&amp;sort=added&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=comedy&amp;sort=release_year&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=comedy&amp;sort=release_year&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=comedy&amp;sort=title&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=romance&amp;sort=price&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=romance&amp;sort=price&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=romance&amp;sort=added&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=romance&amp;sort=added&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=romance&amp;sort=release_year&amp;direction=desc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=romance&amp;sort=release_year&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/videos/?genre=romance&amp;sort=title&amp;direction=asc</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/accounts/login/?next=/customer/</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/accounts/signup/?next=%2Fcustomer%2F</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://videodrome-ff881eaa1b51.herokuapp.com/accounts/login/?next=%2Fcustomer%2F</loc>
+  <lastmod>2024-06-02T20:47:36+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+
+
+</urlset>
