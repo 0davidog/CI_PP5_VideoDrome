@@ -130,6 +130,10 @@ Wireframes were created using Balsamiq to design the general look of the sites m
 
 <details><summary>DETAILS</summary>
 
+### Database Choice
+
+The project uses the PostgreSQL database installed and managed through the Heroku Postgres service and the Psycopg2 database adapter for use with Python and Django. This is chosen as the project requires a relational database for interactivity between models.
+
 ### Full ERD
 
 The diagram displayed here shows the relationship between the database models used in the project.
@@ -144,10 +148,6 @@ The diagram displayed here shows the relationship between the database models us
 - The Customer model connects to the User model as a Foreign Key and contains the saved data chosen by the user.
 - The CustomerMessageThread model connects to the User model as a Foreign Key as the author or the original message in the thread.
 - The CustomerMessage model also connects to the User model as a Foreign Key as the author of the message.
-
-### Database Choice
-
-The project uses the PostgreSQL database installed and managed through the Heroku Postgres service and the Psycopg2 database adapter for use with Python and Django. This is chosen as the project requires a relational database for interactivity between models.
 
 [Heroku Postgres](https://www.heroku.com/postgres)
 
@@ -165,23 +165,23 @@ The project uses the PostgreSQL database installed and managed through the Herok
 |format|CharField|This is the video format chosen from a list of DVD, Blu-Ray, UHD, 'Dual Format: Blu-Ray and DVD' and 'Dual Format: UHD and Blu-Ray'.|Default is set as DVD|
 |discs|IntegerField|This is the number of disks the video has.|Default is set to 1.|
 |condition|CharField|This is whether the video us used or new.|Default is set to Used.|
-|price|DecimalField
-|stock|IntegerField
-|cover|CloudinaryField
-|overview|TextField
-|overview_source|URLField
-|trailer|URLField
-|release_year|DecimalField
-|certificate|CharField
-|aspect_ratio|CharField
-|feature_lengt|CharField
-|added|DateTimeField
-|on_sale|BooleanField
-|sku|CharField
-|languages|ManyToManyField
-|subtitles|ManyToManyField
-|region|ManyToManyField
-|genre|ManyToManyField
+|price|DecimalField|This is the individual product's price.|
+|stock|IntegerField|This is the quantitiy of items in stock.|
+|cover|CloudinaryField|This is a photograph of the product.|
+|overview|TextField|This is a description of the film.|
+|overview_source|URLField|This is the url of the film's wikipedia article.|
+|trailer|URLField|This is a url for the film's trailer on youtube if found.|
+|release_year|DecimalField|This is the year in which the film was originally released.|
+|certificate|CharField|This is the film's age rating or certification.|
+|aspect_ratio|CharField|This is the film's original aspect ratio.|
+|feature_length|CharField|This is the length of the main feature.|
+|added|DateTimeField|When the item was put up for sale.|
+|on_sale|BooleanField|Whether the video is approved for sale or not by admin.|
+|sku|CharField|A random number to represent a stock keeping unit.|
+|languages|ManyToManyField|A list of available language tracks.|
+|subtitles|ManyToManyField|A list of available subtitle tracks.|
+|region|ManyToManyField|The region lock applied to the video.|
+|genre|ManyToManyField|A list of genres applied to the film.|
 
 Model functions.
 
@@ -330,7 +330,13 @@ Model functions.
 
 ### Title and Visual Inspiration
 
+Deciding on the project title and the inspiration behind the visual design.
+
 <details><summary>DETAILS</summary>
+    
+After deciding upon a business model that trades in genre films on physical media I looked to my own collection for ideas on the project title and David Cronenberg's Videodrome stood out. The title, 'videorome' suggests a video arena and would be an ideal name choice for a place of business in which a large stock of videos are traded. It also fits with the nostalgic feel of video rental business which an audience of over 30s would remember fondly. 
+
+This gave me great place to start with the look of the project also...
 
 |Detail|Image|
 |--|--|
@@ -456,17 +462,14 @@ To close, here's a select list of some keywords that may serve this buisness mod
 
 #### Sort Tail
 
-```
-horror blu-ray, horror dvd, horror 4k, sci-fi blu-ray, sci-fi dvd, sci-fi 4k 
-```
+`horror blu-ray, horror dvd, horror 4k, sci-fi blu-ray, sci-fi dvd, sci-fi 4k` 
 
 Note that with these keywords the genre can be replaced with the film title for a large range of relevant options.
 
 #### Long Tail
 
-```
-new horror movies on dvd, used horror DVDs for sale, new sci-fi blu-rays online, classic movie collection for sale, buy 4k ultra HD horror films, second-hand sci-fi DVDs, rare classic Blu-rays, discounted horror movies online, best deals on sci-fi Blu-rays, collectible classic films, limited edition 4k Ultra HD releases
-```
+`new horror movies on dvd, used horror DVDs for sale, new sci-fi blu-rays online, classic movie collection for sale, buy 4k ultra HD horror films, second-hand sci-fi DVDs, rare classic Blu-rays, discounted horror movies online, best deals on sci-fi Blu-rays, collectible classic films, limited edition 4k Ultra HD releases`
+
 </details>
 
 ### Description
@@ -475,9 +478,7 @@ new horror movies on dvd, used horror DVDs for sale, new sci-fi blu-rays online,
 
 Here's the decription for this project chosen to hightlight the online sale of genre films in various formats:
 
-```
-<meta name="description" content="Explore a vast collection of new and used DVDs, Blu-rays, and 4k Ultra HD films spanning the realms of horror, sci-fi, thriller and classic cinema. From cult favorites to timeless classics, find your next movie obsession at our online store today.">
-```
+`<meta name="description" content="Explore a vast collection of new and used DVDs, Blu-rays, and 4k Ultra HD films spanning the realms of horror, sci-fi, thriller and classic cinema. From cult favorites to timeless classics, find your next movie obsession at our online store today.">`
 
 A meta description is a brief summary of the content of a web page. It is typically displayed in search engine results pages (SERPs) beneath the page title and URL. The purpose of a meta description is to provide users with a concise preview of what they can expect to find on the webpage if they click on the link.
 
@@ -535,10 +536,29 @@ Call out how you purposefully incorporated keywords into your content, H1, meta 
 
 ## Features
 
-### Features
+### Video App
+
+#### Product List View
+#### Product Detail View
+
+### Basket App
+
+#### Add to Basket
+#### Basket View
+
+### Checkout App
+
+### Customer App
+#### Order History
 
 <details><summary>DETAILS</summary>
 </details>
+
+
+<details><summary>DETAILS</summary>
+</details>
+
+
 
 ## Testing
 
