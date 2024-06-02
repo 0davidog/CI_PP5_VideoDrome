@@ -33,6 +33,7 @@
             <p>Price: £{{ video.price}}</p>
             <form class="form" action="{% url 'add_to_basket' video.id %}" method="POST">
                 {% csrf_token %}
+                <label for="quantity{{ video.id }}"><small>Quantity:</small></label><br>
                 <input class="qty" type="number" name="quantity" value="1" min="1" max="99" data-video_id="{{ video.id }}">
                 <button type="submit" class="btn btn-primary me-2 btn-basket" {% if not video.stocked %} disabled {% endif %}>
                     <i class="fa-solid fa-basket-shopping"></i>&nbsp;Add to Basket
