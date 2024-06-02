@@ -1,11 +1,9 @@
 
-
 {% if user_rating %}
 Your Rating:&nbsp;
 {% else %}
 Add Your Rating:&nbsp;
 {% endif %}
-
 
 <span {% if not user.is_authenticated %} class="d-none" {% endif %}>
 <a href="{% url 'rate_video' video.slug 1 %}" class="rating-link"><i class="fa-regular fa-star" id="star-1"></i></a>
