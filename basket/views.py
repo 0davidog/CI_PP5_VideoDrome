@@ -16,7 +16,8 @@ def add_to_basket(request, video_id):
     """ Add a quantity of the specified product to the shopping basket """
 
     quantity = int(request.POST.get('quantity'))
-    # calls form number input by name 'quantity' and converts submitted string to int
+    # calls form number input by name 'quantity'
+    # and converts submitted string to int
     redirect_url = request.POST.get('redirect_url')
     # retrieves redirect url from hidden input
     basket = request.session.get('basket', {})
@@ -36,16 +37,18 @@ def add_to_basket(request, video_id):
     request.session['basket'] = basket
     # Adds aquired information to 'basket' dict in session
 
-    messages.add_message(request, messages.SUCCESS, f"Added {video} to basket.")
+    messages.add_message(
+        request, messages.SUCCESS, f"Added {video} to basket."
+        )
     return redirect(redirect_url)
-    
 
 
 def update_basket(request, video_id):
     """Adjust the quantity of the specified product to the specified amount"""
-    
+
     quantity = int(request.POST.get('quantity'))
-    # calls form number input by name 'quantity' and converts submitted string to int
+    # calls form number input by name 'quantity'
+    # and converts submitted string to int
     basket = request.session.get('basket', {})
     # calls 'basket' dictionary from user session
     video = get_object_or_404(Video.objects.filter(id=video_id))
@@ -64,7 +67,9 @@ def update_basket(request, video_id):
     # update basket variable in session with data aquired
 
     if quantity == 0:
-        messages.add_message(request, messages.SUCCESS, f"Removed {video} from basket.")
+        messages.add_message(
+            request, messages.SUCCESS, f"Removed {video} from basket."
+            )
     else:
         messages.add_message(request, messages.SUCCESS, f"Basket updated.")
 
@@ -82,9 +87,10 @@ def remove_from_basket(request, video_id):
     # retrive video information by id for confirmation message
 
     request.session['basket'] = basket
-    # update basket dictionary in session with new information 
+    # update basket dictionary in session with new information
 
-    messages.add_message(request, messages.SUCCESS, f"Removed {video} from basket.")
-    
+    messages.add_message(
+        request, messages.SUCCESS, f"Removed {video} from basket."
+        )
+
     return redirect(reverse('view_basket'))
-    

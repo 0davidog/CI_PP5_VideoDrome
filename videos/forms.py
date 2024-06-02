@@ -2,6 +2,7 @@ from django import forms
 from django.forms.widgets import TextInput
 from .models import UserReview, Video, Genre, Language, Subtitle
 
+
 class ReviewForm(forms.ModelForm):
     """
     Form for adding a review on a video detail page.
@@ -18,14 +19,16 @@ class ReviewForm(forms.ModelForm):
 
 class VideoForm(forms.ModelForm):
     """
+    Form for adding a new video
+    Related to :model: `Video`
     """
 
     class Meta:
         model = Video
         fields = {
-            'title', 
-            'director', 
-            'format', 
+            'title',
+            'director',
+            'format',
             'discs',
             'condition',
             'price',
@@ -33,16 +36,16 @@ class VideoForm(forms.ModelForm):
             'cover',
             'overview',
             'overview_source',
-            'trailer', 
-            'release_year', 
+            'trailer',
+            'release_year',
             'certificate',
-            'aspect_ratio', 
+            'aspect_ratio',
             'feature_length',
-            'on_sale', 
-            'languages', 
+            'on_sale',
+            'languages',
             'subtitles',
-            'region', 
-            'genre', 
+            'region',
+            'genre',
         }
         widgets = {
             "release_year": TextInput(),
@@ -55,48 +58,50 @@ class VideoForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
-            'title': 'Video Title', 
-            'director': 'Video Director', 
-            'format': 'Video Format', 
-            'discs': 'Number of Discs', 
+            'title': 'Video Title',
+            'director': 'Video Director',
+            'format': 'Video Format',
+            'discs': 'Number of Discs',
             'condition': 'Video Condition',
             'price': 'Video Price',
             'stock': 'Units in Stock',
             'cover': 'Cover Image',
             'overview': 'Video Overview',
             'overview_source': 'Wikipedia URL',
-            'trailer': 'YouTube Trailer URL', 
-            'release_year': 'Original Release Year', 
+            'trailer': 'YouTube Trailer URL',
+            'release_year': 'Original Release Year',
             'certificate': 'Certificate/Age Rating',
-            'aspect_ratio': 'Video Aspect Ratio', 
-            'feature_length': 'Length of Main Feature',  
-            'on_sale': 'Available For Sale', 
-            'languages': 'Available Langauges', 
+            'aspect_ratio': 'Video Aspect Ratio',
+            'feature_length': 'Length of Main Feature',
+            'on_sale': 'Available For Sale',
+            'languages': 'Available Langauges',
             'subtitles': 'Available Subtitles',
-            'region': 'Video Region Code', 
-            'genre': 'Video Genre', 
+            'region': 'Video Region Code',
+            'genre': 'Video Genre',
         }
 
         self.fields['title'].widget.attrs['autofocus'] = True
-        
+
         for field in self.fields:
             if self.fields[field].required:
                 placeholder = f'{placeholders[field]} *'
             else:
                 placeholder = placeholders[field]
-            
+
             self.fields[field].widget.attrs['placeholder'] = placeholder
-            
+
             self.fields[field].label = False
 
 
 class GenreForm(forms.ModelForm):
     """
+    Form for ading a new genre instance
+    Related to :model: `Genre`
     """
     class Meta:
         model = Genre
 
-        fields= {
+        fields = {
             'genre_name',
         }
 
@@ -107,11 +112,13 @@ class GenreForm(forms.ModelForm):
 
 class LanguageForm(forms.ModelForm):
     """
+    Form for adding a new langauge track
+    Related to :model: `Language`
     """
     class Meta:
         model = Language
 
-        fields= {
+        fields = {
             'language',
         }
 
@@ -120,18 +127,18 @@ class LanguageForm(forms.ModelForm):
         }
 
 
-
 class SubtitleForm(forms.ModelForm):
     """
+    Form for adding a new subtitle track
+    Related to :model: `Subtitle`
     """
     class Meta:
         model = Subtitle
 
-        fields= {
+        fields = {
             'subtitle',
         }
 
         labels = {
             'subtitle': 'Add a new subtitle Track:',
         }
-

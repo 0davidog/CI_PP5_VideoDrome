@@ -3,6 +3,7 @@ from .models import Customer, CustomerMessage, CustomerMessageThread
 
 # Register your models here.
 
+
 class CustomerMessageAdminInline(admin.TabularInline):
     model = CustomerMessage
     fields = (
@@ -10,7 +11,7 @@ class CustomerMessageAdminInline(admin.TabularInline):
         'date',
         'body',
     )
-    
+
     readonly_fields = (
         'user',
         'date',
@@ -21,7 +22,7 @@ class CustomerMessageAdminInline(admin.TabularInline):
 class CustomerMessageThreadAdmin(admin.ModelAdmin):
     inlines = (CustomerMessageAdminInline,)
 
-    readonly_fields = ('order_number','user_email', 'subject',)
+    readonly_fields = ('order_number', 'user_email', 'subject',)
     ordering = ('created',)
 
 

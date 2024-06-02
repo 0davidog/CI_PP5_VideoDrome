@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.template.loader import render_to_string
 
+
 def send_customer_message(message):
 
     """
@@ -11,9 +12,10 @@ def send_customer_message(message):
     # retrieve customer email from order object passed to function.
     customer_email = message.user_email
 
-    # import EmailMessage module within function to avoid circular import errors
+    # import EmailMessage module within function
+    # to avoid circular import errors
     from django.core.mail import EmailMessage
-    
+
     # retrieve email address from env vars.
     videodrome_email = settings.EMAIL_HOST_USER
 
@@ -26,11 +28,13 @@ def send_customer_message(message):
     # Email body imported from seperate body_order_confirmation.html file.
     # order and sender email provided as context
     email_body = message.body
-    
+
     # Complie all the information into an email.
-    email = EmailMessage(email_subject, email_body, customer_email, recipient_list)
+    email = EmailMessage(
+        email_subject, email_body, customer_email, recipient_list
+    )
     email.content_subtype = "html"  # Set the content type to HTML
-    email.send() # Email sent.
+    email.send()  # Email sent.
 
 
 def reply_to_customer(message):
@@ -43,9 +47,10 @@ def reply_to_customer(message):
     # retrieve customer email from order object passed to function.
     customer_email = message.user_email
 
-    # import EmailMessage module within function to avoid circular import errors
+    # import EmailMessage module within function
+    # to avoid circular import errors
     from django.core.mail import EmailMessage
-    
+
     # retrieve email address from env vars.
     videodrome_email = settings.EMAIL_HOST_USER
 
@@ -58,8 +63,10 @@ def reply_to_customer(message):
     # Email body imported from seperate body_order_confirmation.html file.
     # order and sender email provided as context
     email_body = message.body
-    
+
     # Complie all the information into an email.
-    email = EmailMessage(email_subject, email_body, videodrome_email, recipient_list)
+    email = EmailMessage(
+        email_subject, email_body, videodrome_email, recipient_list
+        )
     email.content_subtype = "html"  # Set the content type to HTML
-    email.send() # Email sent.
+    email.send()  # Email sent.
