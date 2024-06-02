@@ -577,6 +577,44 @@ def update_video(request, slug):
     return render(request, "videos/update_video.html", context)
 
 
+# Define a view function to handle deleting a video entry
+def delete_video(request, video_id):
+    """
+    View to handle deleting a video entry.
+    """
+
+    # Retrieve the referer URL from the request headers
+    referer = request.META.get('HTTP_REFERER')
+
+    # Retrieve the video object with the provided video_id from the database
+    video = get_object_or_404(Video, id=video_id)
+
+    # Check if the currently logged-in user has admin access
+    if request.user.is_staff:
+        # If the user is staff, delete the video
+        video.delete()
+        # Add a success message
+        # indicating the successful deletion of the video
+        messages.add_message(
+            request, messages.SUCCESS,
+            f"Video successfully deleted."
+            )
+    else:
+        # If the user is not staff, add an error message
+        messages.add_message(
+            request, messages.ERROR,
+            f"You must be admin to delete video data!"
+            )
+
+    # If referer exists, redirect to it.
+    # Otherwise, redirect to a default URL.
+    if referer:
+        return HttpResponseRedirect(referer)
+    else:
+        return HttpResponseRedirect('/')
+        # Redirect to a default URL if no referer is found
+
+
 class Page404(TemplateView):
     """
     Displays custom 404 page.

@@ -15,4 +15,7 @@ urlpatterns = [
         views.delete_review, name='delete_review'),
     path('add/', views.create_video, name="create_video"),
     path('edit/<slug:slug>', views.update_video, name="update_video"),
+    path(
+        'video/delete/<video_id>',
+        views.delete_video, name='delete_video'),
 ]

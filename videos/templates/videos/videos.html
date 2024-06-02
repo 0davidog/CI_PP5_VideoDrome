@@ -107,9 +107,15 @@
                                     <i class="fa-solid fa-basket-shopping"></i>&nbsp;Add to Basket
                                 </button>
                                 {% if user.is_staff %}
-                                <a class="btn btn-link m-1" href="{% url 'update_video' video.slug %}">
-                                    Admin: Edit
-                                </a>
+                                <div class="text-danger mt-2"><small>
+                                    <span>ADMIN:</span>
+                                    <a class="btn btn-link m-1" href="{% url 'update_video' video.slug %}">
+                                        Edit
+                                    </a>
+                                    <a type="button" class="btn btn-link wishlist-link" data-bs-toggle="modal" data-bs-target="#deleteVideoModal{{ video.id }}">
+                                        Delete
+                                    </a></small>
+                                </div>
                                 {% endif %}
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             </form>
@@ -118,6 +124,24 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="deleteVideoModal{{ video.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Warning!</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you wish to delete this video?<br>
+                    This cannot be undone.
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                  <a type="button" class="btn btn-danger" href="{% url 'delete_video' video.id %}">Delete</a>
+                </div>
+              </div>
+            </div>
+          </div>
         {% endfor %}
     </div>
 </div>
