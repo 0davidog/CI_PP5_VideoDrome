@@ -32,12 +32,12 @@ This project is to be made using Agile develpment pricipals to plan and complete
 
 ### User Stories
 
-<details><summary>DETAILS</summary>
-
 Following Agile development practice this project has been divided into user stories to give a clear understanding of the project needs, goals and features and to split the work in to small achievable sets of tasks.
 
-[User Stories on Github](#)
+[User Stories on Github](https://github.com/users/0davidog/projects/4)
 
+<details><summary>DETAILS</summary>
+    
 Here is a list of user stories for this project seperated in to their relative Epics. Each story links to its place on Github where you can view:
 
 - User Story
@@ -72,6 +72,7 @@ Epic: Shopping Cart and Checkout
 - [As a shopper, I want to be able to securely check out and provide shipping and payment information so that I may purchase items with ease and confidence.](https://github.com/0davidog/VideoDrome/issues/15)
 
 Epic: Order Management
+
 - [As a shopper, I want to be able to track the status of my orders, so I can be confident my order is handled and shipped in good time.](https://github.com/0davidog/VideoDrome/issues/26)(future feature)
 - [As a shopper, I want to be able to view my order history so that I access the information for my records or a query.](https://github.com/0davidog/VideoDrome/issues/25)
 
@@ -81,6 +82,16 @@ Epic: Audience Reach and Search Engine optimisation.
 - [As a site owner, I want to Include Meta Description tags in the application HTML so that I can improve search engine optimisation](https://github.com/0davidog/VideoDrome/issues/18)
 - [As a site-owner, I want to include a robots.txt file in my site so that I can control search engine bot crawling, preserve bandwidth and protect sensitive data.](https://github.com/0davidog/VideoDrome/issues/22)
 - [As a site-owner, I want to include a 404 response page with an appropriate redirect for attempted access to non-existent content so that users who stumble on such errors are not put off from browsing.](https://github.com/0davidog/VideoDrome/issues/23)
+
+Epic: User Accessibility
+
+- [As a Site User with accessibility needs, I want the website to be accessible, with features like ALT text for images and keyboard navigation, to ensure a positive experience for all users.](https://github.com/0davidog/VideoDrome/issues/27)
+
+Epic: Database Managment & Administration
+
+- [As a site-admin I want to be able to add a product without the admin panel so that my work flow can stay oriented to the site.](https://github.com/0davidog/VideoDrome/issues/28)
+- [As a site-admin I want to be able to edit a product without the admin panel so that my work flow can stay oriented to the site.](https://github.com/0davidog/VideoDrome/issues/29)
+- [As a site-admin I want to be able to edit a product without the admin panel so that my work flow can stay oriented to the site.](https://github.com/0davidog/VideoDrome/issues/30)
 
 </details>
 
@@ -390,9 +401,9 @@ Overall, the ecommerce business model of this site combines niche product offeri
 
 ### Facebook Business Page
 
-<details><summary>DETAILS</summary>
-
 A Facebook buisness page will be set up for this project. Setting up a Facebook business page can be an effective way to enhance your online presence, engage with your audience, and target potential customers. This would potentially drive sales for VideoDrome's DVD, Blu-ray, and 4k Ultra HD film business.
+
+<details><summary>DETAILS</summary>
 
 My goals for setting up a Facebook business page for VideoDrome could include:
 
@@ -403,7 +414,9 @@ My goals for setting up a Facebook business page for VideoDrome could include:
 - Promotion and Marketing: I could easily use a Facebook business page to promote products, announce new arrivals, share special offers and discounts, as well as showcase customer reviews and feedback. This would hopefully help to drive traffic to the website and increase potential sales.
 - Community Building: By creating a Facebook business page, I could build a community around my brand and products, encouraging discussions, sharing content, and creating a sense of belonging amongst my target audience.
 
-[screenshot of the FB page]
+![Screenshot 2024-06-02 at 20-33-54 Facebook](https://github.com/0davidog/VideoDrome/assets/135815736/123a81f5-2c1d-4f3f-9fd1-e1c7be1d8aa2)
+
+A link to the page is provided [here](https://www.facebook.com/people/VideoDrome/61560545848203/), however it is apparently common for Facebook to delete innactive buiness pages so this link may not last.
 
 </details>
 
