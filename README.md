@@ -167,6 +167,7 @@ The diagram displayed here shows the relationship between the database models us
 ### Data Models
 
 #### Video Model
+
 ![VideoDrome_ERD_Video](https://github.com/0davidog/VideoDrome/assets/135815736/edf1a469-f4f9-4005-afa4-84a6a95d6c72)
 
 |DB Key|Data Type|Purpose|Additional Information|
@@ -174,27 +175,27 @@ The diagram displayed here shows the relationship between the database models us
 |id(Primary Key)|IntegerField|Unique numerical identifier.|Automatically generated.|
 |title|CharField|This is the film's title.|Required, has to be unique and maz length is 250 characters.|
 |slug|SlugField|This is a url friendly version of the title.|Is editable.|
-|director|CharField|This is the name of the film's director.|max_length=250, null=True|
+|director|CharField|This is the name of the film's director.||
 |format|CharField|This is the video format chosen from a list of DVD, Blu-Ray, UHD, 'Dual Format: Blu-Ray and DVD' and 'Dual Format: UHD and Blu-Ray'.|Default is set as DVD|
 |discs|IntegerField|This is the number of disks the video has.|Default is set to 1.|
 |condition|CharField|This is whether the video us used or new.|Default is set to Used.|
-|price|DecimalField|This is the individual product's price.|
-|stock|IntegerField|This is the quantitiy of items in stock.|
-|cover|CloudinaryField|This is a photograph of the product.|
-|overview|TextField|This is a description of the film.|
-|overview_source|URLField|This is the url of the film's wikipedia article.|
-|trailer|URLField|This is a url for the film's trailer on youtube if found.|
-|release_year|DecimalField|This is the year in which the film was originally released.|
-|certificate|CharField|This is the film's age rating or certification.|
-|aspect_ratio|CharField|This is the film's original aspect ratio.|
-|feature_length|CharField|This is the length of the main feature.|
-|added|DateTimeField|When the item was put up for sale.|
-|on_sale|BooleanField|Whether the video is approved for sale or not by admin.|
-|sku|CharField|A random number to represent a stock keeping unit.|
-|languages|ManyToManyField|A list of available language tracks.|
-|subtitles|ManyToManyField|A list of available subtitle tracks.|
-|region|ManyToManyField|The region lock applied to the video.|
-|genre|ManyToManyField|A list of genres applied to the film.|
+|price|DecimalField|This is the individual product's price.||
+|stock|IntegerField|This is the quantitiy of items in stock.||
+|cover|CloudinaryField|This is a photograph of the product.||
+|overview|TextField|This is a description of the film.|blank=True||
+|overview_source|URLField|This is the url of the film's wikipedia article.||
+|trailer|URLField|This is a url for the film's trailer on youtube if found.||
+|release_year|DecimalField|This is the year in which the film was originally released.||
+|certificate|CharField|This is the film's age rating or certification.||
+|aspect_ratio|CharField|This is the film's original aspect ratio.||
+|feature_length|CharField|This is the length of the main feature.||
+|added|DateTimeField|When the item was put up for sale.||
+|on_sale|BooleanField|Whether the video is approved for sale or not by admin.||
+|sku|CharField|A random number to represent a stock keeping unit.||
+|languages|ManyToManyField|A list of available language tracks.||
+|subtitles|ManyToManyField|A list of available subtitle tracks.||
+|region|ManyToManyField|The region lock applied to the video.||
+|genre|ManyToManyField|A list of genres applied to the film.||
 
 Model functions.
 
@@ -212,130 +213,240 @@ The Video model contains 6 model functions.
 - [x] Delete - Users in an admin role can delete video entries.
 
 ### UserRating Model
+
 ![VideoDrome_ERD_userrating](https://github.com/0davidog/VideoDrome/assets/135815736/bd8aa67e-6f03-4bca-a37b-38025218205b)
 
 |DB Key|Data Type|Purpose|Additional Information|
 |------|---------|-------|---------------|
+|video|ForeignKey|This is the film that is the subject of the rating score.|Related to Video model.|
+|user|ForeignKey|This is the user who rates the film.|Related to User model.|
+|rating|IntegerField|This is the score out of 5 given to the film||
 
 Model functions.
-- 
+- __str__(self): String representation of UserRating.
 
-- [ ] Create - 
-- [ ] Read - 
-- [ ] Update - 
-- [ ] Delete - 
+- [x] Create - Users when logged in can submit a rating via the video detail page.
+- [x] Read - User can see their rating displayed on the video detail page.
+- [x] Update - Users can change their rating at any time via the video detail page.
+- [x] Delete - User can remove thier rating at any time via the video detail page.
 
 ### UserReview Model
+
 ![VideoDrome_ERD_userreview](https://github.com/0davidog/VideoDrome/assets/135815736/d370e0b8-0b64-460e-981e-e478e71c90f9)
 
 |DB Key|Data Type|Purpose|Additional Information|
 |------|---------|-------|---------------|
+|video|ForeignKey|This is the film that is the subject of the review.|Related to Video model.|
+|title|CharField|This is the title of the review||
+|content|TextField|This is the review content.||
+|author|ForeignKey|This is the review author.|Realted to User model.|
+|approved|BooleanField|Whether or not the review content is approved by admin.|Default is False|
+|created_on|DateTimeField|When the review was first created|Automatically added on creation.|
+|updated_on|DateTimeField|When the review was last edited|Automatically created on save.|
 
 Model functions.
-- 
+- __str__(self): String representation of UserReview.
 
-- [ ] Create - 
-- [ ] Read - 
-- [ ] Update - 
-- [ ] Delete - 
+- [x] Create - Registered users can create a review.
+- [x] Read - All users can see published reviews on video detail pages.
+- [x] Update - User can edit their own reviews.
+- [x] Delete - Users can delete their own reviews.
 
 ### Language Model
+
 ![VideoDrome_ERD_language](https://github.com/0davidog/VideoDrome/assets/135815736/dc0e994c-7e39-4f2e-8ea5-58719005d4aa)
 
 |DB Key|Data Type|Purpose|Additional Information|
 |------|---------|-------|---------------|
+|language|CharField|This is the name of the language track.||
 
 Model functions.
-- 
+- __str__(self): A string representation of the language track.
 
-- [ ] Create - 
-- [ ] Read - 
-- [ ] Update - 
-- [ ] Delete - 
+(Due to time constraints all CRUD functionality for this model remains in the admin panel)
+- [ ] Create - Admin can create new language tracks in the admin panel.
+- [ ] Read - Admin can view language tracks in the admin panel.
+- [ ] Update - Admin can edit language track in the admin panel.
+- [ ] Delete - Admin can delete language tracks in the admin panel.
 
 ### Subtitle Model
+
 ![VideoDrome_ERD_subtitle](https://github.com/0davidog/VideoDrome/assets/135815736/96f8b766-6bee-41af-bfb8-4971b32fc3d1)
 
 |DB Key|Data Type|Purpose|Additional Information|
 |------|---------|-------|---------------|
+|subtitle|CharField|This is the name of the subtitle track.||
 
 Model functions.
-- 
+- def __str__(self): Function to return a string representation of the subtitle track name.
 
-- [ ] Create - 
-- [ ] Read - 
-- [ ] Update - 
-- [ ] Delete - 
+(Due to time constraints all CRUD functionality for this model remains in the admin panel)
+- [ ] Create - Admin can create new subtitle tracks in the admin panel.
+- [ ] Read - Admin can view subtitle tracks in the admin panel.
+- [ ] Update - Admin can edit subtitle track in the admin panel.
+- [ ] Delete - Admin can delete subtitle tracks in the admin panel.
 
 ### Region Model
+
 ![VideoDrome_ERD_region](https://github.com/0davidog/VideoDrome/assets/135815736/9916c9f2-c281-46fc-ba4e-6362a7e8904c)
 
 |DB Key|Data Type|Purpose|Additional Information|
 |------|---------|-------|---------------|
+|regioncode|CharField|This is code name of the region such as A or B, 1 or 2.||
+|region|CharField|This is the name of the region or regions the code represents such as Europe or US.||
 
 Model functions.
-- 
+- def __str__(self): Function to return a string representation of the region code and region.
 
-- [ ] Create - 
-- [ ] Read - 
-- [ ] Update - 
-- [ ] Delete - 
+(Due to time constraints all CRUD functionality for this model remains in the admin panel)
+- [ ] Create - Admin can create new subtitle tracks in the admin panel.
+- [ ] Read - Admin can view subtitle tracks in the admin panel.
+- [ ] Update - Admin can edit subtitle track in the admin panel.
+- [ ] Delete - Admin can delete subtitle tracks in the admin panel.
 
 ### Genre Model
+
 ![VideoDrome_ERD_genre](https://github.com/0davidog/VideoDrome/assets/135815736/8a4c78f4-c39f-4f9a-a3e7-ee7d8139fe83)
 
 |DB Key|Data Type|Purpose|Additional Information|
 |------|---------|-------|---------------|
+|genre_name|CharField|This is the name of each genre added||
 
 Model functions.
-- 
+- def __str__(self): Function to return a string representation of the genre name.
 
-- [ ] Create - 
-- [ ] Read - 
-- [ ] Update - 
-- [ ] Delete - 
+(Due to time constraints all CRUD functionality for this model remains in the admin panel)
+- [ ] Create - Admin can create new subtitle tracks in the admin panel.
+- [ ] Read - Admin can view subtitle tracks in the admin panel.
+- [ ] Update - Admin can edit subtitle track in the admin panel.
+- [ ] Delete - Admin can delete subtitle tracks in the admin panel.
 
 ### CustomerOrder Model
+
 ![VideoDrome_ERD_customerorder](https://github.com/0davidog/VideoDrome/assets/135815736/0bf29d4f-a8ab-4bb0-81ce-a7f8acbe4b6e)
 
 |DB Key|Data Type|Purpose|Additional Information|
 |------|---------|-------|---------------|
+|order_number|CharField|This is a unique number for each order.|Auto generated by method.|
+|order_date|DateTimeField|This is the dat the order was processed.|Auto generated on creation.|    
+|customer|ForeignKey|This is the saved information of the customer that placed the order.|Related to Customer model.|
+|name|CharField|This is the customer's name, given at checkouts.||
+|email|EmailField|This is the customer's email given at checkouts.||
+|phone|CharField|This is the customer's phone number given at checkouts.||
+|country|CountryField|This is the customer's country given at checkouts.|Picked from a dropdown list.|
+|postcode|CharField|This is the customer's postcode given at checkouts.||
+|town_or_city|CharField|This is the customer's city or town name given at checkouts.||
+|street_address1|CharField|The first line of the street address given at checkouts.||
+|street_address2|CharField|The second line of the street address given at checkouts.|Optional.|
+|county|CharField|The county or province given at checkouts.|Optional.|
+|delivery_cost|DecimalField|The cost of delivery.|Generated by method.|
+|order_total|DecimalField|The total cost of goods.||
+|grand_total|DecimalField|The total cost of goods plus elivery charge.|Updated by method.|
+|original_basket|TextField|The original items in the basket saved as a json string.||
+|stripe_pid|CharField|Stripes unique payment id created at checkout.||
 
 Model functions.
+- _generate_order_number(self): Generate a random, unique order number using UUID.
+- update_total(self): Update grand total each time a line item is added, accounting for delivery costs.
+- save(self, *args, **kwargs): Override the original save method to set the order number if it hasn't been set already.
 - 
 
-- [ ] Create - 
-- [ ] Read - 
-- [ ] Update - 
-- [ ] Delete - 
+- [ ] Create - A CustomerOrder instance is created at checkouts.
+- [ ] Read - Orders can be viewed by registered user associated with the order or admin only.
+- [ ] Update - CustomerOrder instances can only be edited in the admin panel.
+- [ ] Delete - CustomerOrder instances cah only be edited in the admin panel.
 
 ### OrderItem Model
+
 ![VideoDrome_ERD_orderitem](https://github.com/0davidog/VideoDrome/assets/135815736/1666a421-b7e6-4ff9-8bca-f84f538ae328)
 
 |DB Key|Data Type|Purpose|Additional Information|
 |------|---------|-------|---------------|
+|order|ForeignKey|This is the order in which this item is a part of.|Related to CustomerOrder model.|
+|video|ForeignKey|This is the video that has been purchased.|Related to Video model.|
+|quantity|IntegerField|This is the quantity of the item ordered.||
+|video_sub_total|DecimalField|This is the the price of the video multiplied by the quantity|Generated by method.|
+
 
 Model functions.
-- 
+- def save(self, *args, **kwargs): Override the save method to calculate the video subtotal before saving.
 
-- [ ] Create - 
-- [ ] Read - 
-- [ ] Update - 
-- [ ] Delete - 
+- [ ] Create - OrderItems are generated in the checkout process.
+- [ ] Read - OrderItems can be read as part of the CustomerOrder model in the Admin panel or as a part of and order detail page.
+- [ ] Update - OrderItems can only be updated by admin in the admin panel.
+- [ ] Delete - OrderItems can only be deleted by admin in the admin panel.
 
-### Customer
+### Customer Model
+
 ![VideoDrome_ERD_customer](https://github.com/0davidog/VideoDrome/assets/135815736/51730266-718a-4e39-b760-4edf2704ba5a)
 
 |DB Key|Data Type|Purpose|Additional Information|
 |------|---------|-------|---------------|
+|user|OneToOneField|This is the user to whom this information belongs.|Related to User model.|
+|saved_street_address1|CharField|This is the shipping information the user choses to save.|Saved at checkout.|
+|saved_street_address2|CharField|This is the shipping information the user choses to save.|Saved at checkout.|
+|saved_town_or_city|CharField|This is the shipping information the user choses to save.|Saved at checkout.|
+|saved_county|CharField|This is the shipping information the user choses to save.|Saved at checkout.|
+|saved_postcode|CharField|This is the shipping information the user choses to save.|Saved at checkout.|
+|saved_country|CountryField|This is the shipping information the user choses to save.|Saved at checkout.|
+|saved_phone_number|CharField|This is the shipping information the user choses to save.|Saved at checkout.|
 
 Model functions.
-- 
+- def __str__(self): String representation of the object
 
-- [ ] Create - 
-- [ ] Read - 
-- [ ] Update - 
-- [ ] Delete - 
+Signal Reciever
+- create_or_update_customer_info(sender, instance, created, **kwargs): Create or update the user profile
+
+- [ ] Create - Customer instance is created automatically via signal reciever.
+- [x] Read - Customer can view their details in the customer info section.
+- [x] Update - Customer can update their details in the customer info section.
+- [ ] Delete - Only admin can currently delete an customer instance.
+
+### CustomerMessageThread Model
+
+![VideoDrome_ERD_customermessagethread](https://github.com/0davidog/VideoDrome/assets/135815736/3c8525eb-f695-4bda-a558-783f4afa21eb)
+
+|DB Key|Data Type|Purpose|Additional Information|
+|------|---------|-------|---------------|
+|user|ForeignKey|The user who sent the initial message and started the thread.|Related to User model.|
+|user_email|EmailField|Email address of the user.||
+|is_resolved|BooleanField|Indicates if the thread query or issue is resolved.||
+|order_number|CharField|Order number associated with the thread.|Optional.|
+|subject|CharField|The initial email subject line.||
+|created|DateField|The date the thread was created.|Added automatically on creation.|
+
+Model functions.
+- resolved(self): Returns a string indicating if the thread is resolved or not.
+- def __str__(self): Returns a string representation of the thread.
+
+- [ ] Create - Created automatically.
+- [x] Read - Can be Read in the customer info section.
+- [ ] Update - Can only be edited by admin.
+- [ ] Delete - Can only be deleted by admin.
+
+
+
+### CustomerMessage Model
+
+![VideoDrome_ERD_customermessage](https://github.com/0davidog/VideoDrome/assets/135815736/8f327bb8-a32a-456f-9b9a-3194e5c152be)
+
+|DB Key|Data Type|Purpose|Additional Information|
+|------|---------|-------|---------------|
+|user|ForeignKey|The user who sent the initial message and started the thread.|Related to User model.|
+|order_number|CharField|Order number associated with the thread.|Optional.|
+|user_email|EmailField|Email address of the user.||
+|subject|CharField|The email subject line.||
+|body|TextField|
+|date|DateTimeField|
+|thread|ForeignKey|
+
+Model functions.
+- def __str__(self): Returns a string representation of the message.
+
+- [x] Create - Messages are created by a customer using a form.
+- [x] Read - Once written messages can be read as a thread in the customer info section.
+- [ ] Update - Only admin can edit messages.
+- [ ] Delete - Only admin can currently delete messages.
 
 </details>
 
