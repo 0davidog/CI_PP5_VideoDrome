@@ -54,6 +54,7 @@ Epic: User Registration and Authentication
 
 Epic: Product Browsing and Searching
 
+- [As a Site User, I want a user-friendly navigation menu that helps me explore different sections of the site easily.](https://github.com/0davidog/VideoDrome/issues/32)
 - [As a user, I want to be able to browse products by category so that I can better find the kind of products I'm interested in.](https://github.com/0davidog/VideoDrome/issues/4)
 - [As a user, I want to be able to search for products by name or keyword so that I can find a particular product I'm interested in.](https://github.com/0davidog/VideoDrome/issues/5)
 - [As a user, I want to be able to order products by price or release date, so I can browse in mind of the cheapest or newest items.](https://github.com/0davidog/VideoDrome/issues/14)
@@ -81,6 +82,7 @@ Epic: Audience Reach and Search Engine optimisation.
 - [As a site-owner, I want to include a site-map to ensure better site navigation and search engine optimisation](https://github.com/0davidog/VideoDrome/issues/17)
 - [As a site owner, I want to Include Meta Description tags in the application HTML so that I can improve search engine optimisation](https://github.com/0davidog/VideoDrome/issues/18)
 - [As a site-owner, I want to include a robots.txt file in my site so that I can control search engine bot crawling, preserve bandwidth and protect sensitive data.](https://github.com/0davidog/VideoDrome/issues/22)
+- [As a site-owner, I want to include a newsletter sign up option, so that I can reach my audience with news and offers in a cost-effective manner.](https://github.com/0davidog/VideoDrome/issues/31)
 - [As a site-owner, I want to include a 404 response page with an appropriate redirect for attempted access to non-existent content so that users who stumble on such errors are not put off from browsing.](https://github.com/0davidog/VideoDrome/issues/23)
 
 Epic: User Accessibility
@@ -422,39 +424,68 @@ A link to the page is provided [here](https://www.facebook.com/people/VideoDrome
 
 ### Newsletter Signup
 
-<details><summary>DETAILS</summary>
+<em>[As a site-owner, I want to include a newsletter sign up option, so that I can reach my audience with news and offers in a cost-effective manner.](https://github.com/0davidog/VideoDrome/issues/31)</em>
 
 A email newsletter sign-up link will be added to this site with the use of mailchimp's free services.
 
+<details><summary>DETAILS</summary>
+
 My goals for setting up an email newsletter for VideoDrome could include:
 
-- Direct Communication: An email newsletter may provide a direct channel of communication with my audience. Unlike social media platforms where posts may get lost in users' feeds, emails land directly in subscribers' inboxes, giving you a higher chance for user engagement.
+- Direct Communication: An email newsletter may provide a direct channel of communication with my audience. Unlike social media platforms where posts may get lost in users' feeds, emails land directly in subscribers' inboxes, giving me a higher chance for user engagement.
 - Building Customer Relationships: Through regular newsletters, I could potentially build stronger relationships with my customers by providing them with useful content such as updates, and exclusive offers. This may help to keep the VideoDrome brand top-of-mind and encourage repeat purchases.
 - Promoting Products and Offers: Email newsletters allow for promotion of products and special offers directly to the audience. With news of new arrivals, sales, discounts, or limited-time promotions, a newsletter coul drive traffic to the store and increase sale potential.
-- Targeted Marketing: With email marketing platforms, you can segment your subscriber list based on factors such as purchase history, interests, and engagement level. This enables you to send targeted and personalized emails to different segments of your audience, increasing relevance and effectiveness.
+- Targeted Marketing: With email marketing platforms, I can segment your subscriber list based on factors such as purchase history, interests, and engagement level. This enables me to send targeted and personalized emails to different segments of my audience, increasing relevance and effectiveness.
 - Measurable Results: Email marketing platforms provide analytics and reporting tools that allow you to track the performance of your newsletters. You can see metrics such as open rates, click-through rates, and conversion rates, enabling you to measure the effectiveness of your campaigns and make data-driven decisions to optimize future efforts.
-- Cost-Effectiveness: Compared to traditional marketing channels, email marketing is relatively inexpensive. Once you have set up your email list and created your templates, the cost of sending out newsletters is minimal, making it a cost-effective way to reach your audience.
-- Driving Website Traffic: By including links to your website or specific product pages in your newsletters, you can drive traffic directly to your site. This not only increases the visibility of your products but also may improve the website's SEO ranking.
+- Cost-Effectiveness: Compared to traditional marketing channels, email marketing is relatively inexpensive. Once I have set up my email list and created the templates, the cost of sending out newsletters is minimal, making it a cost-effective way to reach my target audience.
+- Driving Website Traffic: By including links to my website or specific product pages in my newsletters, I can drive traffic directly to the site. This not only increases the visibility of my products but also may improve the website's SEO ranking.
 
-[Screen shots of newsletter]
+AC1: Link to Sign Up form in footer:
+
+![newsletter1](https://github.com/0davidog/VideoDrome/assets/135815736/77cd8c95-201a-453e-a85e-62ecb04ad6c3)
+
+AC2: User can fill in form and submit:
+
+![newsletter2](https://github.com/0davidog/VideoDrome/assets/135815736/6093cf6e-256f-4f17-8f95-68f457b13448)
+
+AC3: Email is seen in Mailchimp dashboard:
+
+![newsletter3](https://github.com/0davidog/VideoDrome/assets/135815736/0c0cece7-6a5a-427c-9cb7-32f0cda4ad59)
+
+(emails can be seen as being added from the embedded Mailchimp form).
 
 </details>
 
 ### Links
 
-    sponsored links are flagged with rel="sponsored"
-    social links and other links that go outside domain have rel="nofollower" to signal to search engines that those links are not associated with our specific domain
-    show facebook link
+`rel="nofollow"`
+
+This attribute is used in hyperlinks to tell search engines not to pass any link authority from the current page to the linked page. Essentially, it instructs search engine crawlers to not consider the linked URL when calculating the ranking of the linked page in search results. It's commonly used for user-generated content, comments, or other areas where the webmaster does not want to vouch for the credibility or endorse the linked content. It makes sense to use this for social links as the site-owner cannot entirely account for the the comments of social media users at all times, even on their own page. The main link provided as an example is a link to the Facebook business page set up for the project. I've also include links to my own social media pages as symbolic stand-ins for the multiple social accounts and pages a business would have to further extend their audience reach.
+The github link isn't the strongest example of this as it is not a social media site but user comments and social interaction is still a factor so I've included it here anyway.
+
+These links are situated on the site's footer section.
+
+### Facebook
+
+`<a class="btn btn-success" aria-current="page" href="https://www.facebook.com/people/VideoDrome/61560545848203/" target="_blank" rel="nofollower" aria-label="Visit out Facebook Page (opens in new tab)"><i class="fa-brands fa-facebook"></i>&nbsp;Facebook</a>`
+
+### Instagram
+
+`<a class="btn btn-success" aria-current="page" href="https://www.instagram.com/flatbythecemetery/" target="_blank" rel="nofollower" aria-label="Follow us on Instagram (opens in new tab)"><i class="fa-brands fa-instagram"></i>&nbsp;Instagram</a>`
+
+### Github
+
+`<a class="btn btn-success" aria-current="page" href="https://github.com/0davidog" target="_blank" rel="nofollower" aria-label="Check out my work on Github (opens in new tab)"><i class="fa-brands fa-github"></i>&nbsp;Github</a>`
 
 
 ## SEO Strategy
 
 ### Keywords
 
+Despite the keyword Meta tag being no long used in SEO for google [[source](https://ahrefs.com/blog/meta-keywords/)], keyword research is still a useful practice for brainstorming how best to develop your site's content in a way that's relevant to your subject and audience.
+
 <details><summary>DETAILS</summary>
-
-Despite the keyword Meta tag being no long used in SEO, keyword research is still a useful practice for brainstorming how best to develop your site's content in a way that's relevant to your subject and audience.
-
+    
 ![Screenshot 2024-05-29 at 14-42-56 dvd and blu-ray films for sale - Google Search](https://github.com/0davidog/VideoDrome/assets/135815736/ae88c72d-824f-43a1-8349-f94bd5b9c911)
 
 The process for keyword research on the Videorome project looks like this:
@@ -483,9 +514,17 @@ Note that with these keywords the genre can be replaced with the film title for 
 
 `new horror movies on dvd, used horror DVDs for sale, new sci-fi blu-rays online, classic movie collection for sale, buy 4k ultra HD horror films, second-hand sci-fi DVDs, rare classic Blu-rays, discounted horror movies online, best deals on sci-fi Blu-rays, collectible classic films, limited edition 4k Ultra HD releases`
 
+Here they are in a meta keywords tag as found in VideoDrome's base.html:
+
+`<meta name="keywords" content="horror blu-ray, horror dvd, horror 4k, sci-fi blu-ray, sci-fi dvd, sci-fi 4k, new horror movies on dvd, used horror DVDs for sale, new sci-fi blu-rays online, classic movie collection for sale, buy 4k ultra HD horror films, second-hand sci-fi DVDs, rare classic Blu-rays, discounted horror movies online, best deals on sci-fi Blu-rays, collectible classic films, limited edition 4k Ultra HD releases">`
+
 </details>
 
 ### Description
+
+<em>[As a site owner, I want to Include Meta Description tags in the application HTML so that I can improve search engine optimisation](https://github.com/0davidog/VideoDrome/issues/18)</em>
+
+A meta description is a brief summary of the content of a web page. It is typically displayed in search engine results pages (SERPs) beneath the page title and URL. The purpose of a meta description is to provide users with a concise preview of what they can expect to find on the webpage if they click on the link.
 
 <details><summary>DETAILS</summary>
 
@@ -493,14 +532,12 @@ Here's the decription for this project chosen to hightlight the online sale of g
 
 `<meta name="description" content="Explore a vast collection of new and used DVDs, Blu-rays, and 4k Ultra HD films spanning the realms of horror, sci-fi, thriller and classic cinema. From cult favorites to timeless classics, find your next movie obsession at our online store today.">`
 
-A meta description is a brief summary of the content of a web page. It is typically displayed in search engine results pages (SERPs) beneath the page title and URL. The purpose of a meta description is to provide users with a concise preview of what they can expect to find on the webpage if they click on the link.
+Goals for including a Meta Description:
 
-Key purposes of a meta description include:
-
-- Informing Users: Meta descriptions help users understand the relevance and content of a webpage before clicking on it. They provide a snippet of information that can help users decide whether or not to visit the page.
-- Improving Click-Through Rates (CTR): A well-written meta description can entice users to click on the link and visit the webpage. By highlighting the most important or appealing aspects of the content, a compelling meta description can increase the likelihood of users clicking through to the site.
+- Informing Users: Meta descriptions help my audience understand the relevance and content of the webpage before clicking on it. They provide a snippet of information that can help potential users decide whether or not to visit the page.
+- Improving Click-Through Rates (CTR): A well-written meta description can entice the target audience to click on the link and visit the webpage. By highlighting the most relevant or appealing aspects of the store content, a compelling meta description can increase the likelihood of users clicking through to the site.
 - Enhancing Search Engine Optimization (SEO): While meta descriptions themselves do not directly impact search engine rankings, they play a role in SEO indirectly. A relevant and engaging meta description can lead to higher CTRs, which can signal to search engines that the page is valuable and relevant to users' search queries, potentially improving its ranking over time.
-- Differentiating from Competitors: In SERPs where multiple search results are displayed, a well-crafted meta description can help your page stand out from competitors. By highlighting unique selling points, offers, or benefits, you can attract users' attention and encourage them to choose your page over others.
+- Differentiating from Competitors: In SERPs where multiple search results are displayed, a well-crafted meta description can help your page stand out from competitors. By highlighting unique selling points, offers, or benefits, I could attract an audience's attention and encourage them to choose my page over others.
 - Providing Context for Social Sharing: Meta descriptions are often used as the default description when a webpage is shared on social media platforms like Facebook, Twitter, or LinkedIn. A descriptive and engaging meta description can provide context for shared links, increasing engagement and click-throughs from social media users.
 
 </details>
@@ -538,40 +575,93 @@ Call out how you purposefully incorporated keywords into your content, H1, meta 
 
 ## Sitemap
 
+<em>[As a site-owner, I want to include a site-map to ensure better site navigation and search engine optimisation](https://github.com/0davidog/VideoDrome/issues/17)</em>
 
-    sitemap.xml file call out files that exist so browsers can easily crawl site
+A site-map serves as a blueprint for your website, outlining its structure and content organization. Search engines use site-maps to crawl and index your website more effectively. By providing a clear map of your site's structure and content hierarchy, you can help search engines understand and rank your pages better. The site map was genrated using [xml-sitemaps.com.](https://www.xml-sitemaps.com/)
+
+The sitemap.xml for VideoDrome can be found [here.](https://github.com/0davidog/VideoDrome/blob/main/sitemap.xml)
 
 ## Robots.txt
 
+<em>[As a site-owner, I want to include a robots.txt file in my site so that I can control search engine bot crawling, preserve bandwidth and protect sensitive data.](https://github.com/0davidog/VideoDrome/issues/22)</em>
 
-    robots.txt file to restrict pages that are should be searched by google, authentication and others are blocked to only allow relevant pages to be searched by google
+A robots.txt file serves as a communication tool between your website and web robots (such as search engine crawlers) regarding which parts of your site should or should not be crawled or indexed. I chose to block access to the accounts, customer and checkouts pages as they are less about what the site is trying to sell and may contain personal or administative information. Also included in the robots file is a link to the sitemap.
 
+The robots.txt for VideoDrome can be found [here.](https://github.com/0davidog/VideoDrome/blob/main/robots.txt)
 
 ## Features
 
 ### Video App
 
 #### Product List View
+
+<em>[As a user, I want to be able to browse products by category so that I can better find the kind of products I'm interested in.](https://github.com/0davidog/VideoDrome/issues/4)</em>
+
+<em>[As a user, I want to be able to search for products by name or keyword so that I can find a particular product I'm interested in.](https://github.com/0davidog/VideoDrome/issues/5)</em>
+
+<em>[As a user, I want to be able to order products by price or release date, so I can browse in mind of the cheapest or newest items.](https://github.com/0davidog/VideoDrome/issues/14)</em>
+
 #### Product Detail View
+
+<em>[As a shopper, I want to view detailed information about a product, including images, descriptions, and specifications so that I can be better informed about my purchases.](https://github.com/0davidog/VideoDrome/issues/6)</em>
+
+<em>[As a shopper, I want to be able to read reviews for a product so that I can be better informed before making a purchase decision.](https://github.com/0davidog/VideoDrome/issues/7)</em>
+
+<em>[As a registered site-user, I want to be able to add a product to my wishlist so that I can easily return to a product I want to purchase at a more convenient time.](https://github.com/0davidog/VideoDrome/issues/8)</em>
+
+<em>[As a registered site-user, I can give a star rating to a product so that I can express my view on product quality without writing a review.](https://github.com/0davidog/VideoDrome/issues/12)</em>
 
 ### Basket App
 
 #### Add to Basket
+
+<em>[As a shopper, I want to be able to add items to my shopping basket so that I can purchase multiple products in one transaction.](https://github.com/0davidog/VideoDrome/issues/9)</em>
+
 #### Basket View
 
+<em>[As a shopper, I want to be able to view and edit the contents of my shopping cart before proceeding to checkout so that I can be sure of my final purchase decision.](https://github.com/0davidog/VideoDrome/issues/10)</em>
+  
 ### Checkout App
 
+<em>[As a shopper, I want to be able to securely check out and provide shipping and payment information so that I may purchase items with ease and confidence.](https://github.com/0davidog/VideoDrome/issues/15)</em>
+
 ### Customer App
+
 #### Order History
 
-<details><summary>DETAILS</summary>
-</details>
+<em>[As a shopper, I want to be able to view my order history so that I access the information for my records or a query.](https://github.com/0davidog/VideoDrome/issues/25)</em>
+
+### Main App
+
+#### Header
+
+<em>[As a Site User, I want a user-friendly navigation menu that helps me explore different sections of the site easily.](https://github.com/0davidog/VideoDrome/issues/32)</em>
+
+#### Footer
+
+#### Authentication
+
+<em>[As a new user, I want to be able to register an account on the website using my email address and password.](https://github.com/0davidog/VideoDrome/issues/1)</em>
+
+
+<em>[As a registered user, I want to be able to log in to my account securely so that I can shop easily with my saved information.](https://github.com/0davidog/VideoDrome/issues/2)</em>
+
+
+<em>[As a Site user, I want the option to reset my password in case I forget it, ensuring secure access to my account.](https://github.com/0davidog/VideoDrome/issues/3)</em>
+
+#### Custom 404
+
+<em>[As a site-owner, I want to include a 404 response page with an appropriate redirect for attempted access to non-existent content so that users who stumble on such errors are not put off from browsing.](https://github.com/0davidog/VideoDrome/issues/23)</em>
+
+
 
 
 <details><summary>DETAILS</summary>
 </details>
 
+## Future Features
 
+<em>[As a shopper, I want to be able to track the status of my orders, so I can be confident my order is handled and shipped in good time.](https://github.com/0davidog/VideoDrome/issues/26)</em>
 
 ## Testing
 
@@ -604,6 +694,37 @@ Please refer to this seperate testing document for a full rundown of tests and a
 <details><summary>REQUIREMENTS LIST</summary>
   
 ```
+asgiref==3.8.1
+certifi==2024.2.2
+cffi==1.16.0
+charset-normalizer==3.3.2
+cloudinary==1.40.0
+crispy-bootstrap5==2024.2
+cryptography==42.0.5
+defusedxml==0.7.1
+dj-database-url==0.5.0
+Django==5.0.6
+django-allauth==0.61.1
+django-countries==7.6.1
+django-crispy-forms==2.0
+gunicorn==22.0.0
+idna==3.6
+oauthlib==3.2.2
+packaging==24.0
+psycopg2==2.9.9
+pycparser==2.22
+PyJWT==2.8.0
+python3-openid==3.2.0
+pytz==2024.1
+requests==2.31.0
+requests-oauthlib==2.0.0
+six==1.16.0
+sqlparse==0.4.4
+stripe==9.6.0
+typing_extensions==4.11.0
+tzdata==2024.1
+urllib3==2.2.1
+whitenoise==6.6.0
 
 ```
 
