@@ -2,6 +2,27 @@
 
 ## Table of contents
 
+- [VideoDrome Project Test File](#videodrome-project-test-file)
+  - [Manual Testing](#manual-testing)
+  - [Compatibility and Responsive Testing](#compatibility-and-responsive-testing)
+    - [Windows laptop](#windows-laptop)
+    - [Chrome Emulated Device Dimensions](#chrome-emulated-device-dimensions)
+    - [Browserstack Devices](#browserstack-devices)
+    - [Market Share insights](#market-share-insights)
+  - [Accessibility Testing](#accessibility-testing)
+    - [Accessibility Audits](#accessibility-audits)
+      - [Performance, Accessibility, Best Practices and SEO](#performance-accessibility-best-practices-and-seo)
+    - [Keyboard Navigation](#keyboard-navigation)
+  - [Validation Testing](#validation-testing)
+    - [CSS Validation](#css-validation)
+    - [HTML Validation](#html-validation)
+    - [JavaScript Validation](#javascript-validation)
+    - [Python Validation](#python-validation)
+  - [Automated Testing](#automated-testing)
+  - [Defects](#defects)
+  - [Defects of Note](#defects-of-note)
+  - [Outstanding Defects](#outstanding-defects)
+
 ## Manual Testing
 
 Manual testing was done for each completed user story and screenshots added to the comments on each issue page.
@@ -253,7 +274,13 @@ The TestReviewForm class features two methods.
 
 ## Defects
 
+I spent far too long trying to figure out why django and gmail would not cooperate. The entire time I had my own email spelled wrong in env.py.
+
 ## Defects of Note
+
+### Webhooks
+
+Due to the complexity of the stripe implementation in this project I attempted to stick close to the 'Boutique Ado' walkthrough project when it came to the checkout app and stripe payments. However, this caused me to end up with a webhook handler that just wasn't working at all. The problem was such that I didn't even know how to look for the cause. The only solution was to go to the stripe documentation an rebuild the webhook from there. The biggest help was downloading the Stripe CLI which allowed me to test the webhook locally and with this installed I was able to see the print statements and error messages and work from there.
 
 ## Outstanding Defects
 
