@@ -35,7 +35,6 @@ Manual testing was done for each completed user story and screenshots added to t
 
 ## Compatibility and Responsive Testing
 
-
 ### Windows laptop
 
 This project was developed using a Windows laptop running Windows 10 and the site was viewed on three browsers.
@@ -45,8 +44,6 @@ This project was developed using a Windows laptop running Windows 10 and the sit
 |Chrome|1920x1080|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/d37f1f41-d9d8-45a6-8abb-bfbc27e47a15)|
 |Firefox|1920x1080|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/9910ad32-e58c-4e23-ade3-690d191b2ca9)|
 |Edge|1920x1080|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/560b47e2-615b-4229-a36f-6adf4cb34a36)|
-
-
 
 ### Chrome Emulated Device Dimensions
 
@@ -96,7 +93,6 @@ I used [statcounter.com](https://gs.statcounter.com/) to give me an idea of whic
 |Mobile Vendor Market Share:|![Screenshot 2024-06-03 at 22-20-44 Mobile Vendor Market Share Worldwide Statcounter Global Stats](https://github.com/0davidog/VideoDrome/assets/135815736/4ea364b5-4542-412c-9935-50265fb0b9d2)|
 |Tablet Vendor Market Share:|![Screenshot 2024-06-03 at 22-21-04 Tablet Vendor Market Share Worldwide Statcounter Global Stats](https://github.com/0davidog/VideoDrome/assets/135815736/8e94fc2b-931d-460a-9259-c1b4e6b37182)|
 |Operating System Market Share:|![Screenshot 2024-06-03 at 22-21-59 Operating System Market Share Worldwide Statcounter Global Stats](https://github.com/0davidog/VideoDrome/assets/135815736/36ba1e1b-c8aa-46bb-86b5-4514cf251536)|
-
 
 ## Accessibility Testing
 
@@ -246,14 +242,18 @@ The warning 'Functions declared within loops referencing an outer scoped variabl
 
 ## Automated Testing
 
-As time was short, the automated testing done on this project was small and very basic. The Code Institute walkthought project 'I Think, Therfore I Blog" informed the initial tests while the TestHomePage unit test was inspired by django documentation on automated tests [(here)](https://docs.djangoproject.com/en/4.2/topics/testing/advanced/#example).
+As time was short, manual testing was focused on for this project. I repeated a test from the Code Institute walkthought project 'I Think, Therfore I Blog" as it was easy to replicate.
 
+videos/test_forms.py Contains one TestCase class: TestReviewForm.
+
+The TestReviewForm class features two methods.
+
+- test_review_form_is_valid() Method: This method tests whether the form is valid when all required fields are properly filled. It creates an instance of ReviewForm with sample data (a title and content), and then checks if the form is valid using assertTrue() assertion. If the form is valid, the test passes; otherwise, it fails.
+- test_empty_review_form_is_invalid() Method: This method tests whether the form is invalid when all required fields are empty. It creates another instance of ReviewForm with empty values for all fields and checks if the form is valid using assertFalse() assertion. If the form is invalid (as it should be when all required fields are empty), the test passes; otherwise, it fails.
 
 ## Defects
 
-
 ## Defects of Note
-
 
 ## Outstanding Defects
 
