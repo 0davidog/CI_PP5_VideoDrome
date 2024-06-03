@@ -21,7 +21,7 @@
 
     {% if basket_items %}
     
-    <div class="row mb-5">
+    <div class="row mb-5 table-responsive">
         
         <table class="table table-striped">
             <thead>
@@ -45,7 +45,7 @@
                 </td>
                 <td>
                     {{ item.video.title }}&nbsp;{{ item.video.format }}<br>
-                    <span class="text-muted">SKU:{{ item.video.sku }}</span>
+                    <span class="text-muted"><small>SKU:{{ item.video.sku }}</small></span>
                 </td>
                 <td>
                     {{ item.quantity }}
