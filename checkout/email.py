@@ -30,7 +30,7 @@ def send_confirmation_email(order):
     # Email body imported from seperate body_order_confirmation.html file.
     # order and sender email provided as context
     email_body = render_to_string(
-        'checkout/email/body_order_confirmation.html',
+        'checkout/email/body_order_confirmation.txt',
         {
             'order': order,
             'contact_email': sender_email,
