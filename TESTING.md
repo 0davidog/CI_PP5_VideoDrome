@@ -6,9 +6,32 @@
 
 Manual testing was done for each completed user story and screenshots added to the comments on each issue page.
 
-|User Story|Results|Detail|
-|----------|-------|-------------|
-
+|User Story|
+|----------|
+|[As a new user, I want to be able to register an account on the website using my email address and password.](https://github.com/0davidog/VideoDrome/issues/1)|
+|[As a registered user, I want to be able to log in to my account securely so that I can shop easily with my saved information.](https://github.com/0davidog/VideoDrome/issues/2)|
+|[As a Site user, I want the option to reset my password in case I forget it, ensuring secure access to my account.](https://github.com/0davidog/VideoDrome/issues/3)|
+|[As a Site User, I want a user-friendly navigation menu that helps me explore different sections of the site easily.](https://github.com/0davidog/VideoDrome/issues/32)|
+|[As a user, I want to be able to browse products by category so that I can better find the kind of products I'm interested in.](https://github.com/0davidog/VideoDrome/issues/4)|
+|[As a user, I want to be able to search for products by name or keyword so that I can find a particular product I'm interested in.](https://github.com/0davidog/VideoDrome/issues/5)|
+|[As a user, I want to be able to order products by price or release date, so I can browse in mind of the cheapest or newest items.](https://github.com/0davidog/VideoDrome/issues/14)|
+|[As a shopper, I want to view detailed information about a product, including images, descriptions, and specifications so that I can be better informed about my purchases.](https://github.com/0davidog/VideoDrome/issues/6)|
+|[As a shopper, I want to be able to read reviews for a product so that I can be better informed before making a purchase decision.](https://github.com/0davidog/VideoDrome/issues/7)|
+|[As a registered site-user, I want to be able to add a product to my wishlist so that I can easily return to a product I want to purchase at a more convenient time.](https://github.com/0davidog/VideoDrome/issues/8)|
+|[As a registered site-user, I can give a star rating to a product so that I can express my view on product quality without writing a review.](https://github.com/0davidog/VideoDrome/issues/12)|
+|[As a shopper, I want to be able to add items to my shopping basket so that I can purchase multiple products in one transaction.](https://github.com/0davidog/VideoDrome/issues/9)|
+|[As a shopper, I want to be able to view and edit the contents of my shopping cart before proceeding to checkout so that I can be sure of my final purchase decision.](https://github.com/0davidog/VideoDrome/issues/10)|
+|[As a shopper, I want to be able to securely check out and provide shipping and payment information so that I may purchase items with ease and confidence.](https://github.com/0davidog/VideoDrome/issues/15)|
+|[As a shopper, I want to be able to view my order history so that I access the information for my records or a query.](https://github.com/0davidog/VideoDrome/issues/25)|
+|[As a site-owner, I want to include a site-map to ensure better site navigation and search engine optimisation](https://github.com/0davidog/VideoDrome/issues/17)|
+|[As a site owner, I want to Include Meta Description tags in the application HTML so that I can improve search engine optimisation](https://github.com/0davidog/VideoDrome/issues/18)|
+|[As a site-owner, I want to include a robots.txt file in my site so that I can control search engine bot crawling, preserve bandwidth and protect sensitive data.](https://github.com/0davidog/VideoDrome/issues/22)|
+|[As a site-owner, I want to include a newsletter sign up option, so that I can reach my audience with news and offers in a cost-effective manner.](https://github.com/0davidog/VideoDrome/issues/31)|
+|[As a site-owner, I want to include a 404 response page with an appropriate redirect for attempted access to non-existent content so that users who stumble on such errors are not put off from browsing.](https://github.com/0davidog/VideoDrome/issues/23)|
+|[As a Site User with accessibility needs, I want the website to be accessible, with features like ALT text for images and keyboard navigation, to ensure a positive experience for all users.](https://github.com/0davidog/VideoDrome/issues/27)|
+|[As a site-admin I want to be able to add a product without the admin panel so that my work flow can stay oriented to the site.](https://github.com/0davidog/VideoDrome/issues/28)|
+|[As a site-admin I want to be able to edit a product without the admin panel so that my work flow can stay oriented to the site.](https://github.com/0davidog/VideoDrome/issues/29)|
+|[As a site-admin I want to be able to edit a product without the admin panel so that my work flow can stay oriented to the site.](https://github.com/0davidog/VideoDrome/issues/30)|
 
 ## Compatibility and Responsive Testing
 
@@ -19,15 +42,34 @@ This project was developed using a Windows laptop running Windows 10 and the sit
 
 |Browser|Dimensions|Screen|
 |-------|----------|------|
-|Chrome|1920x1080||
-|Firefox|1920x1080||
-|Edge|1920x1080||
+|Chrome|1920x1080|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/d37f1f41-d9d8-45a6-8abb-bfbc27e47a15)|
+|Firefox|1920x1080|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/9910ad32-e58c-4e23-ade3-690d191b2ca9)|
+|Edge|1920x1080|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/560b47e2-615b-4229-a36f-6adf4cb34a36)|
+
 
 
 ### Chrome Emulated Device Dimensions
 
 |Device Name|Dimensions|Screen|
 |-----------|----------|------|
+|iPhoneSE|375x667|[chrome_screen_01](https://github.com/0davidog/VideoDrome/assets/135815736/a7ef51a5-f9bd-496b-bb0e-b18118203a4a)|
+|iPhone XR|414x896|[chrome_screen_02](https://github.com/0davidog/VideoDrome/assets/135815736/351b3cee-f692-4ce9-8eca-a602b7b91d66)|
+|iPhone 12 Pro|390x884|[chrome_screen_03](https://github.com/0davidog/VideoDrome/assets/135815736/ebcd01a5-9386-4c3b-9f93-3762e632989b)|
+|iPhone 14 Pro Max|430x932|[chrome_screen_04](https://github.com/0davidog/VideoDrome/assets/135815736/6d850d14-4ebc-441d-9bb2-aa817d686882)|
+|Pixel 7|412x915|[chrome_screen_05](https://github.com/0davidog/VideoDrome/assets/135815736/76822136-c7dc-49de-a227-1a74dd48f39b)|
+|Samsung Galaxy S8+|360x740|[chrome_screen_06](https://github.com/0davidog/VideoDrome/assets/135815736/a2cbed89-5cbf-4f3b-acf7-10a13f01e3d3)|
+|Samsung Galaxy S20 Ultra|412x915|[chrome_screen_07](https://github.com/0davidog/VideoDrome/assets/135815736/009b5c8a-e122-491a-a8ce-61a0125d3886)|
+|iPad Mini|768x1024|[chrome_screen_08](https://github.com/0davidog/VideoDrome/assets/135815736/e4878edf-fb5e-41c9-b865-bfddbe88c358)|
+|iPad Air|820x1180|[chrome_screen_09](https://github.com/0davidog/VideoDrome/assets/135815736/25e47e87-3d6e-4e79-bc8e-062c09565b93)|
+|iPad Pro|1024x1366|[chrome_screen_10](https://github.com/0davidog/VideoDrome/assets/135815736/992f4a9a-47b7-48b0-b007-7cf64aac3c2b)|
+|Surface Pro 7|912x1368|[chrome_screen_11](https://github.com/0davidog/VideoDrome/assets/135815736/923046e4-d6d5-44fe-8524-825b73653da7)|
+|Surface Duo|540x720|[chrome_screen_12](https://github.com/0davidog/VideoDrome/assets/135815736/8eae8328-e9a7-47c7-9ad9-8141079ddf72)|
+|Galaxy Z Fold 5|344x882|[chrome_screen_13](https://github.com/0davidog/VideoDrome/assets/135815736/e779ec05-cf4a-4b0e-a825-842d0f1b6fbd)|
+|Asus Zenbook Fold|853x1280|[chrome_screen_14](https://github.com/0davidog/VideoDrome/assets/135815736/cddb15a2-17e1-4134-8571-1705cc44302e)|
+|Samsung Galaxy A51/71|412x914|[chrome_screen_15](https://github.com/0davidog/VideoDrome/assets/135815736/59139be4-2985-4bc0-9648-e255c7ab7888)|
+|Nest Hub|1024x600|[chrome_screen_16](https://github.com/0davidog/VideoDrome/assets/135815736/eb4a8c1b-1655-4eab-9b79-d9fb2b3a62f4)|
+|Nest Hub Max|1280x800|[chrome_screen_17](https://github.com/0davidog/VideoDrome/assets/135815736/a6836d41-b6e8-4b68-aef9-b95b62039ee1)|
+
 
 ### Browserstack Devices
 
@@ -35,13 +77,26 @@ This project was developed using a Windows laptop running Windows 10 and the sit
 
 |Device|OS|Browser|Viewport|Screen|
 |------|--|-------|--------|------|
+|iPhone 14|ios v16.6|Chrome|390x664|[browserstack01](https://github.com/0davidog/VideoDrome/assets/135815736/9f29ba15-aa04-4c35-aad3-c1eb39d719ff)|
+|iPhone 15 Pro Max|ios v17.3|Safari|430x932|[browserstack02](https://github.com/0davidog/VideoDrome/assets/135815736/9052de98-52d8-473a-96dc-750af9b3a3a1)|
+|Samsung Galaxy S23|Android v13.0|Chromw|393x786|[browserstack03](https://github.com/0davidog/VideoDrome/assets/135815736/e6c2665f-1d61-4bd7-9e8f-16a9ba58ecd7)|
+|Xiaomi Redmi Note 12 4G|Android v13.0|Chrome|393x736|[browserstack04](https://github.com/0davidog/VideoDrome/assets/135815736/cc11bcd0-f20b-4302-adb7-f49e0fb749fb)|
+|iPad 10th|ios v16.0|Safari|820x1106[browserstack05](https://github.com/0davidog/VideoDrome/assets/135815736/83f093e2-39be-4253-b743-6e08544b2007)|
+|Mac|Sonoma|Safari|1920x927|[browserstack06](https://github.com/0davidog/VideoDrome/assets/135815736/0aa54c48-0e9e-492d-b15c-1f9d86dab969)|
+|iPhone XS|ios v15.3|Chrome|375x635|[browserstack07](https://github.com/0davidog/VideoDrome/assets/135815736/e4187dbb-8ab3-4ab8-8750-fc26868035f9)|
 
 ### Market Share insights
 
 I used [statcounter.com](https://gs.statcounter.com/) to give me an idea of which devices, browsers and operating systems I should focus on due to their popularity.
 
 |Data|Image|
-|----|-----||
+|----|-----|
+|Desktop Browser Market Share:|![Screenshot 2024-06-03 at 22-19-36 Desktop Browser Market Share Worldwide Statcounter Global Stats](https://github.com/0davidog/VideoDrome/assets/135815736/7c73cd92-6903-4bf4-b95e-128397082e5c)|
+|Mobile Browser Market Share:|![Screenshot 2024-06-03 at 22-20-05 Mobile Browser Market Share Worldwide Statcounter Global Stats](https://github.com/0davidog/VideoDrome/assets/135815736/25152248-98c4-4bd3-8929-4779c5f9bcd6)|
+|Mobile Vendor Market Share:|![Screenshot 2024-06-03 at 22-20-44 Mobile Vendor Market Share Worldwide Statcounter Global Stats](https://github.com/0davidog/VideoDrome/assets/135815736/4ea364b5-4542-412c-9935-50265fb0b9d2)|
+|Tablet Vendor Market Share:|![Screenshot 2024-06-03 at 22-21-04 Tablet Vendor Market Share Worldwide Statcounter Global Stats](https://github.com/0davidog/VideoDrome/assets/135815736/8e94fc2b-931d-460a-9259-c1b4e6b37182)|
+|Operating System Market Share:|![Screenshot 2024-06-03 at 22-21-59 Operating System Market Share Worldwide Statcounter Global Stats](https://github.com/0davidog/VideoDrome/assets/135815736/36ba1e1b-c8aa-46bb-86b5-4514cf251536)|
+
 
 ## Accessibility Testing
 
