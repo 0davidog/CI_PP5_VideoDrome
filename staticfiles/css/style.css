@@ -90,11 +90,6 @@ a:hover {
     outline: none;
 }
 
-#nav-logo {
-    height: 50px;
-    vertical-align: top;
-}
-
 .nav-link-white {
     color: #ffffff;
 }
@@ -227,9 +222,6 @@ a:hover {
 /* Bootstrap md breakpoint */
 
 @media (min-width: 768px) {
-    .image-container {
-        height: 100%;
-    }
     body {
         background-position: right 0px;
     }

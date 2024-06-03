@@ -14,6 +14,9 @@ class Language(models.Model):
         )
 
     def __str__(self):
+        """
+        A string representation of the language track.
+        """
         return f"{self.language}"
 
 
@@ -24,6 +27,9 @@ class Subtitle(models.Model):
         )
 
     def __str__(self):
+        """
+        Function to return a string representation of the subtitle track name.
+        """
         if self:
             return f"{self.subtitle}"
         else:
@@ -40,6 +46,9 @@ class Region(models.Model):
         )
 
     def __str__(self):
+        """
+        Function to return a string representation of the region code and region.
+        """
         if self:
             return f"{self.regioncode}: {self.region}"
         else:
@@ -53,6 +62,9 @@ class Genre(models.Model):
         )
 
     def __str__(self):
+        """
+        Function to return a string representation of the genre name.
+        """
         if self:
             return f"{self.genre_name}"
         else:

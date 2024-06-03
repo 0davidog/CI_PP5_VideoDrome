@@ -39,11 +39,11 @@ window.addEventListener('DOMContentLoaded', () => {
             star.onmouseover = function() {
                 star.classList.remove('fa-regular');
                 star.classList.add('fa-solid');
-            }
+            };
             star.onmouseout = function() {
                 star.classList.remove('fa-solid');
                 star.classList.add('fa-regular');
-            }
+            };
         }
     }
 

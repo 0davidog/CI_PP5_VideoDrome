@@ -102,8 +102,10 @@ class OrderItem(models.Model):
         max_digits=10, decimal_places=2, null=False, default=0
         )
 
-    # Override the save method to calculate the video subtotal before saving
     def save(self, *args, **kwargs):
+        """
+        Override the save method to calculate the video subtotal before saving
+        """
         # Calculate the video subtotal based on the video price and quantity
         self.video_sub_total = self.video.price * self.quantity
         # Call the parent class's save method to save the object
