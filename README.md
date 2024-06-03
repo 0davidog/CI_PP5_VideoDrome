@@ -24,7 +24,39 @@ David C. O'Gara
 
 ## Table of Contents
 
-[]
+- [VideoDrome](#videodrome)
+  - [Live Site](#live-site)
+  - [Repo](#repo)
+  - [Author](#author)
+- [Table of Contents](#table-of-contents)
+  - [Agile Process](#agile-process)
+    - [User Stories](#user-stories)
+    - [Project Backlog](#project-backlog)
+    - [Iteration 01 – Due 05/03/2024](#iteration-01--due-04062024)
+- [UX](#ux)
+  - [Project Goal](#project-goal)
+  - [Target Audience](#target-audience)
+  - [Wireframes](#wireframes)
+  - [Information Architecture](#information-architecture)
+  - [Design Choices](#design-choices)
+  - [E-Commerce Business model](#e-commerce-business-model)
+  - [Features](#features)
+  - [Testing](#testing)
+  - [Technologies Used](#technologies-used)
+    - [Languages](#languages)
+    - [Frameworks, Libraries & Programs Used](#frameworks-libraries--programs-used)
+  - [Deployment](#deployment)
+    - [Prerequisites](#prerequisites)
+      - [Heroku Postgres Database](#heroku-postgres-database)
+      - [Create Superuser](#create-superuser)
+      - [Cloudinary](#cloudinary)
+    - [Fork and Clone the Repository](#fork-and-clone-the-repository)
+    - [Local Deployment](#local-deployment)
+    - [Production Deployment](#production-deployment)
+  - [Credits](#credits)
+    - [Content](#content)
+    - [Media](#media)
+    - [Acknowledgments](#acknowledgments)
 
 ## Agile Process
 
