@@ -276,25 +276,37 @@ def rating(request, slug, rating):
         rating_exists = get_object_or_404(UserRating.objects.filter(
             user=user, video=video
             ))
-        rating_exists.rating = user_rating
-        rating_exists.save()
-        # Add a success message indicating the updated rating
-        messages.add_message(
+        if user_rating > 0:
+            rating_exists.rating = user_rating
+            rating_exists.save()
+            # Add a success message indicating the updated rating
+            messages.add_message(
             request, messages.SUCCESS,
             f"You rated {video} {user_rating} stars."
             )
+        else:
+            rating_exists.delete()
+            # Add a success message indicating the deleted rating
+            messages.add_message(
+            request, messages.SUCCESS,
+            f"You removed your rating for {video}."
+            )
+        
     else:
-        # If the user has not rated the video, create a new rating entry
-        UserRating.objects.create(
-            user=user,
-            video=video,
-            rating=user_rating,
-        )
-        # Add a success message indicating the new rating
-        messages.add_message(
-            request, messages.SUCCESS,
-            f"You rated {video} {user_rating} stars."
+        if user_rating > 0:
+            # If the user has not rated the video, create a new rating entry
+            UserRating.objects.create(
+                user=user,
+                video=video,
+                rating=user_rating,
             )
+            # Add a success message indicating the new rating
+            messages.add_message(
+                request, messages.SUCCESS,
+                f"You rated {video} {user_rating} stars."
+                )
+        else:
+            return HttpResponseRedirect(reverse('video_detail', args=[slug]))
 
     # Redirect the user to the video detail page after rating
     return HttpResponseRedirect(reverse('video_detail', args=[slug]))

@@ -6,10 +6,11 @@ Add Your Rating:&nbsp;
 {% endif %}
 
 <span {% if not user.is_authenticated %} class="d-none" {% endif %}>
-<a href="{% url 'rate_video' video.slug 1 %}" class="rating-link"><i class="fa-regular fa-star" id="star-1"></i></a>
-<a href="{% url 'rate_video' video.slug 2 %}" class="rating-link"><i class="fa-regular fa-star" id="star-2"></i></a>
-<a href="{% url 'rate_video' video.slug 3 %}" class="rating-link"><i class="fa-regular fa-star" id="star-3"></i></a>
-<a href="{% url 'rate_video' video.slug 4 %}" class="rating-link"><i class="fa-regular fa-star" id="star-4"></i></a>
-<a href="{% url 'rate_video' video.slug 5 %}" class="rating-link"><i class="fa-regular fa-star" id="star-5"></i></a>
+<a href="{% url 'rate_video' video.slug 0 %}" class="wishlist-link" title="Delete Rating"><i class="fa-solid fa-ban"></i></a>
+<a href="{% url 'rate_video' video.slug 1 %}" class="rating-link" title="1"><i class="fa-regular fa-star" id="star-1"></i></a>
+<a href="{% url 'rate_video' video.slug 2 %}" class="rating-link" title="2"><i class="fa-regular fa-star" id="star-2"></i></a>
+<a href="{% url 'rate_video' video.slug 3 %}" class="rating-link" title="3"><i class="fa-regular fa-star" id="star-3"></i></a>
+<a href="{% url 'rate_video' video.slug 4 %}" class="rating-link" title="4"><i class="fa-regular fa-star" id="star-4"></i></a>
+<a href="{% url 'rate_video' video.slug 5 %}" class="rating-link" title="5"><i class="fa-regular fa-star" id="star-5"></i></a>
 </span>
 <span {% if user.is_authenticated %} class="d-none text-danger" {% else %} class="text-danger" {% endif %}>Log in to rate videos.</span>
