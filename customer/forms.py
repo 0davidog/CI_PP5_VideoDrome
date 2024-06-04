@@ -1,7 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from .models import Customer, CustomerMessage
-
+from .models import Customer
 class SavedAddressForm(forms.ModelForm):
 
     class Meta:
@@ -71,48 +70,5 @@ class SavedDetailsForm(forms.ModelForm):
             if value in [None, '']:
                 del cleaned_data[field_name]
         return cleaned_data
-
-
-class MessageForm(forms.ModelForm):
-
-    user_email = forms.EmailField(max_length=254)
-    subject = forms.CharField(max_length=254)
-
-    class Meta:
-        model = CustomerMessage
-
-        fields = {
-            'user_email',
-            'subject',
-            'body',
-            'order_number',
-        }
-
-    def __init__(self, *args, **kwargs):
-        """
-        Add placeholders and classes, remove auto-generated
-        labels and set autofocus on first field
-        """
-        super().__init__(*args, **kwargs)
-        
-        placeholders = {
-            'user_email': 'Your Email Address',
-            'subject': 'Message Subject',
-            'body': 'Your Message...',
-            'order_number': 'Order number this applies to (if any)'
-        }
-
-        # iterate over fields to add matching placeholder and remove label
-        for field in self.fields:
-            # Set placeholder variable to matching field
-            # Includes astrix if required.
-            if self.fields[field].required:
-                    placeholder = f'{placeholders[field]} *'
-            else:
-                placeholder = placeholders[field]
-            # Set placeholder attribute in form widget to our placeholder var value 
-            self.fields[field].widget.attrs['placeholder'] = placeholder
-            # Remove existing field label
-            self.fields[field].label = False
 
 

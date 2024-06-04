@@ -6,10 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Customer
 from checkout.models import CustomerOrder, OrderItem
 from videos.models import Video, UserRating, UserReview
-from .forms import SavedAddressForm, SavedDetailsForm, MessageForm
-from videos.forms import VideoForm
-from customer.models import CustomerMessageThread, CustomerMessage
-from .email import send_customer_message, reply_to_customer
+from .forms import SavedAddressForm, SavedDetailsForm
 
 # Create your views here.
 
@@ -153,61 +150,6 @@ def read_reviews(request):
     return render(request, 'customer/reviews.html', context)
 
 
-# Define a view function to create and send messages
-# Ensure that only authenticated users can access this view
-@login_required
-def create_messages(request):
-    """
-    View to render and handle creating and sending messages.
-    """
-
-    # Check if the request method is POST (i.e., form submission)
-    if request.method == "POST":
-        # Instantiate a MessageForm with the POST data
-        message_form = MessageForm(request.POST)
-
-        # Validate the submitted form data
-        if message_form.is_valid():
-            # Save the message object without committing it to the database
-            message = message_form.save(commit=False)
-            # Assign the current user to the message's user field
-            message.user = request.user
-            # Create a new message thread
-            # associated with the user and message details
-            message.thread = CustomerMessageThread.objects.create(
-                user=request.user,
-                order_number=message.order_number,
-                subject=message.subject,
-                user_email=message.user_email,
-            )
-            # Save the message object to the database
-            message.save()
-            # Send the message to the customer
-            send_customer_message(message)
-            # Add a success message
-            # indicating the successful sending of the message
-            messages.success(request, 'Your message has been sent.')
-            # Redirect the user to the read_messages view
-            return redirect('read_messages')
-        else:
-            # If the form is not valid, add an error message
-            messages.error(
-                request,
-                'Error submitting form. Please check your information.'
-                )
-    else:
-        # If the request method is not POST, instantiate an empty MessageForm
-        message_form = MessageForm()
-
-    # Create a context dictionary to pass data to the template
-    context = {
-        'message_form': message_form,
-    }
-
-    # Render the 'create_messages.html' template with the context data
-    return render(request, 'customer/create_messages.html', context)
-
-
 # Define a view function to read customer messages
 # Ensure that only authenticated users can access this view
 @login_required
@@ -317,85 +259,6 @@ def order_detail(request, order_number):
 
     # Render the 'order_detail.html' template with the context
     return render(request, 'customer/order_detail.html', context)
-
-
-# Define a view function to reply to customer messages in a specific thread
-@login_required  # Ensure that only authenticated users can access this view
-def reply_messages(request, thread):
-    """
-    View to render and handle
-    replying to customer messages in a specific thread.
-    """
-
-    # Retrieve all customer messages in the specified thread
-    customer_messages = CustomerMessage.objects.filter(thread=thread)
-
-    # Retrieve the message thread associated with the thread ID
-    message_thread = get_object_or_404(CustomerMessageThread, id=thread)
-
-    # Extract email, subject, and order number from the message thread
-    email = message_thread.user_email
-    subject = f"RE: {message_thread.subject}"
-    order_number = message_thread.order_number
-
-    # Check if the request method is POST (i.e., form submission)
-    if request.method == "POST":
-        # Instantiate a MessageForm with the POST data and initial values
-        message_form = MessageForm(request.POST, initial={
-            'user_email': email,
-            'subject': subject,
-            'order_number': order_number
-        })
-
-        # Validate the submitted form data
-        if message_form.is_valid():
-            # Save the message object without committing it to the database
-            message = message_form.save(commit=False)
-            # Assign the current user and message thread to the message object
-            message.user = request.user
-            message.thread = message_thread
-            # Save the message object to the database
-            message.save()
-            # Send the message
-            if request.user.is_staff:
-                send_customer_message(message)
-            else:
-                reply_to_customer(message)
-            # Add a success message
-            # indicating the successful sending of the message
-            messages.success(request, 'Your message has been sent.')
-            # Construct the URL
-            # for redirecting to the read_messages view
-            # with the thread ID as a query parameter
-            url = reverse('read_messages') + f'?thread={thread}'
-            # Redirect the user to the read_messages view
-            # with the thread ID as a query parameter
-            return HttpResponseRedirect(url)
-        else:
-            # If the form is not valid, add an error message
-            messages.error(
-                request,
-                'Error submitting form. Please check your information.'
-                )
-    else:
-        # If the request method is not POST,
-        # instantiate a MessageForm with initial values
-        message_form = MessageForm(initial={
-            'user_email': email, 'subject': subject,
-            'order_number': order_number})
-
-    # Prepare the context for rendering the template
-    context = {
-        'message_form': message_form,
-        # Message form for replying to the thread
-        'customer_messages': customer_messages,
-        # Customer messages in the thread
-        'message_thread': message_thread,
-        # Message thread
-    }
-
-    # Render the 'reply_messages.html' template with the context
-    return render(request, 'customer/reply_messages.html', context)
 
 
 # Define a view function to display inventory
