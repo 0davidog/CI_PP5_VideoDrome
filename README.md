@@ -476,22 +476,22 @@ Keeping with the sites theme I decided the logo should represent a VHS video tap
 
 ## E-commerce Business Model
 
-The ecommerce business model of this site revolves around selling physical media products (DVDs, Blu-rays, and 4k Ultra HD films) related to horror, sci-fi, thriller and classic film genres predominently. 
+The business to customer e-commerce business model of this site revolves around selling physical media products (DVDs, Blu-rays, and 4k Ultra HD films) related to horror, sci-fi, thriller and classic film genres predominantly. 
 Here's a breakdown of its key components:
 
 - Product Offering: The site will offer a range of products including both new and used DVDs, Blu-rays, and 4k Ultra HD films. The focus is on niche genres such as horror, sci-fi, and classic films, catering to enthusiasts and collectors within these genres.
-- Inventory Management: The business will manage an inventory of physical media, ensuring availability of both popular and niche titles in its catalog. This may involve sourcing products from distributors, acquiring used items through trade-ins or purchases, and maintaining stock levels to meet customer demand.
+- Inventory Management: The business will manage an inventory of physical media, ensuring availability of both popular and niche titles in its catalogue. This may involve sourcing products from distributors, acquiring used items through trade-ins or purchases, and maintaining stock levels to meet customer demand.
 - Online Platform: The site will operate as an online platform where customers can browse, search, and purchase products. It should include features such as product listings, search functionality, shopping cart, secure payment processing, and order tracking (order tracking should be listed as a future feature as it is out of this project's scope).
-- Customer Experience: Providing a positive customer experience is crucial for an ecommerce business model. This will involve offering a user-friendly website interface, accurate product descriptions and images, secure payment options, responsive customer support, and efficient order fulfillment and delivery (order fullfillment and delivery are outside the scope of this project and will be listed as future features).
+- Customer Experience: Providing a positive customer experience is crucial for an ecommerce business model. This will involve offering a user-friendly website interface, accurate product descriptions and images, secure payment options, responsive customer support, and efficient order fulfilment and delivery (order fulfilment and delivery are outside the scope of this project and will be listed as future features).
 - Marketing and Promotion: Marketing efforts should focus on targeting audiences interested in horror, sci-fi, thriller, and classic films through channels such as social media, email newsletters, content marketing (e.g., blog posts, reviews), and partnerships with influencers or related websites. Special promotions, discounts, and loyalty programs may also be used to attract and retain customers.
-- Logistics and Fulfillment: The business would, if fully operational, manage logistics and fulfillment operations to ensure timely delivery of orders. This includes packaging products securely, arranging shipping or delivery services, and handling returns or exchanges.
+- Logistics and Fulfilment: The business would, if fully operational, manage logistics and fulfilment operations to ensure timely delivery of orders. This includes packaging products securely, arranging shipping or delivery services, and handling returns or exchanges.
 - Revenue Model: Revenue is primarily generated through the sale of products, with pricing determined based on factors such as demand, rarity, condition (for used items), and competition. Additional revenue streams to consider may include shipping fees, handling fees, and potentially advertising or sponsorship revenue if the site features relevant promotional content.
 
 Overall, the ecommerce business model of this site combines niche product offerings with an online platform and marketing efforts tailored to attract and engage customers interested in horror, sci-fi, and classic films.
 
 ### Facebook Business Page
 
-A Facebook buisness page will be set up for this project. Setting up a Facebook business page can be an effective way to enhance your online presence, engage with your audience, and target potential customers. This would potentially drive sales for VideoDrome's DVD, Blu-ray, and 4k Ultra HD film business.
+A Facebook business page will be set up for this project. Setting up a Facebook business page can be an effective way to enhance your online presence, engage with your audience, and target potential customers. This would potentially drive sales for VideoDrome's DVD, Blu-ray, and 4k Ultra HD film business.
 
 My goals for setting up a Facebook business page for VideoDrome could include:
 
@@ -510,13 +510,13 @@ A link to the page is provided [here](https://www.facebook.com/people/VideoDrome
 
 <em>[As a site-owner, I want to include a newsletter sign up option, so that I can reach my audience with news and offers in a cost-effective manner.](https://github.com/0davidog/VideoDrome/issues/31)</em>
 
-A email newsletter sign-up link will be added to this site with the use of mailchimp's free services.
+An email newsletter sign-up link will be added to this site with the use of Mailchimp's free services.
 
 My goals for setting up an email newsletter for VideoDrome could include:
 
 - Direct Communication: An email newsletter may provide a direct channel of communication with my audience. Unlike social media platforms where posts may get lost in users' feeds, emails land directly in subscribers' inboxes, giving me a higher chance for user engagement.
 - Building Customer Relationships: Through regular newsletters, I could potentially build stronger relationships with my customers by providing them with useful content such as updates, and exclusive offers. This may help to keep the VideoDrome brand top-of-mind and encourage repeat purchases.
-- Promoting Products and Offers: Email newsletters allow for promotion of products and special offers directly to the audience. With news of new arrivals, sales, discounts, or limited-time promotions, a newsletter coul drive traffic to the store and increase sale potential.
+- Promoting Products and Offers: Email newsletters allow for promotion of products and special offers directly to the audience. With news of new arrivals, sales, discounts, or limited-time promotions, a newsletter could rive traffic to the store and increase sale potential.
 - Targeted Marketing: With email marketing platforms, I can segment your subscriber list based on factors such as purchase history, interests, and engagement level. This enables me to send targeted and personalized emails to different segments of my audience, increasing relevance and effectiveness.
 - Measurable Results: Email marketing platforms provide analytics and reporting tools that allow you to track the performance of your newsletters. You can see metrics such as open rates, click-through rates, and conversion rates, enabling you to measure the effectiveness of your campaigns and make data-driven decisions to optimize future efforts.
 - Cost-Effectiveness: Compared to traditional marketing channels, email marketing is relatively inexpensive. Once I have set up my email list and created the templates, the cost of sending out newsletters is minimal, making it a cost-effective way to reach my target audience.
@@ -652,50 +652,6 @@ The robots.txt for VideoDrome can be found [here.](https://github.com/0davidog/V
 
 ## Features
 
-Here's a list of features available on the site, information such as testing of features can be found by following the links to the related user stories.
-
-### Video App
-
-#### Product List View
-
-<em>[As a user, I want to be able to browse products by category so that I can better find the kind of products I'm interested in.](https://github.com/0davidog/VideoDrome/issues/4)</em>
-
-The videos view allows the user to view the full list of products or filter them by category if they are looking for something in particular. Categories include the video's format (DVD, Blu-Ray or UHD) and any genre label that's been attached to the video.
-
-<em>[As a user, I want to be able to search for products by name or keyword so that I can find a particular product I'm interested in.](https://github.com/0davidog/VideoDrome/issues/5)</em>
-
-Users can search for a particular video or videos based on a keyword by use of the sites search bar that can be found on the site header.
-
-<em>[As a user, I want to be able to order products by price or release date, so I can browse in mind of the cheapest or newest items.](https://github.com/0davidog/VideoDrome/issues/14)</em>
-
-Users can then view these lists in an order that suits them such as price in lowest to highest for those looking for a bargain or date newest to oldest for those looking for the latest releases.
-
-#### Product Detail View
-
-<em>[As a shopper, I want to view detailed information about a product, including images, descriptions, and specifications so that I can be better informed about my purchases.](https://github.com/0davidog/VideoDrome/issues/6)</em>
-
-Clicking on a video's title link takes the user to a video detail view that displays all the relevant information the user needs before choosing a purchase. To save time on this project, overviews of the films represented in the videos were sourced from wikipedia and a link to the source was included.
-
-<em>[As a shopper, I want to be able to read reviews for a product so that I can be better informed before making a purchase decision.](https://github.com/0davidog/VideoDrome/issues/7)</em>
-
-While browsing the video detail pages user can read any user reviews that have been submitted by other users to help them make an informed choice. 
-
-<em>[As a registered site user, I would like to leave a review on a product I have already purchased so that I might help others be informed.](https://github.com/0davidog/VideoDrome/issues/33)</em>
-
-They may also, if registered, leave their own review via a form linked to from the review section.
-
-<em>[As a registered site-user, I want to be able to add a product to my wishlist so that I can easily return to a product I want to purchase at a more convenient time.](https://github.com/0davidog/VideoDrome/issues/8)</em>
-
-Registered users can also add a product to their wishlist while viewing the video detail page. This wishlist can later be viewed and updated in the customer page.
-
-<em>[As a registered site-user, I can give a star rating to a product so that I can express my view on product quality without writing a review.](https://github.com/0davidog/VideoDrome/issues/12)</em>
-
-Registered user can also give a star rating (out of five) to a video they like. This can be changed or removed at any time as long as the user is logged in.
-
-### Basket App
-
-#### Add to Basket
-
 <em>[As a shopper, I want to be able to add items to my shopping basket so that I can purchase multiple products in one transaction.](https://github.com/0davidog/VideoDrome/issues/9)</em>
 
 Once set on a product, users need only click the 'add to basket' link that appears with the product on both the all videos view and video detail view.
@@ -704,7 +660,7 @@ Once set on a product, users need only click the 'add to basket' link that appea
 
 <em>[As a shopper, I want to be able to view and edit the contents of my shopping cart before proceeding to checkout so that I can be sure of my final purchase decision.](https://github.com/0davidog/VideoDrome/issues/10)</em>
 
-Once items have been added to basket, users have the ability to edit the quantity or remove any of the basket items.
+Once items have been added to the basket, users have the ability to edit the quantity or remove any of the basket items.
   
 ### Checkout App
 
@@ -736,7 +692,7 @@ The footer contains social links, a newsletter signup and an email contact form.
 
 <em>[As a new user, I want to be able to register an account on the website using my email address and password.](https://github.com/0davidog/VideoDrome/issues/1)</em>
 
-Users are able to register for an account thanks to django-allauth. Email confirmation is required. Signing up provides access to benefits such as saved address, order history, wishlist and reviews.
+Users are able to register for an account thanks to django-allauth. Email confirmation is required. Signing up provides access to benefits such as saved address, order history, wish list and reviews.
 
 <em>[As a registered user, I want to be able to log in to my account securely so that I can shop easily with my saved information.](https://github.com/0davidog/VideoDrome/issues/2)</em>
 
@@ -744,7 +700,7 @@ Once registered, users can log in securely with their details.
 
 <em>[As a Site user, I want the option to reset my password in case I forget it, ensuring secure access to my account.](https://github.com/0davidog/VideoDrome/issues/3)</em>
 
-If a password is forgotten allauth allows a process in which user can recover their account.
+If a password is forgotten, allauth allows a process in which a user can recover their account.
 
 #### Custom 404
 
@@ -756,7 +712,7 @@ A custom 404 page is provided to ensure that users who attempt to access missing
 
 <em>[As a shopper, I want to be able to track the status of my orders, so I can be confident my order is handled and shipped in good time.](https://github.com/0davidog/VideoDrome/issues/26)</em>
 
-As a real store would also handle shipping an ideal future feature would be a way in which customers can keep up to date with their order status.
+As a real store would also handle shipping, an ideal future feature would be a way in which customers can keep up to date with their order status.
 
 ## Testing
 
@@ -1052,8 +1008,6 @@ Install Gunicorn:
 `pip freeze > requirements.txt`
 
 Set Up Database:
-
-See [ElephantSQL](####-ElephantSQL-Database)
 
 Ad Heroku to allowed hosts in settins.py:
 
