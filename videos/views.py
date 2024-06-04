@@ -260,6 +260,8 @@ def rating(request, slug, rating):
     """
     View for rating videos
     """
+    # Retrieve the referer URL from the request headers
+    referer = request.META.get('HTTP_REFERER')
 
     # Retrieve the authenticated user object
     user = get_object_or_404(User, id=request.user.id)
@@ -306,10 +308,21 @@ def rating(request, slug, rating):
                 f"You rated {video} {user_rating} stars."
                 )
         else:
-            return HttpResponseRedirect(reverse('video_detail', args=[slug]))
+            # If referer exists, redirect to it.
+            # Otherwise, redirect to a default URL.
+            if referer:
+                return HttpResponseRedirect(referer)
+            else:
+                return HttpResponseRedirect('/')
+                # Redirect to a default URL if no referer is found
 
-    # Redirect the user to the video detail page after rating
-    return HttpResponseRedirect(reverse('video_detail', args=[slug]))
+    # If referer exists, redirect to it.
+    # Otherwise, redirect to a default URL.
+    if referer:
+        return HttpResponseRedirect(referer)
+    else:
+        return HttpResponseRedirect('/')
+        # Redirect to a default URL if no referer is found
 
 
 # Define a view function to render and submit a review form

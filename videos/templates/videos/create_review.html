@@ -9,7 +9,6 @@
         <div class="col">
             <h2>Write a Review</h2>
             <p class="text-muted">{{ video.title }}&nbsp;{{ video.release_year }}&nbsp;{{ video.format}}</p>
-            {% include 'includes/stars.html' %}
             <hr>
 
             <div class="card">
@@ -34,7 +33,7 @@
                         <i class="fa-solid fa-triangle-exclamation"></i>
                         All review submissions will require admin approval.
                     </div>
-                    <div class="text-warning">
+                    <div class="text-danger">
                         <i class="fa-solid fa-triangle-exclamation"></i>
                         You can only write one review per title.
                     </div>
