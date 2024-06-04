@@ -8,13 +8,13 @@ VideoDrome is an ecommerce website dedicated to the sale of genre, cult and clas
 
 ## Live Site
 
-The live app is hosted on the Heroku platform. More details on how the project was deployed can be found below [here]().
+The live app is hosted on the Heroku platform. More details on how the project was deployed can be found below [here](#deployment).
 
 [Heroku Link](https://videodrome-ff881eaa1b51.herokuapp.com/)
 
 ## Repo
 
-The project's code and file repository is hosted by Github. More details on cloning or forking the repository can be found [here]().
+The project's code and file repository is hosted by Github. More details on cloning or forking the repository can be found [here](#fork-and-clone-the-repository).
 
 [Github link](https://github.com/0davidog/VideoDrome)
 
@@ -67,8 +67,6 @@ This project is to be made using Agile develpment pricipals to plan and complete
 Following Agile development practice this project has been divided into user stories to give a clear understanding of the project needs, goals and features and to split the work in to small achievable sets of tasks.
 
 [User Stories on Github](https://github.com/users/0davidog/projects/4)
-
-<details><summary>DETAILS</summary>
     
 Here is a list of user stories for this project seperated in to their relative Epics. Each story links to its place on Github where you can view:
 
@@ -95,6 +93,7 @@ Epic: Product Detail and Reviews
 
 - [As a shopper, I want to view detailed information about a product, including images, descriptions, and specifications so that I can be better informed about my purchases.](https://github.com/0davidog/VideoDrome/issues/6)
 - [As a shopper, I want to be able to read reviews for a product so that I can be better informed before making a purchase decision.](https://github.com/0davidog/VideoDrome/issues/7)
+- [As a registered site user, I would like to leave a review on a product I have already purchased so that I might help others be informed.](https://github.com/0davidog/VideoDrome/issues/33)
 - [As a registered site-user, I want to be able to add a product to my wishlist so that I can easily return to a product I want to purchase at a more convenient time.](https://github.com/0davidog/VideoDrome/issues/8)
 - [As a registered site-user, I can give a star rating to a product so that I can express my view on product quality without writing a review.](https://github.com/0davidog/VideoDrome/issues/12)
 
@@ -127,8 +126,6 @@ Epic: Database Managment & Administration
 - [As a site-admin I want to be able to edit a product without the admin panel so that my work flow can stay oriented to the site.](https://github.com/0davidog/VideoDrome/issues/29)
 - [As a site-admin I want to be able to edit a product without the admin panel so that my work flow can stay oriented to the site.](https://github.com/0davidog/VideoDrome/issues/30)
 
-</details>
-
 ### Project Backlog
 
 Due to the small scope of this project, having a project backlog and seperate iterations didn't seem neccessary as their would only be one project to client hand-over. It was instead decided to keep all the user stories in the one project iteration list. A project backlog milestone was created however on github to follow agile practice.
@@ -145,7 +142,7 @@ As this is an accedemic porfolio project there is only one interation in which t
 
 ### Project Goal
 
-The project goal is a site that allows for the browsing and purchase of physical media items in the form of DVD, Blu-ray and 4k Ultra HD disks.
+The project goal is a site that allows for the browsing and purchase of physical media items in the form of DVD, Blu-ray and 4k Ultra HD disks. 
 
 ### Target Audience
 
@@ -154,8 +151,6 @@ The target audience will be enthusiasts of genre and cult cinema, physical media
 ### Wireframes
 
 Wireframes were created using Balsamiq to design the general look of the sites main features.
-
-<details><summary>DETAILS</summary>
 
 #### Landing Page Displaying All Products:
 
@@ -169,11 +164,7 @@ Wireframes were created using Balsamiq to design the general look of the sites m
 
 ![Basket](https://github.com/0davidog/VideoDrome/assets/135815736/eb8e798a-de3b-4c6f-99c0-b5ed9bf38931)
 
-</details>
-
 ## Information Architecture
-
-<details><summary>DETAILS</summary>
 
 ### Database Choice
 
@@ -183,7 +174,8 @@ The project uses the PostgreSQL database installed and managed through the Herok
 
 The diagram displayed here shows the relationship between the database models used in the project.
 
-![VideoDrome_ERD_full](https://github.com/0davidog/VideoDrome/assets/135815736/c8fa55be-7af0-4df2-aaed-c5d11b46b0cd)
+![VideoDrome ERD](https://github.com/0davidog/VideoDrome/assets/135815736/86878f91-8482-4475-ac26-b09e5ab3c676)
+
 
 - The Video model is connected to the Language, Subtitle, Region, Genre and user models all as Many To Many fields. These represent the multiple attributes different videos can have and whether or not as user has added it to their wishlist.
 - The UserRating model connects to the Video model and User model as Foreign Keys, representing subject and author respectively.
@@ -191,8 +183,6 @@ The diagram displayed here shows the relationship between the database models us
 - The CustomerOrder model connects to the Customer model as a Foregin Key. This is the customer's saved information.
 - The OrderItem model connects to the CustomerOrder and Video models as Foreign Keys and represent the videos purchased as a part of an order.
 - The Customer model connects to the User model as a Foreign Key and contains the saved data chosen by the user.
-- The CustomerMessageThread model connects to the User model as a Foreign Key as the author or the original message in the thread.
-- The CustomerMessage model also connects to the User model as a Foreign Key as the author of the message.
 
 [Heroku Postgres](https://www.heroku.com/postgres)
 
@@ -201,6 +191,8 @@ The diagram displayed here shows the relationship between the database models us
 #### Video Model
 
 ![VideoDrome_ERD_Video](https://github.com/0davidog/VideoDrome/assets/135815736/edf1a469-f4f9-4005-afa4-84a6a95d6c72)
+
+The Video model holds the data for each individual product sold on Videorome and contains a range of useful information to inform potential customers.
 
 |DB Key|Data Type|Purpose|Additional Information|
 |------|---------|-------|----------------------|
@@ -434,100 +426,53 @@ Signal Reciever
 - [x] Update - Customer can update their details in the customer info section.
 - [ ] Delete - Only admin can currently delete an customer instance.
 
-### CustomerMessageThread Model
-
-![VideoDrome_ERD_customermessagethread](https://github.com/0davidog/VideoDrome/assets/135815736/3c8525eb-f695-4bda-a558-783f4afa21eb)
-
-|DB Key|Data Type|Purpose|Additional Information|
-|------|---------|-------|---------------|
-|user|ForeignKey|The user who sent the initial message and started the thread.|Related to User model.|
-|user_email|EmailField|Email address of the user.||
-|is_resolved|BooleanField|Indicates if the thread query or issue is resolved.||
-|order_number|CharField|Order number associated with the thread.|Optional.|
-|subject|CharField|The initial email subject line.||
-|created|DateField|The date the thread was created.|Added automatically on creation.|
-
-Model functions.
-- resolved(self): Returns a string indicating if the thread is resolved or not.
-- def __str__(self): Returns a string representation of the thread.
-
-- [ ] Create - Created automatically.
-- [x] Read - Can be Read in the customer info section.
-- [ ] Update - Can only be edited by admin.
-- [ ] Delete - Can only be deleted by admin.
-
-
-
-### CustomerMessage Model
-
-![VideoDrome_ERD_customermessage](https://github.com/0davidog/VideoDrome/assets/135815736/8f327bb8-a32a-456f-9b9a-3194e5c152be)
-
-|DB Key|Data Type|Purpose|Additional Information|
-|------|---------|-------|---------------|
-|user|ForeignKey|The user who sent the initial message and started the thread.|Related to User model.|
-|order_number|CharField|Order number associated with the thread.|Optional.|
-|user_email|EmailField|Email address of the user.||
-|subject|CharField|The email subject line.||
-|body|TextField|
-|date|DateTimeField|
-|thread|ForeignKey|
-
-Model functions.
-- def __str__(self): Returns a string representation of the message.
-
-- [x] Create - Messages are created by a customer using a form.
-- [x] Read - Once written messages can be read as a thread in the customer info section.
-- [ ] Update - Only admin can edit messages.
-- [ ] Delete - Only admin can currently delete messages.
-
-</details>
-
 ## Design Choices
 
 ### Title and Visual Inspiration
 
 Deciding on the project title and the inspiration behind the visual design.
-
-<details><summary>DETAILS</summary>
+  
+![videodrome_video_cover_videodrome_4k](https://github.com/0davidog/VideoDrome/assets/135815736/a4500b67-7ae7-4fa7-b266-dcebbf68d64f)
     
 After deciding upon a business model that trades in genre films on physical media I looked to my own collection for ideas on the project title and David Cronenberg's Videodrome stood out. The title, 'videorome' suggests a video arena and would be an ideal name choice for a place of business in which a large stock of videos are traded. It also fits with the nostalgic feel of video rental business which an audience of over 30s would remember fondly. 
 
 This gave me great place to start with the look of the project also...
 
-|Detail|Image|
-|--|--|
-|detail|![videodrome_video_cover_videodrome_blu_ray](https://github.com/0davidog/VideoDrome/assets/135815736/75b7ae34-43e2-427e-809f-8bccb3f682f9)|
-|detail|![videodrome_video_cover_videodrome_4k](https://github.com/0davidog/VideoDrome/assets/135815736/a4500b67-7ae7-4fa7-b266-dcebbf68d64f)|
+![videodrome_video_cover_videodrome_blu_ray](https://github.com/0davidog/VideoDrome/assets/135815736/75b7ae34-43e2-427e-809f-8bccb3f682f9)
 
-</details>
+I like the mix of colours used in the special edition blu-ray release of this film and saw an opportunity for using greens and reds to highlight important parts of the site such as buttons, links and messages.
 
 ### Chosen Colour Palette
 
-<details><summary>DETAILS</summary>
+I took the colours from the blu-ray cover as inspiration and realised it could fit quite well with bootstraps options for colour themes. I wanted to include a yellow as part of the site because I had planned to use stars to represent a score out of five that users can give the products. I also went with a dark blue, I wanted to use this for the background of the header and footer while also use it as the text color on the main pages. I had decided to go with white as the background colour for the main page content to keep a focus on getting information to the audience in a clear manner.
 
 ![videodrome_palette](https://github.com/0davidog/VideoDrome/assets/135815736/ed47af8e-2ac6-4af6-b226-b96f4e36607a)
-[via coolors](https://coolors.co/041348-198754-dc3545-0d6efd-ffc107)
 
-</details>
+[via coolors](https://coolors.co/041348-198754-dc3545-0d6efd-ffc107)
 
 ### Font Choice
 
-<details><summary>DETAILS</summary>
-
 ![videodrome_font_color_choice](https://github.com/0davidog/VideoDrome/assets/135815736/5ec04738-2823-456e-b30b-5b22fb812dc7)
 
-</details>
+In looking for font choices I had searched for a 'cyber-punk' themed font as I feel this would suit the video rental shop nostalgia that I was looking to envoke. Orbitron seemed perfect for the role however it was unsuitable for any serious body of text due to the blocky style of letters making for difficult reading. I searched for a suitable font pairing for the copy text and found a recommendation [here.](https://looka.com/blog/font-pair/)
+
+![Screenshot 2024-06-04 at 01-36-22 25 Font Pairs to Build Your Brand ( Examples!) Looka](https://github.com/0davidog/VideoDrome/assets/135815736/d65b968d-de02-4eb0-bf11-4cd877ca6b6a)
+
+Here's a screenshot of the article to save scrolling.
 
 ### Graphic Design
 
-<details><summary>DETAILS</summary>
+#### Background Image
 
-|Detail|Image|
-|--|--|
-|detail|![videodrome_logo](https://github.com/0davidog/VideoDrome/assets/135815736/e21a1c11-57ce-4087-b89c-d67d5fdc463c)|
-|detail|![videodrome_bg](https://github.com/0davidog/VideoDrome/assets/135815736/8fd207ee-24c7-4b22-8b88-6553c2e33ce9)|
+![videodrome](https://github.com/0davidog/VideoDrome/assets/135815736/2c55f845-3a69-41ac-8d28-0378360f69c7)
 
-</details>
+I wanted a background image for the landing page that would suit the theme and purpose of the site. I chose to design this pixel art image of someone watching videos at home late night. the color palette is taken from the site's colors to blend in and attempts to capture that nostalgia of watching videos in the 80s and 90s.
+
+#### Site Logo
+
+![videodrome_logo](https://github.com/0davidog/VideoDrome/assets/135815736/e21a1c11-57ce-4087-b89c-d67d5fdc463c)
+
+Keeping with the sites theme I decided the logo should represent a VHS video tape. Despite not being sold on the site, many of the site's target audience who are interested in home video may have fond memories of the VHS medium.
 
 ## E-commerce Business Model
 
@@ -548,8 +493,6 @@ Overall, the ecommerce business model of this site combines niche product offeri
 
 A Facebook buisness page will be set up for this project. Setting up a Facebook business page can be an effective way to enhance your online presence, engage with your audience, and target potential customers. This would potentially drive sales for VideoDrome's DVD, Blu-ray, and 4k Ultra HD film business.
 
-<details><summary>DETAILS</summary>
-
 My goals for setting up a Facebook business page for VideoDrome could include:
 
 - Increased Visibility: By creating a Facebook business page, I can increase my online presence and make your products more visible to potential customers.
@@ -563,15 +506,11 @@ My goals for setting up a Facebook business page for VideoDrome could include:
 
 A link to the page is provided [here](https://www.facebook.com/people/VideoDrome/61560545848203/), however it is apparently common for Facebook to delete innactive buiness pages so this link may not last.
 
-</details>
-
 ### Newsletter Signup
 
 <em>[As a site-owner, I want to include a newsletter sign up option, so that I can reach my audience with news and offers in a cost-effective manner.](https://github.com/0davidog/VideoDrome/issues/31)</em>
 
 A email newsletter sign-up link will be added to this site with the use of mailchimp's free services.
-
-<details><summary>DETAILS</summary>
 
 My goals for setting up an email newsletter for VideoDrome could include:
 
@@ -596,8 +535,6 @@ AC3: Email is seen in Mailchimp dashboard:
 ![newsletter3](https://github.com/0davidog/VideoDrome/assets/135815736/0c0cece7-6a5a-427c-9cb7-32f0cda4ad59)
 
 (emails can be seen as being added from the embedded Mailchimp form).
-
-</details>
 
 ### Links
 
@@ -626,8 +563,6 @@ These links are situated on the site's footer section.
 ### Keywords
 
 Despite the keyword Meta tag being no long used in SEO for google [[source](https://ahrefs.com/blog/meta-keywords/)], keyword research is still a useful practice for brainstorming how best to develop your site's content in a way that's relevant to your subject and audience.
-
-<details><summary>DETAILS</summary>
     
 ![Screenshot 2024-05-29 at 14-42-56 dvd and blu-ray films for sale - Google Search](https://github.com/0davidog/VideoDrome/assets/135815736/ae88c72d-824f-43a1-8349-f94bd5b9c911)
 
@@ -661,15 +596,11 @@ Here they are in a meta keywords tag as found in VideoDrome's base.html:
 
 `<meta name="keywords" content="horror blu-ray, horror dvd, horror 4k, sci-fi blu-ray, sci-fi dvd, sci-fi 4k, new horror movies on dvd, used horror DVDs for sale, new sci-fi blu-rays online, classic movie collection for sale, buy 4k ultra HD horror films, second-hand sci-fi DVDs, rare classic Blu-rays, discounted horror movies online, best deals on sci-fi Blu-rays, collectible classic films, limited edition 4k Ultra HD releases">`
 
-</details>
-
 ### Description
 
 <em>[As a site owner, I want to Include Meta Description tags in the application HTML so that I can improve search engine optimisation](https://github.com/0davidog/VideoDrome/issues/18)</em>
 
 A meta description is a brief summary of the content of a web page. It is typically displayed in search engine results pages (SERPs) beneath the page title and URL. The purpose of a meta description is to provide users with a concise preview of what they can expect to find on the webpage if they click on the link.
-
-<details><summary>DETAILS</summary>
 
 Here's the decription for this project chosen to hightlight the online sale of genre films in various formats:
 
@@ -683,11 +614,7 @@ Goals for including a Meta Description:
 - Differentiating from Competitors: In SERPs where multiple search results are displayed, a well-crafted meta description can help your page stand out from competitors. By highlighting unique selling points, offers, or benefits, I could attract an audience's attention and encourage them to choose my page over others.
 - Providing Context for Social Sharing: Meta descriptions are often used as the default description when a webpage is shared on social media platforms like Facebook, Twitter, or LinkedIn. A descriptive and engaging meta description can provide context for shared links, increasing engagement and click-throughs from social media users.
 
-</details>
-
 ### Title
-
-<details><summary>DETAILS</summary>
 
 Here's the title for this project, chosen to highlight the sites content of genre films on various formats, the sites name and UK location:
 
@@ -703,18 +630,9 @@ The meta title serves several important purposes:
 - Browser Tab Label: The meta title is also displayed in the browser tab when the webpage is opened. This helps users keep track of multiple open tabs and quickly identify the content of each tab.
 - Social Sharing: When a web page is shared on social media platforms or other websites, the meta title is often used as the default title for the shared link. A descriptive and compelling meta title can improve the visibility and engagement of shared content on social media.
 
-</details>
-
 ### Relevant Content
 
-<details><summary>DETAILS</summary>
-
- `<h1>{{ video.title }} {{ video.format }}</h1>`
-
-
-Call out how you purposefully incorporated keywords into your content, H1, meta data etc.
-
-</details>
+The site's content involves use of keywords throughout in trying to provide usful information about it's products such as the media format, aspect ratio, film length and user reviews.
 
 ## Sitemap
 
@@ -734,25 +652,45 @@ The robots.txt for VideoDrome can be found [here.](https://github.com/0davidog/V
 
 ## Features
 
+Here's a list of features available on the site, information such as testing of features can be found by following the links to the related user stories.
+
 ### Video App
 
 #### Product List View
 
 <em>[As a user, I want to be able to browse products by category so that I can better find the kind of products I'm interested in.](https://github.com/0davidog/VideoDrome/issues/4)</em>
 
+The videos view allows the user to view the full list of products or filter them by category if they are looking for something in particular. Categories include the video's format (DVD, Blu-Ray or UHD) and any genre label that's been attached to the video.
+
 <em>[As a user, I want to be able to search for products by name or keyword so that I can find a particular product I'm interested in.](https://github.com/0davidog/VideoDrome/issues/5)</em>
 
+Users can search for a particular video or videos based on a keyword by use of the sites search bar that can be found on the site header.
+
 <em>[As a user, I want to be able to order products by price or release date, so I can browse in mind of the cheapest or newest items.](https://github.com/0davidog/VideoDrome/issues/14)</em>
+
+Users can then view these lists in an order that suits them such as price in lowest to highest for those looking for a bargain or date newest to oldest for those looking for the latest releases.
 
 #### Product Detail View
 
 <em>[As a shopper, I want to view detailed information about a product, including images, descriptions, and specifications so that I can be better informed about my purchases.](https://github.com/0davidog/VideoDrome/issues/6)</em>
 
+Clicking on a video's title link takes the user to a video detail view that displays all the relevant information the user needs before choosing a purchase. To save time on this project, overviews of the films represented in the videos were sourced from wikipedia and a link to the source was included.
+
 <em>[As a shopper, I want to be able to read reviews for a product so that I can be better informed before making a purchase decision.](https://github.com/0davidog/VideoDrome/issues/7)</em>
+
+While browsing the video detail pages user can read any user reviews that have been submitted by other users to help them make an informed choice. 
+
+<em>[As a registered site user, I would like to leave a review on a product I have already purchased so that I might help others be informed.](https://github.com/0davidog/VideoDrome/issues/33)</em>
+
+They may also, if registered, leave their own review via a form linked to from the review section.
 
 <em>[As a registered site-user, I want to be able to add a product to my wishlist so that I can easily return to a product I want to purchase at a more convenient time.](https://github.com/0davidog/VideoDrome/issues/8)</em>
 
+Registered users can also add a product to their wishlist while viewing the video detail page. This wishlist can later be viewed and updated in the customer page.
+
 <em>[As a registered site-user, I can give a star rating to a product so that I can express my view on product quality without writing a review.](https://github.com/0davidog/VideoDrome/issues/12)</em>
+
+Registered user can also give a star rating (out of five) to a video they like. This can be changed or removed at any time as long as the user is logged in.
 
 ### Basket App
 
@@ -760,13 +698,19 @@ The robots.txt for VideoDrome can be found [here.](https://github.com/0davidog/V
 
 <em>[As a shopper, I want to be able to add items to my shopping basket so that I can purchase multiple products in one transaction.](https://github.com/0davidog/VideoDrome/issues/9)</em>
 
+Once set on a product, users need only click the 'add to basket' link that appears with the product on both the all videos view and video detail view.
+
 #### Basket View
 
 <em>[As a shopper, I want to be able to view and edit the contents of my shopping cart before proceeding to checkout so that I can be sure of my final purchase decision.](https://github.com/0davidog/VideoDrome/issues/10)</em>
+
+Once items have been added to basket, users have the ability to edit the quantity or remove any of the basket items.
   
 ### Checkout App
 
 <em>[As a shopper, I want to be able to securely check out and provide shipping and payment information so that I may purchase items with ease and confidence.](https://github.com/0davidog/VideoDrome/issues/15)</em>
+
+Users can checkout securely thanks to Stripe integration.
 
 ### Customer App
 
@@ -774,37 +718,45 @@ The robots.txt for VideoDrome can be found [here.](https://github.com/0davidog/V
 
 <em>[As a shopper, I want to be able to view my order history so that I access the information for my records or a query.](https://github.com/0davidog/VideoDrome/issues/25)</em>
 
+Users are able to view their order history in the customer info section once they've made an order.
+
 ### Main App
 
 #### Header
 
 <em>[As a Site User, I want a user-friendly navigation menu that helps me explore different sections of the site easily.](https://github.com/0davidog/VideoDrome/issues/32)</em>
 
+The header provides the main navigation links for the site as well as the search bar so users should have no trouble finding what they want.
+
 #### Footer
+
+The footer contains social links, a newsletter signup and an email contact form.
 
 #### Authentication
 
 <em>[As a new user, I want to be able to register an account on the website using my email address and password.](https://github.com/0davidog/VideoDrome/issues/1)</em>
 
+Users are able to register for an account thanks to django-allauth. Email confirmation is required. Signing up provides access to benefits such as saved address, order history, wishlist and reviews.
 
 <em>[As a registered user, I want to be able to log in to my account securely so that I can shop easily with my saved information.](https://github.com/0davidog/VideoDrome/issues/2)</em>
 
+Once registered, users can log in securely with their details.
 
 <em>[As a Site user, I want the option to reset my password in case I forget it, ensuring secure access to my account.](https://github.com/0davidog/VideoDrome/issues/3)</em>
+
+If a password is forgotten allauth allows a process in which user can recover their account.
 
 #### Custom 404
 
 <em>[As a site-owner, I want to include a 404 response page with an appropriate redirect for attempted access to non-existent content so that users who stumble on such errors are not put off from browsing.](https://github.com/0davidog/VideoDrome/issues/23)</em>
 
-
-
-
-<details><summary>DETAILS</summary>
-</details>
+A custom 404 page is provided to ensure that users who attempt to access missing pages are not taken out of the flow of the site and can easily get back to browsing.
 
 ## Future Features
 
 <em>[As a shopper, I want to be able to track the status of my orders, so I can be confident my order is handled and shipped in good time.](https://github.com/0davidog/VideoDrome/issues/26)</em>
+
+As a real store would also handle shipping an ideal future feature would be a way in which customers can keep up to date with their order status.
 
 ## Testing
 
@@ -1147,6 +1099,21 @@ Create a new app on Heroku:
 </details>
 
 ## Credits
+
 ### Content
+
+The 'Boutique Ado' project was followed for the checkout and basket app due to the complexity of these functions.
+
 ### Media
+
+Icons are sourced from [fontawesome](fontawesome.com/).
+
+The favicon image was converted using [favicon.io](Favicon.io).
+
+Site logo and background created by the site author.
+Video cover images taken by site author.
+
 ### Acknowledgments
+
+- Thanks to my Mentor, Malia, for her advice throughout the course.
+- Thanks to those users who signed up and got involved in testing/using the site.
