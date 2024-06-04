@@ -174,8 +174,6 @@ Using a reference from [https://webaim.org](https://webaim.org/techniques/keyboa
 |customer/view_wishlist|No errors or warnings to show.|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/c0c278a1-9a56-4404-95bf-8ea4de06698c)|
 |customer/saved_address|No errors or warnings to show.|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/d3d67292-5f61-4280-96bc-c5066f360f1f)|
 |customer/read_reviews|No errors or warnings to show.|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/78f1078d-c5d1-42d2-a83e-cdc2b8404448)|
-|customer/create_messages|No errors or warnings to show.|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/449cb639-c8a4-4a1f-9d49-cb11e89bd8a7)|
-|customer/read_messages|No errors or warnings to show.|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/a79e9971-0384-4e89-8b57-03e4c8945648)|
 |customer/inventory|No errors or warnings to show.|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/5deeb811-75d8-4081-862b-123fab51fc95)|
 |customer/orders|No errors or warnings to show.|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/c9f95b0d-9b55-4899-b3e4-d663d46d8e94)|
 |customer/order_detail|No errors or warnings to show.|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/8c975789-1e63-4857-a0d3-863595f55615)|
@@ -236,7 +234,6 @@ The warning 'Functions declared within loops referencing an outer scoped variabl
 |urls.py|Good|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/c9a87ea5-aeb5-47d3-b159-44519e0642c9)|
 |models.py|Good|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/aa38d79f-586c-40e9-aa15-c8aad7be66ed)|
 |forms.py|Good|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/3807df02-cf67-4bad-8694-bd1dc2e8d21f)|
-|email.py|Good|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/0b5bc12e-2b0a-4e6f-80f5-f3b1f17e4863)|
 |admin.py|Good|[Screenshot](https://github.com/0davidog/VideoDrome/assets/135815736/898aff10-9967-4829-8d72-60f7930fe1c1)|
 
 #### Checkout App
