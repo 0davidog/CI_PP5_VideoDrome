@@ -53,4 +53,3 @@ def create_or_update_customer_info(sender, instance, created, **kwargs):
 
     # For existing users, save the customer profile
     instance.customer.save()
-

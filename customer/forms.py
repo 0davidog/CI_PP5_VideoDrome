@@ -1,6 +1,8 @@
 from django import forms
 from django.contrib.auth.models import User
 from .models import Customer
+
+
 class SavedAddressForm(forms.ModelForm):
 
     class Meta:
@@ -30,7 +32,7 @@ class SavedAddressForm(forms.ModelForm):
                 placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].label = False
-    
+
 
 class SavedDetailsForm(forms.ModelForm):
 
@@ -38,7 +40,7 @@ class SavedDetailsForm(forms.ModelForm):
         model = User
 
         fields = (
-            'first_name', 
+            'first_name',
             'last_name',
         )
 
@@ -58,11 +60,12 @@ class SavedDetailsForm(forms.ModelForm):
         for field in self.fields:
             # Set placeholder variable to matching field
             placeholder = placeholders[field]
-            # Set placeholder attribute in form widget to our placeholder var value 
+            # Set placeholder attribute in form widget to our
+            # placeholder var value
             self.fields[field].widget.attrs['placeholder'] = placeholder
             # Remove existing field label
             self.fields[field].label = False
-    
+
     def clean(self):
         cleaned_data = super().clean()
         # Iterate over fields and remove empty values
@@ -70,5 +73,3 @@ class SavedDetailsForm(forms.ModelForm):
             if value in [None, '']:
                 del cleaned_data[field_name]
         return cleaned_data
-
-

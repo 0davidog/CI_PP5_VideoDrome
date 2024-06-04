@@ -80,9 +80,8 @@
             </button>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="{% url 'admin:index' %}">Admin Panel</a></li>
-              <li><a class="dropdown-item" href="{% url 'admin:videos_video_changelist' %}">Inventory List</a></li>
-              <li><a class="dropdown-item" href="{% url 'admin:auth_user_changelist' %}">User List</a></li>
-              <li><a class="dropdown-item" href="{% url 'admin:checkout_customerorder_changelist' %}">Orders</a></li>
+              <li><a class="dropdown-item" href="{% url 'inventory' %}">Inventory List</a></li>
+              <li><a class="dropdown-item" href="{% url 'orders' %}">Orders</a></li>
               <li><a class="dropdown-item" href="{% url 'create_video' %}">Add a video</a></li>
             </ul>
             </div>
